@@ -1,6 +1,7 @@
 package com.example.ngalodern.Page
 
 import android.icu.text.ListFormatter.Width
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
@@ -43,6 +44,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 import androidx.compose.runtime.*
+
 
 @Preview
 @Composable
@@ -405,11 +407,10 @@ fun Dashboard(scrollState: ScrollState) {
                     }
 
 
-                    Row (
+                    Row ( // button buat select hadits / dongeng
                         modifier = Modifier
                             .padding(top = 10.dp)
                     ){
-
                         Box(){
                             Button(
                                 colors = ButtonDefaults.buttonColors(
@@ -424,16 +425,25 @@ fun Dashboard(scrollState: ScrollState) {
                                             bottomEnd = 21.dp,
                                         )
                                     )
-                                    .background(color = Color(android.graphics.Color.parseColor("#457B9D")))
+                                    .background(
+                                        if (!indikator) Color(android.graphics.Color.parseColor("#487c9c"))
+                                        else Color.Transparent
+                                    )
                                     .height(29.dp)
                                     .width(109.dp),
                                 onClick = {
                                     indikator = false
-                                }
+                                },
+                                shape = if(!indikator) RoundedCornerShape(50)
+                                else RoundedCornerShape(100),
+                                border = BorderStroke(1.dp, Color(android.graphics.Color.parseColor("#487c9c")))
                             ) {
                                 Text(
                                     text = "Dongeng",
-                                    fontSize = 12.sp
+                                    fontSize = 12.sp,
+                                    color = if (!indikator) Color.White
+                                            else Color(android.graphics.Color.parseColor("#487c9c")),
+                                    fontWeight = FontWeight.Bold
                                 )
                             }
                         }
@@ -455,14 +465,24 @@ fun Dashboard(scrollState: ScrollState) {
                                             bottomEnd = 21.dp,
                                         )
                                     )
-                                    .background(color = Color(android.graphics.Color.parseColor("#457B9D")))
+                                    .background(
+                                        if (indikator) Color(android.graphics.Color.parseColor("#487c9c"))
+                                        else Color.Transparent
+                                    )
                                     .height(29.dp)
                                     .width(109.dp),
-                                onClick = { indikator = true }
+                                onClick = { indikator = true },
+                                shape =
+                                if(indikator) RoundedCornerShape(50)
+                                else RoundedCornerShape(100),
+                                border = BorderStroke(1.dp, Color(android.graphics.Color.parseColor("#487c9c")))
                             ) {
                                 Text(
                                     text = "Hadits",
-                                    fontSize = 12.sp
+                                    fontSize = 12.sp,
+                                    color = if (indikator) Color.White
+                                    else Color(android.graphics.Color.parseColor("#487c9c")),
+                                    fontWeight = FontWeight.Bold
                                 )
                             }
                         }
