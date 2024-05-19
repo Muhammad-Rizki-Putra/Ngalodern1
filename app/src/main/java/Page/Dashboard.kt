@@ -33,7 +33,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.ngalodern.R
 import androidx.compose.ui.text.style.TextOverflow
-
+import Page.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -246,55 +246,6 @@ fun togglebelajar(indikator: Boolean = true){
 
 @Preview
 @Composable
-fun navbar(){
-    Box (
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(68.dp)
-            .background(color = Color(android.graphics.Color.parseColor("#E8E5DE")))
-    ){
-        Box(){
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceAround
-            ) {
-                Image(
-                    modifier = Modifier
-                        .height(75.dp)
-                        .width(75.dp)
-                        .clickable {
-
-                        },
-                    painter = painterResource(id = R.drawable.beranda_focus),
-                    contentDescription = "Logo Beranda"
-                )
-                Image(
-                    modifier = Modifier
-                        .height(75.dp)
-                        .width(75.dp)
-                        .clickable {
-
-                        },
-                    painter = painterResource(id = R.drawable.latihan_unfocus),
-                    contentDescription = "Logo Latihan"
-                )
-                Image(
-                    modifier = Modifier
-                        .height(75.dp)
-                        .width(75.dp)
-                        .clickable {
-
-                        },
-                    painter = painterResource(id = R.drawable.profil_unfocus),
-                    contentDescription = "Logo Profil"
-                )
-            }
-        }
-    }
-}
-
-@Preview
-@Composable
 fun topbar(){
     Row( //Ngalodern & logo
         modifier = Modifier
@@ -327,7 +278,7 @@ fun Dashboard(scrollState: ScrollState, navController: NavController) {
     var indikator by remember { mutableStateOf(false) }
     Scaffold(
         bottomBar = {
-            navbar()
+            navbar(navController)
         },
         topBar = {
             topbar()
@@ -341,9 +292,6 @@ fun Dashboard(scrollState: ScrollState, navController: NavController) {
                 .background(color = Color(android.graphics.Color.parseColor("#E8E5DE")))
                 .padding(30.dp)
         ) {
-
-            //to do taruh fungsi banenr
-
             Box( //Banner
                 modifier = Modifier
                     .height(200.dp)
