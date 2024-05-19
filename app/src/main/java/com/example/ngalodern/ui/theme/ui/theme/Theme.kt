@@ -1,4 +1,4 @@
-package com.example.ngalodern.ui.theme
+package com.example.ngalodern.ui.theme.ui.theme
 
 import android.app.Activity
 import android.os.Build

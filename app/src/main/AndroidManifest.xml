@@ -13,6 +13,11 @@
         android:theme="@style/Theme.Ngalodern"
         tools:targetApi="31">
         <activity
+            android:name=".ui.theme.Belajar"
+            android:exported="false"
+            android:label="@string/title_activity_belajar"
+            android:theme="@style/Theme.Ngalodern" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"

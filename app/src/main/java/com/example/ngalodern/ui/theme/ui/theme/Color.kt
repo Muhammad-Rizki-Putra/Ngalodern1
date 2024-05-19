@@ -1,4 +1,4 @@
-package com.example.ngalodern.ui.theme
+package com.example.ngalodern.ui.theme.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

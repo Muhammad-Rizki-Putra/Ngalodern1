@@ -44,6 +44,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 import androidx.compose.runtime.*
+import androidx.navigation.compose.rememberNavController
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.navigation.NavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 
 
 @Preview
@@ -287,11 +295,42 @@ fun navbar(){
 
 @Preview
 @Composable
-fun Dashboard(scrollState: ScrollState) {
+fun topbar(){
+    Row( //Ngalodern & logo
+        modifier = Modifier
+            .fillMaxWidth()
+            .verticalScroll(rememberScrollState())
+            .background(color = Color(android.graphics.Color.parseColor("#E8E5DE")))
+            .padding(30.dp)
+            ,
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Text(
+            text = "Ngalodern",
+            fontSize = 32.sp,
+            fontWeight = FontWeight.ExtraBold
+        )
+        Image(
+            modifier = Modifier
+                .width(60.dp)
+                .height(60.dp),
+            painter = painterResource(id = R.drawable.logo_ngalodern1_2_1),
+            contentDescription = "Profile Image"
+        )
+    }
+}
+
+@Preview
+@Composable
+fun Dashboard(scrollState: ScrollState, navController: NavController) {
     var indikator by remember { mutableStateOf(false) }
     Scaffold(
         bottomBar = {
             navbar()
+        },
+        topBar = {
+            topbar()
         }
     ) { innerPadding ->
         Column(
@@ -303,25 +342,7 @@ fun Dashboard(scrollState: ScrollState) {
                 .padding(30.dp)
         ) {
 
-            Row( //Ngalodern & logo
-                modifier = Modifier
-                    .fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = "Ngalodern",
-                    fontSize = 32.sp,
-                    fontWeight = FontWeight.ExtraBold
-                )
-                Image(
-                    modifier = Modifier
-                        .size(60.dp)
-                        .fillMaxWidth(),
-                    painter = painterResource(id = R.drawable.logo_ngalodern1_2_1),
-                    contentDescription = "Profile Image"
-                )
-            }
+            //to do taruh fungsi banenr
 
             Box( //Banner
                 modifier = Modifier
@@ -400,7 +421,9 @@ fun Dashboard(scrollState: ScrollState) {
                             text = "Lihat semua",
                             fontSize = 14.sp,
                             fontWeight = FontWeight.Bold,
-                            color =  Color(android.graphics.Color.parseColor("#457B9D"))
+                            color =  Color(android.graphics.Color.parseColor("#457B9D")),
+                            modifier = Modifier
+                                .clickable { navController.navigate("Belajar") }
                         )
                     }
 

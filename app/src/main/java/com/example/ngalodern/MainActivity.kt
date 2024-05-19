@@ -1,6 +1,8 @@
 package com.example.ngalodern
 
 import Page.Belajar
+import Page.Navigation
+import Page.Navigation
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -15,7 +17,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val scrollState = rememberScrollState()
-            Dashboard(scrollState)
+            Navigation(scrollState = scrollState)
         }
     }
 }

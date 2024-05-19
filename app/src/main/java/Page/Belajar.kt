@@ -60,6 +60,8 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 
 @Preview
@@ -111,7 +113,7 @@ fun tomboldongeng(){
 
 @Composable
 @Preview
-fun topbar() {
+fun topbar(navController: NavController) {
     Surface(
         modifier = Modifier
             .fillMaxWidth()
@@ -149,7 +151,8 @@ fun topbar() {
                     .width(150.dp)
                     .height(46.dp)
                     .align(Alignment.CenterStart)
-                    .padding(start = 10.dp),
+                    .padding(start = 10.dp)
+                    .clickable { navController.navigate("Dashboard") },
                 painter = painterResource(id = R.drawable.next_reverse),
                 contentDescription = "nextlogo"
             )
@@ -274,14 +277,13 @@ fun box_belajar(judul: String = "None"){
     }
 }
 
-
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Preview
 @Composable
-fun Belajar(scrollState: ScrollState){
+fun Belajar(scrollState: ScrollState, navController: NavController){
     Scaffold(
         topBar = {
-            topbar()
+            topbar(navController)
         }
     ) {
         Box(
