@@ -194,8 +194,6 @@ fun togglebelajar(indikator: Boolean = true){
                 .padding(top = 10.dp)
         ) {
             Column {
-
-
                 LazyRow(
                 ) {
                     items(3) {
