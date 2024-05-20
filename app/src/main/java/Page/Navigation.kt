@@ -26,6 +26,13 @@ fun Navigation(scrollState: ScrollState){
             )
         }
 
+        composable("Latihan") {
+            Latihan(
+                scrollState = scrollState,
+                navController = navController
+            )
+        }
+
         composable("Profile") {
             Profile(
                 scrollState = scrollState,

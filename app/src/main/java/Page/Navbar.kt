@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -30,6 +31,12 @@ fun navbar(navController: NavController){
         R.drawable.beranda_focus
     } else {
         R.drawable.beranda_unfocus
+    }
+
+    val belajarResourceId = if (currentDestination == "Belajar") {
+        R.drawable.belajar_focused
+    } else {
+        R.drawable.belajar_unfocused
     }
 
     val latihanResourceId = if (currentDestination == "Latihan") {
@@ -70,7 +77,17 @@ fun navbar(navController: NavController){
                         .height(75.dp)
                         .width(75.dp)
                         .clickable {
-
+                            navController.navigate("Belajar")
+                        },
+                    painter = painterResource(id = belajarResourceId),
+                    contentDescription = "Logo Belajar"
+                )
+                Image(
+                    modifier = Modifier
+                        .height(75.dp)
+                        .width(75.dp)
+                        .clickable {
+                            navController.navigate("Latihan")
                         },
                     painter = painterResource(id = latihanResourceId),
                     contentDescription = "Logo Latihan"

@@ -53,11 +53,13 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material3.*
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -69,14 +71,15 @@ import androidx.navigation.compose.rememberNavController
 fun tombolhadits(){
     Box(
         modifier = Modifier
-            .fillMaxWidth()
+
             .fillMaxHeight()
     ){
     LazyColumn {
         items(10){
             Box(
                 modifier = Modifier
-                    .padding(top = 30.dp)
+                    .padding(bottom = 20.dp)
+
             ){
                 box_materi(
                     waktu = "",
@@ -99,8 +102,8 @@ fun tomboldongeng(){
     ){
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
-            verticalArrangement = Arrangement.spacedBy(16.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp)
+            verticalArrangement = Arrangement.spacedBy(20.dp),
+            horizontalArrangement = Arrangement.spacedBy(20.dp)
         ) {
             items(5){
                 box_belajar(
@@ -121,15 +124,15 @@ fun topbar(navController: NavController) {
             .shadow(
                 elevation = 35.dp,
                 shape = RoundedCornerShape(
-                    bottomStart = 50.dp,
-                    bottomEnd = 50.dp
+                    bottomStart = 30.dp,
+                    bottomEnd = 30.dp
                 ),
                 clip = false
             ),
         color = Color(android.graphics.Color.parseColor("#457b9d")),
         shape = RoundedCornerShape(
-            bottomStart = 50.dp,
-            bottomEnd = 50.dp
+            bottomStart = 30.dp,
+            bottomEnd = 30.dp
         )
     ) {
         Box(
@@ -144,17 +147,6 @@ fun topbar(navController: NavController) {
                 fontSize = 35.sp,
                 color = Color.White,
                 fontWeight = FontWeight.Bold
-            )
-
-            Image(
-                modifier = Modifier
-                    .width(150.dp)
-                    .height(46.dp)
-                    .align(Alignment.CenterStart)
-                    .padding(start = 10.dp)
-                    .clickable { navController.navigate("Dashboard") },
-                painter = painterResource(id = R.drawable.next_reverse),
-                contentDescription = "nextlogo"
             )
         }
     }
@@ -173,7 +165,7 @@ fun box_materi(waktu: String = "00.00",durasi: String = "00.00", judul: String =
                     bottomEnd = 10.dp,
                 )
             )
-            .width(299.dp)
+            .width(335.dp)
             .background(color = Color(android.graphics.Color.parseColor("#A9C0CF")))
             .height(53.dp)
         ,
@@ -284,14 +276,20 @@ fun Belajar(scrollState: ScrollState, navController: NavController){
     Scaffold(
         topBar = {
             topbar(navController)
+        },
+        bottomBar = {
+            navbar(navController = navController)
         }
-    ) {
-        Box(
+    ) { innerPadding ->
+        Column(
             modifier = Modifier
                 .fillMaxSize()
                 .background(color = Color(android.graphics.Color.parseColor("#E8E5DE")))
-                .padding(30.dp)
-                .padding(top = 75.dp)
+                .padding(top = 30.dp, start = 30.dp, end = 30.dp, bottom = 0.dp)
+                .padding(innerPadding)
+                ,
+            horizontalAlignment = Alignment.CenterHorizontally
+
         )
         {
             var indikator by remember { mutableStateOf(false) }
@@ -318,8 +316,9 @@ fun Belajar(scrollState: ScrollState, navController: NavController){
                             if (!indikator) Color(android.graphics.Color.parseColor("#487c9c"))
                             else Color.Transparent
                         )
-                        .height(29.dp)
-                        .width(109.dp),
+                        .height(32.dp)
+                        .width(150.dp),
+
                     onClick = {
                         indikator = false
                     },
@@ -328,11 +327,16 @@ fun Belajar(scrollState: ScrollState, navController: NavController){
                     border = BorderStroke(1.dp, Color(android.graphics.Color.parseColor("#487c9c")))
                 ) {
                     Text(
+                        modifier = Modifier
+
+
+                        ,
                         text = "Dongeng",
                         fontSize = 12.sp,
                         color = if (!indikator) Color.White
                         else Color(android.graphics.Color.parseColor("#487c9c")),
-                        fontWeight = FontWeight.Bold
+                        fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center
                     )
                 }
 
@@ -353,8 +357,8 @@ fun Belajar(scrollState: ScrollState, navController: NavController){
                             if (indikator) Color(android.graphics.Color.parseColor("#487c9c"))
                             else Color.Transparent
                         )
-                        .height(29.dp)
-                        .width(109.dp),
+                        .height(32.dp)
+                        .width(150.dp),
                     onClick = { indikator = true },
                     shape =
                     if(indikator) RoundedCornerShape(50)
@@ -373,8 +377,8 @@ fun Belajar(scrollState: ScrollState, navController: NavController){
             if(indikator == true){
                 Box(
                     modifier = Modifier
-                        .padding(top = 35.dp)
-                        .padding(start = 18.dp)
+                        .padding(top = 30.dp)
+
                 ) {
                     tombolhadits()
                 }
@@ -382,8 +386,8 @@ fun Belajar(scrollState: ScrollState, navController: NavController){
             else{
                 Box(
                     modifier = Modifier
-                        .padding(top = 65.dp)
-                        .padding(start = 18.dp)
+                        .padding(top = 30.dp)
+
                 ) {
                     tomboldongeng()
                 }

@@ -52,6 +52,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.ngalodern.ui.theme.ui.theme.leaguespartanFontFamily
 
 
 @Preview
@@ -252,7 +253,7 @@ fun topbar(){
             .fillMaxWidth()
             .verticalScroll(rememberScrollState())
             .background(color = Color(android.graphics.Color.parseColor("#E8E5DE")))
-            .padding(30.dp)
+            .padding(start = 30.dp, end = 30.dp, top = 30.dp, bottom = 10.dp)
             ,
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
@@ -260,7 +261,8 @@ fun topbar(){
         Text(
             text = "Ngalodern",
             fontSize = 32.sp,
-            fontWeight = FontWeight.ExtraBold
+            fontFamily = leaguespartanFontFamily,
+            fontWeight = FontWeight.Bold
         )
         Image(
             modifier = Modifier
@@ -290,7 +292,7 @@ fun Dashboard(scrollState: ScrollState, navController: NavController) {
                 .verticalScroll(rememberScrollState())
                 .fillMaxWidth()
                 .background(color = Color(android.graphics.Color.parseColor("#E8E5DE")))
-                .padding(30.dp)
+                .padding(start = 30.dp, end = 30.dp, top = 0.dp, bottom = 10.dp)
         ) {
             Box( //Banner
                 modifier = Modifier
