@@ -53,7 +53,7 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-
+import Object.*
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material3.*
@@ -68,33 +68,33 @@ import androidx.navigation.compose.rememberNavController
 
 @Preview
 @Composable
-fun tombolhadits(){
+fun tombolhadist(navController: NavController){
     Box(
         modifier = Modifier
-
             .fillMaxHeight()
+            .fillMaxWidth()
     ){
-    LazyColumn {
-        items(10){
-            Box(
-                modifier = Modifier
-                    .padding(bottom = 20.dp)
-
-            ){
-                box_materi(
-                    waktu = "",
-                    durasi = "",
-                    judul = "Hadits $it"
+        LazyVerticalGrid(
+            modifier = Modifier,
+            columns = GridCells.Fixed(2),
+            verticalArrangement = Arrangement.spacedBy(20.dp),
+            horizontalArrangement = Arrangement.spacedBy(20.dp)
+        ) {
+            val data: Data = Data()
+            items(data.sizehd){
+                box_belajar(
+                    judul = data.hadistList[it].judul,
+                    route = "Hadist_$it",
+                    navController = navController
                 )
             }
         }
-    }
     }
 }
 
 @Preview
 @Composable
-fun tomboldongeng(){
+fun tomboldongeng(navController: NavController){
     Box(
         modifier = Modifier
             .fillMaxHeight()
@@ -105,9 +105,12 @@ fun tomboldongeng(){
             verticalArrangement = Arrangement.spacedBy(20.dp),
             horizontalArrangement = Arrangement.spacedBy(20.dp)
         ) {
-            items(5){
+            val data: Data = Data()
+            items(data.sizedg){
                 box_belajar(
-                    judul = "Dongeng $it"
+                    judul = data.dongengList[it].judul,
+                    route = "Dongeng_$it",
+                    navController = navController
                 )
             }
         }
@@ -152,59 +155,24 @@ fun topbar(navController: NavController) {
     }
 }
 
+
+
 @Preview
 @Composable
-fun box_materi(waktu: String = "00.00",durasi: String = "00.00", judul: String = "Ragam Subjek"){
+fun box_belajar(judul: String = "None", route: String, navController: NavController){
     Box(
         modifier = Modifier
-            .clip(
-                RoundedCornerShape(
-                    topStart = 10.dp,
+            .clickable {
+                navController.navigate(route)
+            }
+            .shadow(
+                elevation = 15.dp,
+                shape = RoundedCornerShape(
                     bottomStart = 10.dp,
-                    topEnd = 10.dp,
-                    bottomEnd = 10.dp,
-                )
+                    bottomEnd = 10.dp
+                ),
+                clip = false
             )
-            .width(335.dp)
-            .background(color = Color(android.graphics.Color.parseColor("#A9C0CF")))
-            .height(53.dp)
-        ,
-
-        ){
-        Row (
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(10.dp)
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-            ){
-            Text(
-                text = judul,
-                fontSize = 24.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.White
-            )
-
-            Image(
-                modifier = Modifier
-                    .height(60.dp)
-                    .width(60.dp)
-                    .clickable {
-
-                    },
-                painter = painterResource(id = R.drawable.tombol_play_1),
-                contentDescription = "Logo buku",
-            )
-        }
-    }
-}
-
-@Preview
-@Composable
-fun box_belajar(judul: String = "None"){
-    Box(
-        modifier = Modifier
             .clip(
                 RoundedCornerShape(
                     topStart = 10.dp,
@@ -216,6 +184,7 @@ fun box_belajar(judul: String = "None"){
             .height(138.dp)
             .width(160.dp)
             .background(color = Color(android.graphics.Color.parseColor("#A9C0CF")))
+
     ){
         Column {
             Box(
@@ -380,7 +349,7 @@ fun Belajar(scrollState: ScrollState, navController: NavController){
                         .padding(top = 30.dp)
 
                 ) {
-                    tombolhadits()
+                    tombolhadist(navController)
                 }
             }
             else{
@@ -389,7 +358,7 @@ fun Belajar(scrollState: ScrollState, navController: NavController){
                         .padding(top = 30.dp)
 
                 ) {
-                    tomboldongeng()
+                    tomboldongeng(navController)
                 }
             }
         }

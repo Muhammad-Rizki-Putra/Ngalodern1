@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.ngalodern.Page.Dashboard
 import com.example.ngalodern.Page.Profile
+import Object.*
 
 @Composable
 fun Navigation(scrollState: ScrollState){
@@ -38,6 +39,27 @@ fun Navigation(scrollState: ScrollState){
                 scrollState = scrollState,
                 navController = navController
             )
+        }
+
+        val data: Data = Data()
+        val dongengList = data.dongengList
+        dongengList.forEachIndexed() { index, dongeng ->
+            composable("Dongeng_$index"){
+                dongeng.board(
+                    scrollState = scrollState,
+                    navController = navController
+                )
+            }
+        }
+
+        val hadistList = data.hadistList
+        hadistList.forEachIndexed() { index, hadist ->
+            composable("Hadist_$index"){
+                hadist.board(
+                    scrollState = scrollState,
+                    navController = navController
+                )
+            }
         }
     }
 }

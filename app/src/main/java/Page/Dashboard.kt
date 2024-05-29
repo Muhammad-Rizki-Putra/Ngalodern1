@@ -48,6 +48,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.ui.draw.shadow
 import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -60,6 +61,14 @@ import com.example.ngalodern.ui.theme.ui.theme.leaguespartanFontFamily
 fun box_belajar(judul: String = "None"){
     Box(
         modifier = Modifier
+            .shadow(
+                elevation = 15.dp,
+                shape = RoundedCornerShape(
+                    bottomStart = 10.dp,
+                    bottomEnd = 10.dp
+                ),
+                clip = false
+            )
             .clip(
                 RoundedCornerShape(
                     topStart = 10.dp,
@@ -129,6 +138,14 @@ fun box_belajar(judul: String = "None"){
 fun box_materi(waktu: String = "00.00",durasi: String = "00.00", judul: String = "Ragam Subjek"){
     Box(
         modifier = Modifier
+            .shadow(
+                elevation = 15.dp,
+                shape = RoundedCornerShape(
+                    bottomStart = 10.dp,
+                    bottomEnd = 10.dp
+                ),
+                clip = false
+            )
             .clip(
                 RoundedCornerShape(
                     topStart = 10.dp,
@@ -298,6 +315,7 @@ fun Dashboard(scrollState: ScrollState, navController: NavController) {
                 modifier = Modifier
                     .height(200.dp)
                     .fillMaxWidth()
+
             ) {
                 Image(
                     modifier = Modifier
@@ -311,7 +329,6 @@ fun Dashboard(scrollState: ScrollState, navController: NavController) {
             Box( //Terakhir dilihat
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(color = Color(android.graphics.Color.parseColor("#E8E5DE")))
                     .padding(top = 10.dp)
             ) {
                 Column {
@@ -329,7 +346,6 @@ fun Dashboard(scrollState: ScrollState, navController: NavController) {
             Box( //Materi
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(color = Color(android.graphics.Color.parseColor("#E8E5DE")))
                     .padding(top = 20.dp)
             ) {
                 Column {

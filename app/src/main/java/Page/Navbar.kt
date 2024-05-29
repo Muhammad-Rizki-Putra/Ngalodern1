@@ -10,8 +10,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -64,6 +67,7 @@ fun navbar(navController: NavController){
             ) {
                 Image(
                     modifier = Modifier
+                        .clip(RoundedCornerShape(100.dp))
                         .height(75.dp)
                         .width(75.dp)
                         .clickable {
@@ -74,6 +78,7 @@ fun navbar(navController: NavController){
                 )
                 Image(
                     modifier = Modifier
+                        .clip(RoundedCornerShape(100.dp))
                         .height(75.dp)
                         .width(75.dp)
                         .clickable {
@@ -84,6 +89,7 @@ fun navbar(navController: NavController){
                 )
                 Image(
                     modifier = Modifier
+                        .clip(RoundedCornerShape(100.dp))
                         .height(75.dp)
                         .width(75.dp)
                         .clickable {
@@ -94,6 +100,7 @@ fun navbar(navController: NavController){
                 )
                 Image(
                     modifier = Modifier
+                        .clip(RoundedCornerShape(100.dp))
                         .height(75.dp)
                         .width(75.dp)
                         .clickable {
