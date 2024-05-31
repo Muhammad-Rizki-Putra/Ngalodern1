@@ -64,7 +64,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-
+import Object.get_sizehd
 
 @Preview
 @Composable
@@ -80,10 +80,9 @@ fun tombolhadist(navController: NavController){
             verticalArrangement = Arrangement.spacedBy(20.dp),
             horizontalArrangement = Arrangement.spacedBy(20.dp)
         ) {
-            val data: Data = Data()
-            items(data.sizehd){
+            items(get_sizehd()){
                 box_belajar(
-                    judul = data.hadistList[it].judul,
+                    judul = hadistList[it].judul,
                     route = "Hadist_$it",
                     navController = navController
                 )
@@ -105,10 +104,9 @@ fun tomboldongeng(navController: NavController){
             verticalArrangement = Arrangement.spacedBy(20.dp),
             horizontalArrangement = Arrangement.spacedBy(20.dp)
         ) {
-            val data: Data = Data()
-            items(data.sizedg){
+            items(sizedg){
                 box_belajar(
-                    judul = data.dongengList[it].judul,
+                    judul = dongengList[it].judul,
                     route = "Dongeng_$it",
                     navController = navController
                 )

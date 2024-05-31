@@ -42,11 +42,17 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.withStyle
 
 class Dongeng {
     var judul: String =""
@@ -54,6 +60,9 @@ class Dongeng {
     var arti: String=""
     var arab : String = ""
     var arr_arab = arrayOf<String>()
+    var arr_indo = arrayOf<String>()
+
+    var arr_lokasi = arrayOf<Triple<Int, Int, Int>>()
 
     constructor(judul: String, subjudul: String, arti: String, arab: String){
         this.judul = judul
@@ -63,19 +72,21 @@ class Dongeng {
         this.arr_arab = this.arab.split(" ").toTypedArray()
     }
 
+    constructor(judul: String, subjudul: String,arti: String, arr_indo: Array<String>, arr_arab: Array<String> , lokasilogat: Array<Triple<Int, Int, Int>>){
+        this.judul = judul
+        this.subjudul = subjudul
+        this.arti = arti
+        this.arr_arab = arr_arab
+        this.arr_indo = arr_indo
+        this.arr_lokasi = lokasilogat
+    }
+
     // alt constructor
     constructor(){
         this.judul = ""
         this.subjudul = ""
         this.arti = ""
         this.arab = ""
-    }
-
-    constructor(judul: String, subjudul: String, arti: String, arr_arab: Array<String>){
-        this.judul = judul
-        this.subjudul = subjudul
-        this.arti = arti
-        this.arr_arab = arr_arab
     }
 
     // setter
@@ -109,6 +120,31 @@ class Dongeng {
         return this.arab
     }
 
+    // backend capek (CAPEKKkkkkkkkkkkkkkkkkkkkkkkkkkk)
+    fun Coloredchar(str: String, indexesToColor: List<Int>, colorIds: List<Int>): AnnotatedString {
+        return buildAnnotatedString {
+            str.forEachIndexed { index, char ->
+                val colorIndex = indexesToColor.indexOf(index)
+                if (colorIndex != -1) {
+                    val colorId = colorIds[colorIndex]
+                    val color = when (colorId) {
+                        1 -> Color.Red
+                        2 -> Color.Blue
+                        3 -> Color(android.graphics.Color.parseColor("#964B00"))
+                        4 -> Color(android.graphics.Color.parseColor("#800080"))
+                        else -> Color.Black
+                    }
+                    withStyle(style = SpanStyle(color = color)) {
+                        append(char)
+                    }
+                } else {
+                    append(char)
+                }
+            }
+        }
+    }
+
+
     @Composable
     fun topbar(navController: NavController) {
         Surface(
@@ -141,7 +177,7 @@ class Dongeng {
                 ){
                     Text(
                         modifier = Modifier
-                            ,
+                        ,
                         text = judul,
                         fontSize = 32.sp,
                         color = androidx.compose.ui.graphics.Color.White,
@@ -150,7 +186,7 @@ class Dongeng {
 
                     Text(
                         modifier = Modifier
-                            ,
+                        ,
                         text = subjudul,
                         fontSize = 16.sp,
                         color = androidx.compose.ui.graphics.Color.White,
@@ -165,8 +201,7 @@ class Dongeng {
                         .height(46.dp)
                         .align(Alignment.CenterStart)
                         .padding(start = 10.dp)
-                        .clickable { navController.navigate("Belajar") }
-                        ,
+                        .clickable { navController.navigate("Belajar") },
                     painter = painterResource(id = R.drawable.next_reverse),
                     contentDescription = "nextlogo"
                 )
@@ -182,6 +217,8 @@ class Dongeng {
         val (dialogTitle, setDialogTitle) = remember { mutableStateOf("") }
         val (dialogArti, setArti) = remember { mutableStateOf("") }
         val (dialogPembahasan, setPembahasan) = remember { mutableStateOf("") }
+        var (showLogat, setShowLogat) = remember { mutableStateOf(false)}
+
 
         Scaffold(
             topBar = {
@@ -196,27 +233,44 @@ class Dongeng {
                     .padding(top = 30.dp, start = 30.dp, end = 30.dp, bottom = 0.dp)
                     .verticalScroll(rememberScrollState())
             ) {
+                Button(
+                    onClick = {
+                        setShowLogat(!showLogat)
+                    }
+                ) {
+                    Text(text = if (showLogat) "hide logat" else "show logat")
+                }
+
                 FlowRow(
                     modifier = Modifier
                         .wrapContentWidth()
                         .fillMaxSize(),
                     Arrangement.Center
                 ) {
-                    arr_arab.forEach { item ->
+                    arr_arab.forEachIndexed { index, item ->
                         Box(
                             modifier = Modifier
                                 .padding(bottom = 20.dp, end = 5.dp)
                                 .clickable {
                                     setDialogTitle("$item")
-                                    setArti("Contoh arti untuk $item")
-                                    setPembahasan("Contoh Pembahasan untuk $item")
+                                    setArti(arr_indo[index])
+                                    setPembahasan("")
 
                                     setShowDialog(true)
                                 }
                         ) {
                             Text(
                                 modifier = Modifier.padding(5.dp),
-                                text = item,
+                                text = if (showLogat) {
+                                    val logatInfo = arr_lokasi.filter { it.first == index }
+                                    if (logatInfo.isNotEmpty()) {
+                                        Coloredchar(item, logatInfo.map { it.second }, logatInfo.map { it.third })
+                                    } else {
+                                        AnnotatedString(item)
+                                    }
+                                } else {
+                                    AnnotatedString(item)
+                                },
                                 fontSize = 24.sp,
                                 fontWeight = FontWeight.Bold,
                                 style = TextStyle(textDecoration = TextDecoration.Underline)

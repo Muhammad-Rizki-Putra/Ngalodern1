@@ -41,8 +41,7 @@ fun Navigation(scrollState: ScrollState){
             )
         }
 
-        val data: Data = Data()
-        val dongengList = data.dongengList
+        val dongengList = get_dongengList()
         dongengList.forEachIndexed() { index, dongeng ->
             composable("Dongeng_$index"){
                 dongeng.board(
@@ -52,7 +51,7 @@ fun Navigation(scrollState: ScrollState){
             }
         }
 
-        val hadistList = data.hadistList
+        val hadistList = get_hadistList()
         hadistList.forEachIndexed() { index, hadist ->
             composable("Hadist_$index"){
                 hadist.board(
