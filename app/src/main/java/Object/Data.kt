@@ -55,7 +55,7 @@ fun Data(){
 
 //    hadits
 //    hadist 1
-    Array_arab += "إليْهِ"
+    Array_arab += "إليْه"
     Array_arab += "هَاجَرَ"
     Array_arab += "ما"
     Array_arab += "إلى"

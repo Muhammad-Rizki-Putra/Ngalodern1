@@ -40,3 +40,7 @@ val leaguespartanFontFamily = FontFamily(
     Font(R.font.leaguespartan_extrabold, FontWeight.ExtraBold),
     Font(R.font.leaguespartan_bold, FontWeight.Bold),
 )
+
+val dmsansFontFamily = FontFamily(
+    Font(R.font.dmsans_bold, FontWeight.Bold),
+)

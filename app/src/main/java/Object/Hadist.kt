@@ -37,11 +37,24 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.BottomSheetScaffold
 import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.SheetState
+import androidx.compose.material3.rememberBottomSheetScaffoldState
+import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.platform.LocalLayoutDirection
@@ -49,7 +62,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.max
+import com.example.ngalodern.ui.theme.ui.theme.dmsansFontFamily
+import kotlinx.coroutines.launch
 
+@OptIn(ExperimentalMaterial3Api::class)
 class Hadist {
     var judul: String = ""
     var subjudul: String = ""
@@ -138,6 +154,41 @@ class Hadist {
         }
     }
 
+//    @Composable
+//    fun arti(navController: NavController) {
+//        Surface (
+//            modifier = Modifier
+//
+//        ){
+//            val SheetState = rememberModalBottomSheetState()
+//            var isSheetOpen by rememberSaveable {
+//                mutableStateOf(false)
+//            }
+//            val scaffoldState = rememberBottomSheetScaffoldState()
+//            val scope = rememberCoroutineScope()
+//
+//
+//
+//            BottomSheetScaffold(
+//                scaffoldState = scaffoldState,
+//                sheetContent = {
+//                    Image(
+//                        modifier = Modifier
+//                            .fillMaxWidth()
+//                            .heightIn(min = 200.dp, max = 625.dp)
+//                            .fillMaxHeight(),
+//                        painter = painterResource(id = R.drawable.he_has_been_boiled_alhamdulillah),
+//                        contentDescription = null
+//
+//                    )
+//                },
+//
+//
+//            ) {
+//
+//            }
+//        }
+//    }
 
     @Composable
     fun topbar(navController: NavController) {
@@ -148,8 +199,8 @@ class Hadist {
                 .shadow(
                     elevation = 35.dp,
                     shape = RoundedCornerShape(
-                        bottomStart = 50.dp,
-                        bottomEnd = 50.dp
+                        bottomStart = 30.dp,
+                        bottomEnd = 30.dp
                     ),
                     clip = false
                 ),
@@ -215,13 +266,21 @@ class Hadist {
             topBar = {
                 topbar(navController = navController)
             }
+            
         ) { innerPadding ->
+            val SheetState = rememberModalBottomSheetState()
+            var isSheetOpen by rememberSaveable {
+                mutableStateOf(false)
+            }
+            val scaffoldState = rememberBottomSheetScaffoldState()
+            val scope = rememberCoroutineScope()
+
             Column(
                 modifier = Modifier
                     .fillMaxSize()
                     .background(color = Color(android.graphics.Color.parseColor("#E8E5DE")))
                     .padding(innerPadding)
-                    .padding(top = 30.dp, start = 30.dp, end = 30.dp, bottom = 0.dp)
+                    .padding(top = 30.dp, start = 30.dp, end = 30.dp, bottom = 60.dp)
                     .verticalScroll(rememberScrollState())
             ) {
                 Button(
@@ -251,12 +310,14 @@ class Hadist {
                                         setShowDialog(true)
                                     }
                             ) {
-                                Box(
+                                Row(
                                     modifier = Modifier
                                         .padding(start = 10.dp)
+//                                        .fillMaxWidth(),
+//                                    horizontalArrangement = Arrangement.SpaceEvenly
                                 ) {
                                     Text(
-                                        modifier = Modifier.padding(start = 10.dp, end = 10.dp),
+                                        modifier = Modifier.padding(start = 0.dp, end = 0.dp),
                                         text =
                                         if (showLogat) {
                                             val logatInfo = arr_lokasi.filter { it.first == index }
@@ -269,6 +330,7 @@ class Hadist {
                                             AnnotatedString(item)
                                         },
                                         fontSize = 24.sp,
+                                        fontFamily = dmsansFontFamily,
                                         fontWeight = FontWeight.Bold,
                                         style = TextStyle(textDecoration = TextDecoration.Underline),
                                         overflow = TextOverflow.Ellipsis,
@@ -279,6 +341,8 @@ class Hadist {
                         }
                     }
                 }
+
+
             }
 
             if (showDialog) {
@@ -288,6 +352,25 @@ class Hadist {
                     pembahasan = dialogPembahasan,
                     onDismiss = { setShowDialog(false) }
                 )
+            }
+
+            BottomSheetScaffold(
+                scaffoldState = scaffoldState,
+                sheetContent = {
+                    Image(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .heightIn(min = 200.dp, max = 625.dp)
+                            .fillMaxHeight(),
+                        painter = painterResource(id = R.drawable.he_has_been_boiled_alhamdulillah),
+                        contentDescription = null
+
+                    )
+                },
+
+
+                ) {
+
             }
         }
     }
