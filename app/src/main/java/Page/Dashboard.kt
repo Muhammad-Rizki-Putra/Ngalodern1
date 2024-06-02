@@ -1,10 +1,9 @@
 package com.example.ngalodern.Page
 
-import Object.dongengList
-import Object.hadistList
+import Object.Dongeng
+import Object.Hadist
 import Object.sizedg
 import Object.sizehd
-import android.icu.text.ListFormatter.Width
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.ScrollState
@@ -18,9 +17,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -28,9 +25,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -46,17 +41,9 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 import androidx.compose.runtime.*
-import androidx.navigation.compose.rememberNavController
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.draw.shadow
 import androidx.navigation.NavController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import com.example.ngalodern.ui.theme.ui.theme.leaguespartanFontFamily
 
 
@@ -310,7 +297,7 @@ fun togglebelajar(indikator: Boolean = true, navController: NavController){
                 ) {
                     items(sizedg){
                         box_belajar_2(
-                            judul = dongengList[it].judul,
+                            judul = Dongeng[it].judul,
                             route = "Dongeng_$it",
                             navController = navController
                         )
@@ -332,7 +319,7 @@ fun togglebelajar(indikator: Boolean = true, navController: NavController){
                 ) {
                     items(sizehd){
                         box_belajar_2(
-                            judul = hadistList[it].judul,
+                            judul = Hadist[it].judul,
                             route = "Hadist_$it",
                             navController = navController
                         )

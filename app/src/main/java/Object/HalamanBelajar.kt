@@ -37,18 +37,13 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.heightIn
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.BottomSheetScaffold
-import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ModalBottomSheet
-import androidx.compose.material3.SheetState
 import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.rememberBottomSheetScaffoldState
@@ -59,17 +54,14 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.layout
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.LayoutDirection
-import androidx.compose.ui.unit.max
 import com.example.ngalodern.ui.theme.ui.theme.dmsansFontFamily
-import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
-class Hadist {
+class HalamanBelajar {
     var judul: String = ""
     var subjudul: String = ""
     var arti: String = ""
@@ -78,29 +70,28 @@ class Hadist {
     var arr_indo = arrayOf<String>()
     var arr_lokasi = arrayOf<Triple<Int, Int, Int>>()
     var logat: Logat = Logat()
+    var PenjelasanHadist: String = ""
+    var ArtiFull: String = ""
 
-    constructor(judul: String, subjudul: String, arti: String, arab: String) {
-        this.judul = judul
-        this.subjudul = subjudul
-        this.arti = arti
-        this.arab = arab
-        this.arr_arab = this.arab.split(" ").toTypedArray()
-    }
-
-    constructor(judul: String, subjudul: String, arti: String, arr_indo: Array<String>, arr_arab: Array<String>, lokasilogat: Array<Triple<Int, Int, Int>>) {
+    constructor(judul: String, subjudul: String, arti: String, arr_indo: Array<String>, arr_arab: Array<String>, lokasilogat: Array<Triple<Int, Int, Int>>,ArtiFull: String  ,  PenjelasanHadist: String) {
         this.judul = judul
         this.subjudul = subjudul
         this.arti = arti
         this.arr_arab = arr_arab
         this.arr_indo = arr_indo
         this.arr_lokasi = lokasilogat
+        this.PenjelasanHadist = PenjelasanHadist
+        this.ArtiFull = ArtiFull
     }
 
-    constructor() {
-        this.judul = ""
-        this.subjudul = ""
-        this.arti = ""
-        this.arab = ""
+    constructor(judul: String, subjudul: String, arti: String, arr_indo: Array<String>, arr_arab: Array<String>, lokasilogat: Array<Triple<Int, Int, Int>>,ArtiFull: String) {
+        this.judul = judul
+        this.subjudul = subjudul
+        this.arti = arti
+        this.arr_arab = arr_arab
+        this.arr_indo = arr_indo
+        this.arr_lokasi = lokasilogat
+        this.ArtiFull = ArtiFull
     }
 
     fun setjudul(judul: String) {
@@ -337,20 +328,26 @@ class Hadist {
                         modifier = Modifier
                             ,
                     ){
-                        Image(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .heightIn(min = 200.dp, max = 625.dp)
-                                .fillMaxHeight(),
-                            painter = painterResource(id = R.drawable.he_has_been_boiled_alhamdulillah),
-                            contentDescription = null
-
+                        Text(
+                            text = ArtiFull
                         )
+
+                        if (PenjelasanHadist != ""){
+                            Box(modifier = Modifier){
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .height(10.dp)
+                                        .background(color = Color(android.graphics.Color.parseColor("#457b9d")))
+                                ){
+                                }
+                                Text(text = PenjelasanHadist)
+                            }
+                        }
                     }
                 },
                 sheetPeekHeight = 45.dp
                 ) {
-
             }
         }
     }

@@ -1,13 +1,12 @@
 package Object
 
-import android.util.Log
 import androidx.compose.runtime.Composable
 
 var sizehd: Int = 0
 var sizedg: Int = 0
 
-var dongengList: List<Dongeng> = listOf()
-var hadistList: List<Hadist> = listOf()
+var Dongeng: List<HalamanBelajar> = listOf()
+var Hadist: List<HalamanBelajar> = listOf()
 
 
 
@@ -26,6 +25,8 @@ fun Data(){
     var Array_arab = arrayOf<String>()
     var Array_indo = arrayOf<String>()
     var Array_logat = arrayOf<Triple<Int, Int, Int>>()
+    var ArtiFull: String = ""
+    var Penjelasan: String = ""
 
     fun clearArrays() {
         // Option 1: Clear elements by setting to empty strings
@@ -44,14 +45,6 @@ fun Data(){
     }
 
 //    untuk penggunaan array pakai saja yang diatas supaya tidak perlu menulis ulang (nambah memori)
-
-//    dongeng
-    val dongeng1: Dongeng = Dongeng("Judul 1", "Sub judul 1", "isi 1" , "عن N1أَمِيْرِالْمُؤْمِنِيْنَ N1أَبِيْ حَفْصٍ عُمَرَ بْنِ الْخَطَّابِ VlرَضِيَP2 اللهُS2 Ppعَنْهُ VlقَالَP2: VlسَمِعْتُP2+S2  N1رَسُوْلَ اللهِ صلّى الله عليه و سَلَّمَO: إنَّمَا N+الأعمَالُS1 PpبالنِّيَّاتِP1 Koوإِنَّما لِكُلِّ امريءٍ ما نَوَى فَمَنْS1 كَانَتْ هِجْرَتُهُ إلى اللهِ ورَسُولِهِ فهِجْرَتُهُ Ppإلى اللهِ Koورَسُوْلِهِ KoومَنْS1 كَانَتْ هِجْرَتُهُ Ppلِدُنْيَا VnlيُصِيْبُهاP2 Koأو N1امرأةٍ VnlيَنْكِحُهَاP2 فهِجْرَتُهُ Ppإلى ما VlهَاجَرَP2 Ppإليهِ")
-    val dongeng2: Dongeng = Dongeng()
-    val dongeng3: Dongeng = Dongeng()
-    val dongeng4: Dongeng = Dongeng()
-
-
 
 //    hadits
 //    hadist 1
@@ -165,12 +158,20 @@ fun Data(){
     Array_logat += Triple(0,1,1)
     Array_logat += Triple(2,1,1)
 
+    ArtiFull = "Dari Amirul Mukminin, Abu Hafsh ‘Umar bin Al-Khattab radhiyallahu ‘anhu, ia berkata bahwa ia mendengar Rasulullah shallallahu ‘alaihi wa sallam bersabda: “Sesungguhnya setiap amalan tergantung pada niatnya. Setiap orang akan mendapatkan apa yang ia niatkan. Siapa yang hijrahnya karena Allah dan Rasul-Nya, maka hijrahnya untuk Allah dan Rasul-Nya. Siapa yang hijrahnya karena mencari dunia atau karena wanita yang dinikahinya, maka hijrahnya kepada yang ia tuju.”"
+    Penjelasan = "Penjelasan hadist\n" +
+            "\n" + "Niat artinya bermaksud atau berkehendak. Sebagian ulama bersepakat bahwa niat itu letaknya di hati. Jika seseorang berniat dalam hatinya tanpa dilafazhkan, maka niatnya dianggap sah. \n" +
+            "Suatu amalan ada dikarenakan ada niatnya. Jika seseorang melakukan pekerjaan tanpa niat, maka seperti orang yang tertidur atau gila. \n" +
+            "Setiap orang memperoleh pahala sesuai dengan apa yang ia niatkan. \n" +
+            "Hijrah itu artinya berpindah atau meninggalkan tempat, dapat diartikan pula berpindah dari maksiat menuju ketaatan. \n" +
+            "Dalam beramal perlu niat yang ikhlas.\n"
 
-    val hadist1: Hadist = Hadist("Judul 1", "Sub judul 1", "isi 1" ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat)
-    hadistList += listOf(hadist1)
-    sizehd = hadistList.size
-    dongengList += listOf(dongeng1, dongeng2, dongeng3, dongeng4)
-    sizedg = dongengList.size
+    val hadist1: HalamanBelajar = HalamanBelajar("Judul 1", "Sub judul 1", "isi 1" ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Penjelasan)
+    val dongeng1: HalamanBelajar = HalamanBelajar("Judul 1", "Sub judul 1", "isi 1" ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull)
+    Hadist += listOf(hadist1)
+    sizehd = Hadist.size
+    Dongeng += listOf(dongeng1)
+    sizedg = Dongeng.size
 
 }
 
@@ -183,10 +184,11 @@ fun get_sizedg(): Int{
     return sizedg
 }
 
-fun get_hadistList(): List<Hadist>{
-    return hadistList
+fun get_Hadist(): List<HalamanBelajar>{
+    return Hadist
 }
 
-fun get_dongengList(): List<Dongeng>{
-    return dongengList
+fun get_Dongeng(): List<HalamanBelajar>{
+    return Dongeng
 }
+
