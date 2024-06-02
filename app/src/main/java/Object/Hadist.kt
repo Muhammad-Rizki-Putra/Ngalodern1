@@ -40,6 +40,7 @@ import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -48,6 +49,8 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.SheetState
+import androidx.compose.material3.Switch
+import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.rememberBottomSheetScaffoldState
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.CompositionLocalProvider
@@ -171,17 +174,18 @@ class Hadist {
                 ),
             color = Color(android.graphics.Color.parseColor("#457b9d")),
             shape = RoundedCornerShape(
-                bottomStart = 50.dp,
-                bottomEnd = 50.dp
+                bottomStart = 30.dp,
+                bottomEnd = 30.dp
             )
         ) {
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(bottom = 8.dp)
+                    .padding(start = 30.dp, end = 30.dp)
             ) {
                 Column(
                     modifier = Modifier
+                        .padding(top = 8.dp)
                         .fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
@@ -205,10 +209,10 @@ class Hadist {
                 Image(
                     modifier = Modifier
                         .clip(RoundedCornerShape(100.dp))
-                        .width(150.dp)
-                        .height(46.dp)
+                        .width(35.dp)
+                        .height(35.dp)
                         .align(Alignment.CenterStart)
-                        .padding(start = 10.dp)
+
                         .clickable { navController.navigate("Belajar") },
                     painter = painterResource(id = R.drawable.next_reverse),
                     contentDescription = "nextlogo"
@@ -241,6 +245,7 @@ class Hadist {
             }
             val scaffoldState = rememberBottomSheetScaffoldState()
             val scope = rememberCoroutineScope()
+            var checked by remember { mutableStateOf(false)}
 
             Column(
                 modifier = Modifier
@@ -248,15 +253,20 @@ class Hadist {
                     .background(color = Color(android.graphics.Color.parseColor("#E8E5DE")))
                     .padding(innerPadding)
                     .padding(top = 30.dp, start = 30.dp, end = 30.dp, bottom = 60.dp)
-                    .verticalScroll(rememberScrollState())
+                    .verticalScroll(rememberScrollState()),
+                horizontalAlignment = Alignment.End
             ) {
-                Button(
-                    onClick = {
+                Switch(
+                    checked = checked,
+                    onCheckedChange = {
+                        checked = it
                         setShowLogat(!showLogat)
-                    }
-                ) {
-                    Text(text = if (showLogat) "hide logat" else "show logat")
-                }
+                    },
+                    colors = SwitchDefaults.colors(
+                        checkedTrackColor = Color(android.graphics.Color.parseColor("#457b9d")),
+                        uncheckedTrackColor = Color.LightGray,
+                    )
+                )
 
                 CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
                     FlowRow(
@@ -293,7 +303,8 @@ class Hadist {
                                     } else {
                                         AnnotatedString(item)
                                     },
-                                    fontSize = 36.sp,
+                                    fontFamily = dmsansFontFamily,
+                                    fontSize = 24.sp,
                                     fontWeight = FontWeight.Bold,
                                     style = TextStyle(textDecoration = TextDecoration.Underline),
                                     overflow = TextOverflow.Ellipsis,
@@ -322,18 +333,22 @@ class Hadist {
             BottomSheetScaffold(
                 scaffoldState = scaffoldState,
                 sheetContent = {
-                    Image(
+                    Box(
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .heightIn(min = 200.dp, max = 625.dp)
-                            .fillMaxHeight(),
-                        painter = painterResource(id = R.drawable.he_has_been_boiled_alhamdulillah),
-                        contentDescription = null
+                            ,
+                    ){
+                        Image(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .heightIn(min = 200.dp, max = 625.dp)
+                                .fillMaxHeight(),
+                            painter = painterResource(id = R.drawable.he_has_been_boiled_alhamdulillah),
+                            contentDescription = null
 
-                    )
+                        )
+                    }
                 },
-
-
+                sheetPeekHeight = 45.dp
                 ) {
 
             }
