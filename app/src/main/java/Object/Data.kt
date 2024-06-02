@@ -39,7 +39,7 @@ fun Data(){
 
     fun init_arabic(){
         for (i in Array_arab.indices) {
-            Array_arab[i] = " " + Array_arab[i] + " "
+            Array_arab[i] = Array_arab[i] + " "
         }
     }
 
@@ -164,10 +164,7 @@ fun Data(){
 
     Array_logat += Triple(0,1,1)
     Array_logat += Triple(2,1,1)
-    Array_logat += Triple(4,0,1)
-    Array_logat += Triple(4,4,1)
-    Array_logat += Triple(5,1,1)
-    Array_logat += Triple(5,2,1)
+
 
     val hadist1: Hadist = Hadist("Judul 1", "Sub judul 1", "isi 1" ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat)
     hadistList += listOf(hadist1)

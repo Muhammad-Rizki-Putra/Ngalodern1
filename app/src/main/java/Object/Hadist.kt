@@ -37,6 +37,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -58,6 +59,7 @@ class Hadist {
     var arr_arab = arrayOf<String>()
     var arr_indo = arrayOf<String>()
     var arr_lokasi = arrayOf<Triple<Int, Int, Int>>()
+    var logat: Logat = Logat()
 
     constructor(judul: String, subjudul: String, arti: String, arab: String) {
         this.judul = judul
@@ -202,7 +204,6 @@ class Hadist {
     }
 
     @OptIn(ExperimentalLayoutApi::class)
-    @Preview
     @Composable
     fun board(scrollState: ScrollState, navController: NavController) {
         val (showDialog, setShowDialog) = remember { mutableStateOf(false) }
@@ -210,7 +211,8 @@ class Hadist {
         val (dialogArti, setArti) = remember { mutableStateOf("") }
         val (dialogPembahasan, setPembahasan) = remember { mutableStateOf("") }
         val (showLogat, setShowLogat) = remember { mutableStateOf(false) }
-
+        var (lastindex, setLastIndex) = remember { mutableStateOf(-1) }
+        var (lastchar, setlastchar) = remember { mutableStateOf(-1) }
         Scaffold(
             topBar = {
                 topbar(navController = navController)
@@ -240,6 +242,12 @@ class Hadist {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         arr_arab.forEachIndexed { index, item ->
+                            val logatInfo = arr_lokasi.filter { it.first == index }
+                            if (index < arr_lokasi.size && arr_lokasi[index].first != lastindex) {
+                                lastindex = arr_lokasi[index].first
+                            }
+
+
                             Box(
                                 modifier = Modifier
                                     .padding(bottom = 20.dp, end = 5.dp)
@@ -247,33 +255,28 @@ class Hadist {
                                         setDialogTitle("$item")
                                         setArti(arr_indo[index])
                                         setPembahasan("")
-
                                         setShowDialog(true)
                                     }
                             ) {
-                                Box(
-                                    modifier = Modifier
-                                        .padding(start = 10.dp)
-                                ) {
-                                    Text(
-                                        modifier = Modifier.padding(start = 10.dp, end = 10.dp),
-                                        text =
-                                        if (showLogat) {
-                                            val logatInfo = arr_lokasi.filter { it.first == index }
-                                            if (logatInfo.isNotEmpty()) {
-                                                Coloredchar(item, logatInfo.map { it.second }, logatInfo.map { it.third })
-                                            } else {
-                                                AnnotatedString(item)
-                                            }
+                                Text(
+                                    text =
+                                    if (showLogat) {
+                                        if (logatInfo.isNotEmpty()) {
+                                            Coloredchar(item, logatInfo.map { it.second }, logatInfo.map { it.third })
                                         } else {
                                             AnnotatedString(item)
-                                        },
-                                        fontSize = 24.sp,
-                                        fontWeight = FontWeight.Bold,
-                                        style = TextStyle(textDecoration = TextDecoration.Underline),
-                                        overflow = TextOverflow.Ellipsis,
-                                        maxLines = 1
-                                    )
+                                        }
+                                    } else {
+                                        AnnotatedString(item)
+                                    },
+                                    fontSize = 36.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    style = TextStyle(textDecoration = TextDecoration.Underline),
+                                    overflow = TextOverflow.Ellipsis,
+                                    maxLines = 1
+                                )
+                                if (lastindex == index && showLogat) {
+                                    logat.tombol(Simbol = "S1")
                                 }
                             }
                         }
@@ -291,4 +294,5 @@ class Hadist {
             }
         }
     }
+
 }
