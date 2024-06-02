@@ -103,7 +103,7 @@ fun Data(){
     Array_arab += "رَضِيَ"
     Array_arab += "أَبِيْ حَفْصٍ عُمَرَ بْنِ الْخَطَّابِ"
     Array_arab += "أَمِيْرِالْمُؤْمِنِيْنَ"
-    Array_arab += "عن"
+    Array_arab += "عَنْ"
     init_arabic()
 
     Array_indo += "Kepadanya"

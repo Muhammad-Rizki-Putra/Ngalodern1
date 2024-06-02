@@ -1,5 +1,9 @@
 package com.example.ngalodern.Page
 
+import Object.dongengList
+import Object.hadistList
+import Object.sizedg
+import Object.sizehd
 import android.icu.text.ListFormatter.Width
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -211,8 +215,90 @@ fun box_materi(waktu: String = "00.00",durasi: String = "00.00", judul: String =
 
 @Preview
 @Composable
-fun togglebelajar(indikator: Boolean = true){
-    if (indikator == true){
+fun box_belajar_2(judul: String = "None", route: String, navController: NavController){
+    Box(
+        modifier = Modifier
+            .padding(end = 15.dp , bottom = 10.dp)
+            .clickable {
+                navController.navigate(route)
+            }
+            .shadow(
+                elevation = 15.dp,
+                shape = RoundedCornerShape(
+                    bottomStart = 10.dp,
+                    bottomEnd = 10.dp
+                ),
+                clip = false
+            )
+            .clip(
+                RoundedCornerShape(
+                    topStart = 10.dp,
+                    bottomStart = 10.dp,
+                    topEnd = 10.dp,
+                    bottomEnd = 10.dp,
+                )
+            )
+            .height(138.dp)
+            .width(160.dp)
+            .background(color = Color(android.graphics.Color.parseColor("#A9C0CF")))
+    ){
+        Column {
+            Box(
+                modifier = Modifier
+                    .clip(
+                        RoundedCornerShape(
+                            topStart = 21.dp,
+                            bottomStart = 21.dp,
+                            topEnd = 21.dp,
+                            bottomEnd = 21.dp,
+                        )
+                    )
+                    .padding(5.dp)
+                    .height(80.dp)
+                    .width(150.dp)
+                    .background(color = Color(android.graphics.Color.parseColor("#FFFFFF")))
+            ){
+
+            }
+
+            Row (
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(10.dp)
+                    .fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+            ){
+                Box (
+                    modifier = Modifier
+                        .padding(end = 10.dp)
+                ){
+                    Text(
+                        text = judul,
+                        color = Color.White,
+                        fontWeight = FontWeight.Bold,
+                        maxLines = 2,
+                        overflow = TextOverflow.Ellipsis,
+                    )
+                }
+
+                Image(
+                    modifier = Modifier
+                        .width(31.dp)
+                        .height(31.dp),
+                    painter = painterResource(id = R.drawable.next_logo),
+                    contentDescription = "nextlogo",
+
+                    )
+            }
+        }
+    }
+}
+
+
+@Preview
+@Composable
+fun togglebelajar(indikator: Boolean = true, navController: NavController){
+    if (indikator == false){
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -222,13 +308,12 @@ fun togglebelajar(indikator: Boolean = true){
             Column {
                 LazyRow(
                 ) {
-                    items(3) {
-                        Box(
-                            modifier = Modifier
-                                .padding(10.dp)
-                        ){
-                            box_belajar("Judul $it Hadits")
-                        }
+                    items(sizedg){
+                        box_belajar_2(
+                            judul = dongengList[it].judul,
+                            route = "Dongeng_$it",
+                            navController = navController
+                        )
                     }
                 }
 
@@ -243,17 +328,14 @@ fun togglebelajar(indikator: Boolean = true){
                 .padding(top = 10.dp)
         ) {
             Column {
-
-
                 LazyRow(
                 ) {
-                    items(3) {
-                        Box(
-                            modifier = Modifier
-                                .padding(10.dp)
-                        ){
-                            box_belajar("Judul $it Dongeng")
-                        }
+                    items(sizehd){
+                        box_belajar_2(
+                            judul = hadistList[it].judul,
+                            route = "Hadist_$it",
+                            navController = navController
+                        )
                     }
                 }
 
@@ -474,7 +556,7 @@ fun Dashboard(scrollState: ScrollState, navController: NavController) {
                             }
                         }
                     }
-                    togglebelajar(indikator)
+                    togglebelajar(indikator,navController)
                 }
             }
         }
