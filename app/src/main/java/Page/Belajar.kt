@@ -76,12 +76,12 @@ fun tombolhadist(navController: NavController){
     ){
         LazyVerticalGrid(
             modifier = Modifier,
-            columns = GridCells.Fixed(2),
+            columns = GridCells.Fixed(1),
             verticalArrangement = Arrangement.spacedBy(20.dp),
             horizontalArrangement = Arrangement.spacedBy(20.dp)
         ) {
             items(get_sizehd()){
-                box_belajar(
+                box_materi(
                     judul = hadistList[it].judul,
                     route = "Hadist_$it",
                     navController = navController
@@ -232,6 +232,71 @@ fun box_belajar(judul: String = "None", route: String, navController: NavControl
 
                     )
             }
+        }
+    }
+}
+
+@Preview
+@Composable
+fun box_materi(judul: String = "None", route: String, navController: NavController){
+    Box(
+        modifier = Modifier
+            .clickable {
+                navController.navigate(route)
+            }
+            .clip(
+                RoundedCornerShape(
+                    topStart = 10.dp,
+                    bottomStart = 10.dp,
+                    topEnd = 10.dp,
+                    bottomEnd = 10.dp,
+                )
+            )
+            .fillMaxWidth()
+            .background(color = Color(android.graphics.Color.parseColor("#A9C0CF")))
+            .height(68.dp)
+        ,
+
+        ){
+        Row (
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp)
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+
+            ){
+            Box(){
+                Row{
+                    Image(
+                        modifier = Modifier
+                            .height(60.dp)
+                            .width(60.dp),
+                        painter = painterResource(id = R.drawable.buku_1),
+                        contentDescription = "Logo buku"
+                    )
+                    Column {
+                        Text(
+                            text = judul,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 16.sp,
+                            color = Color.White
+                        )
+                    }
+                }
+
+            }
+
+            Image(
+                modifier = Modifier
+                    .height(60.dp)
+                    .width(60.dp)
+                    .clickable {
+
+                    },
+                painter = painterResource(id = R.drawable.tombol_play_1),
+                contentDescription = "Logo buku",
+            )
         }
     }
 }
