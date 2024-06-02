@@ -74,6 +74,7 @@ class Hadist {
     var arr_arab = arrayOf<String>()
     var arr_indo = arrayOf<String>()
     var arr_lokasi = arrayOf<Triple<Int, Int, Int>>()
+    var logat: Logat = Logat()
 
     constructor(judul: String, subjudul: String, arti: String, arab: String) {
         this.judul = judul
@@ -154,42 +155,6 @@ class Hadist {
         }
     }
 
-//    @Composable
-//    fun arti(navController: NavController) {
-//        Surface (
-//            modifier = Modifier
-//
-//        ){
-//            val SheetState = rememberModalBottomSheetState()
-//            var isSheetOpen by rememberSaveable {
-//                mutableStateOf(false)
-//            }
-//            val scaffoldState = rememberBottomSheetScaffoldState()
-//            val scope = rememberCoroutineScope()
-//
-//
-//
-//            BottomSheetScaffold(
-//                scaffoldState = scaffoldState,
-//                sheetContent = {
-//                    Image(
-//                        modifier = Modifier
-//                            .fillMaxWidth()
-//                            .heightIn(min = 200.dp, max = 625.dp)
-//                            .fillMaxHeight(),
-//                        painter = painterResource(id = R.drawable.he_has_been_boiled_alhamdulillah),
-//                        contentDescription = null
-//
-//                    )
-//                },
-//
-//
-//            ) {
-//
-//            }
-//        }
-//    }
-
     @Composable
     fun topbar(navController: NavController) {
         Surface(
@@ -261,6 +226,8 @@ class Hadist {
         val (dialogArti, setArti) = remember { mutableStateOf("") }
         val (dialogPembahasan, setPembahasan) = remember { mutableStateOf("") }
         val (showLogat, setShowLogat) = remember { mutableStateOf(false) }
+        var (lastindex, setLastIndex) = remember { mutableStateOf(-1) }
+        var (lastchar, setlastchar) = remember { mutableStateOf(-1) }
 
         Scaffold(
             topBar = {
@@ -299,6 +266,12 @@ class Hadist {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         arr_arab.forEachIndexed { index, item ->
+                            val logatInfo = arr_lokasi.filter { it.first == index }
+                            if (index < arr_lokasi.size && arr_lokasi[index].first != lastindex) {
+                                lastindex = arr_lokasi[index].first
+                            }
+
+
                             Box(
                                 modifier = Modifier
                                     .padding(bottom = 20.dp, end = 5.dp)
@@ -306,36 +279,28 @@ class Hadist {
                                         setDialogTitle("$item")
                                         setArti(arr_indo[index])
                                         setPembahasan("")
-
                                         setShowDialog(true)
                                     }
                             ) {
-                                Row(
-                                    modifier = Modifier
-                                        .padding(start = 10.dp)
-//                                        .fillMaxWidth(),
-//                                    horizontalArrangement = Arrangement.SpaceEvenly
-                                ) {
-                                    Text(
-                                        modifier = Modifier.padding(start = 0.dp, end = 0.dp),
-                                        text =
-                                        if (showLogat) {
-                                            val logatInfo = arr_lokasi.filter { it.first == index }
-                                            if (logatInfo.isNotEmpty()) {
-                                                Coloredchar(item, logatInfo.map { it.second }, logatInfo.map { it.third })
-                                            } else {
-                                                AnnotatedString(item)
-                                            }
+                                Text(
+                                    text =
+                                    if (showLogat) {
+                                        if (logatInfo.isNotEmpty()) {
+                                            Coloredchar(item, logatInfo.map { it.second }, logatInfo.map { it.third })
                                         } else {
                                             AnnotatedString(item)
-                                        },
-                                        fontSize = 24.sp,
-                                        fontFamily = dmsansFontFamily,
-                                        fontWeight = FontWeight.Bold,
-                                        style = TextStyle(textDecoration = TextDecoration.Underline),
-                                        overflow = TextOverflow.Ellipsis,
-                                        maxLines = 1
-                                    )
+                                        }
+                                    } else {
+                                        AnnotatedString(item)
+                                    },
+                                    fontSize = 36.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    style = TextStyle(textDecoration = TextDecoration.Underline),
+                                    overflow = TextOverflow.Ellipsis,
+                                    maxLines = 1
+                                )
+                                if (lastindex == index && showLogat) {
+                                    logat.tombol(Simbol = "S1")
                                 }
                             }
                         }
