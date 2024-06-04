@@ -83,8 +83,9 @@ class HalamanBelajar {
     var ArtiFull: String = ""
     var arr_lokasi_U = arrayOf<Pair<Int, Int>>()
     var arr_lokasi_B = arrayOf<Pair<Int, String>>()
+    var arr_duplicate = arrayOf<Pair<Int, Int>>()
 
-    constructor(judul: String, subjudul: String, arr_lokasi_U: Array<Pair<Int, Int>>, arr_indo: Array<String>, arr_arab: Array<String>, lokasilogat: Array<Quadruple<Int, Int, Int, String>>,ArtiFull: String  ,  PenjelasanHadist: String, arr_lokasi_B: Array<Pair<Int, String>>) {
+    constructor(judul: String, subjudul: String, arr_lokasi_U: Array<Pair<Int, Int>>, arr_indo: Array<String>, arr_arab: Array<String>, lokasilogat: Array<Quadruple<Int, Int, Int, String>>,ArtiFull: String  , arr_lokasi_B: Array<Pair<Int, String>> , arr_duplicate: Array<Pair<Int, Int>> ,  PenjelasanHadist: String) {
         this.judul = judul
         this.subjudul = subjudul
         this.arti = arti
@@ -95,9 +96,10 @@ class HalamanBelajar {
         this.ArtiFull = ArtiFull
         this.arr_lokasi_U = arr_lokasi_U
         this.arr_lokasi_B = arr_lokasi_B
+        this.arr_duplicate = arr_duplicate
     }
 
-    constructor(judul: String, subjudul: String, arr_lokasi_U: Array<Pair<Int, Int>>, arr_indo: Array<String>, arr_arab: Array<String>, lokasilogat: Array<Quadruple<Int, Int, Int, String>>,ArtiFull: String, arr_lokasi_B: Array<Pair<Int, String>>) {
+    constructor(judul: String, subjudul: String, arr_lokasi_U: Array<Pair<Int, Int>>, arr_indo: Array<String>, arr_arab: Array<String>, lokasilogat: Array<Quadruple<Int, Int, Int, String>>,ArtiFull: String, arr_lokasi_B: Array<Pair<Int, String>>, arr_duplicate: Array<Pair<Int, Int>>) {
         this.judul = judul
         this.subjudul = subjudul
         this.arti = arti
@@ -107,6 +109,7 @@ class HalamanBelajar {
         this.ArtiFull = ArtiFull
         this.arr_lokasi_U = arr_lokasi_U
         this.arr_lokasi_B = arr_lokasi_B
+        this.arr_duplicate = arr_duplicate
     }
 
     fun setjudul(judul: String) {
@@ -270,6 +273,7 @@ class HalamanBelajar {
 
                 var iterasi: Int = 0
                 var iterasi_B: Int = 0
+                var iterasi_D: Int = 0
                 CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
                     FlowRow(
                         modifier = Modifier
@@ -314,9 +318,15 @@ class HalamanBelajar {
 
                                 if (showLogat && iterasi < arr_lokasi_U.size && arr_lokasi_U[iterasi].first == index) {
                                     if (iterasi == 0 || (arr_lokasi[arr_lokasi_U[iterasi].second].fourth != arr_lokasi[arr_lokasi_U[iterasi - 1].second].fourth)){
-                                            logat.tombol(Simbol = arr_lokasi[arr_lokasi_U[iterasi].second].fourth)
-                                            iterasi++
-                                            buffer_logat = 0
+                                            Row(){
+                                                logat.tombol(Simbol = arr_lokasi[arr_lokasi_U[iterasi].second].fourth)
+                                                if (iterasi_D < arr_duplicate.size && arr_duplicate[iterasi_D].first == index){
+                                                        logat.tombol(Simbol = arr_lokasi[arr_duplicate[iterasi_D].second].fourth)
+                                                    iterasi_D++
+                                                }
+                                                iterasi++
+                                                buffer_logat = 0
+                                            }
                                     }
 
                                     else if (buffer_logat - 1 > 1){

@@ -28,6 +28,8 @@ fun Data(){
     var ArtiFull: String = ""
     var Penjelasan: String = ""
     var Array_logat_B = arrayOf<Pair<Int, String>>()
+    var Array_Duplicate = arrayOf<Pair<Int, Int>>()
+    var iterasi: Int = 0
 
     fun clearArrays() {
         // Option 1: Clear elements by setting to empty strings
@@ -45,12 +47,19 @@ fun Data(){
         }
     }
 
-//    fun detect_dups(){
-//        if (Array_logat.isNotEmpty()){
-//            for (i in Array_logat){
-//                if (Arra)
+//    fun detect_dups(): IntArray{
+//        val firstElementMap = mutableMapOf<Int, MutableSet<Int>>()
+//
+//        Array_logat.forEach { quad ->
+//            if (firstElementMap.containsKey(quad.a)) {
+//                firstElementMap[quad.a]?.add(quad.c)
+//            } else {
+//                firstElementMap[quad.a] = mutableSetOf(quad.c)
 //            }
 //        }
+//
+//        val duplicates = firstElementMap.filter { it.value.size > 1 }.keys
+//        return duplicates.toIntArray()
 //    }
 
 //    untuk penggunaan array pakai saja yang diatas supaya tidak perlu menulis ulang (nambah memori)
@@ -167,52 +176,65 @@ fun Data(){
 //    Array_logat += Triple(3,1,1)
     for (i in 0..5){
         Array_logat += Quadruple(3,i,2,"P2")
+        iterasi++
     }
 
     for (i in 0..4){
         Array_logat += Quadruple(4,i,1, "S2")
+        iterasi++
     }
 
     for (i in 0..4){
         Array_logat += Quadruple(6,i,2, "P2")
+        iterasi++
     }
 
     for (i in 0..13){
         Array_logat += Quadruple(8,i,3, "O")
+        iterasi++
     }
 
     for (i in 0..4){
         Array_logat += Quadruple(9,i,3, "O")
+        iterasi++
     }
 
     for (i in 0..4){
         Array_logat += Quadruple(10,i,3, "O")
+        iterasi++
     }
 
     for (i in 0..4){
         Array_logat += Quadruple(11,i,3, "O")
+        iterasi++
     }
 
     for (i in 0..1){
         Array_logat += Quadruple(12,i,3, "O")
+        iterasi++
     }
 
     for (i in 0..6){
         Array_logat += Quadruple(13,i,3, "O")
+        iterasi++
     }
 
     for (i in 0..8){
         Array_logat += Quadruple(15,i,1, "S1")
+        iterasi++
     }
 
     for (i in 0..6){
         Array_logat += Quadruple(16,i,2, "P1")
+        iterasi++
     }
 
-    //contoh doang
+    //contoh doang duplikat ada di arr 11
     for (i in 7..12){
         Array_logat += Quadruple(16,i,1, "S2")
+        iterasi++
     }
+    Array_Duplicate += Pair(16,iterasi - 1)
 
     for (i in 2..5){
         Array_logat += Quadruple(23,i,1, "S1")
@@ -256,7 +278,7 @@ fun Data(){
             "Hijrah itu artinya berpindah atau meninggalkan tempat, dapat diartikan pula berpindah dari maksiat menuju ketaatan. \n" +
             "Dalam beramal perlu niat yang ikhlas.\n"
 
-    val hadist1: HalamanBelajar = HalamanBelajar("Hadist Arbain No. 1", "Setiap Amalan Tergantung Pada Niat", resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Penjelasan, Array_logat_B)
+    val hadist1: HalamanBelajar = HalamanBelajar("Hadist Arbain No. 1", "Setiap Amalan Tergantung Pada Niat", resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
 //    val dongeng1: HalamanBelajar = HalamanBelajar("Judul 1", "Sub judul 1", "isi 1" ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull)
     Hadist += listOf(hadist1)
     sizehd = Hadist.size
