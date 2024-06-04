@@ -139,4 +139,45 @@ class Logat {
             )
         }
     }
+
+    @Preview
+    @Composable
+    fun tombol_bawah(Simbol: String){
+        this.simbol = Simbol
+        val (showDialog, setShowDialog) = remember { mutableStateOf(false) }
+        val (dialogTitle, setDialogTitle) = remember { mutableStateOf("") }
+        val (dialogArti, setArti) = remember { mutableStateOf("") }
+        val (dialogPembahasan, setPembahasan) = remember { mutableStateOf("") }
+        Box(
+            modifier = Modifier
+                .offset(y = (30).dp)
+                .clip(RoundedCornerShape(50))
+                .background(Color.Black)
+                .padding(2.dp)
+                .clickable(onClick = {
+                    this.simbol = Simbol
+                    init_fr_simbol()
+                    setDialogTitle(simbol)
+                    setArti("")
+                    setPembahasan(penjelasan)
+                    setShowDialog(true)
+                }
+                )
+        ) {
+            Text(
+                text = Simbol,
+                fontSize = 8.sp,
+                color = Color.White,
+                modifier = Modifier.padding(4.dp)
+            )
+        }
+        if (showDialog) {
+            Penjelasan(
+                title = dialogTitle,
+                arti_indonesia = dialogArti,
+                pembahasan = dialogPembahasan,
+                onDismiss = { setShowDialog(false) }
+            )
+        }
+    }
 }

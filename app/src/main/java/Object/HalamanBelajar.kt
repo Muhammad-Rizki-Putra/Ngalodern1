@@ -82,8 +82,9 @@ class HalamanBelajar {
     var PenjelasanHadist: String = ""
     var ArtiFull: String = ""
     var arr_lokasi_U = arrayOf<Pair<Int, Int>>()
+    var arr_lokasi_B = arrayOf<Pair<Int, String>>()
 
-    constructor(judul: String, subjudul: String, arr_lokasi_U: Array<Pair<Int, Int>>, arr_indo: Array<String>, arr_arab: Array<String>, lokasilogat: Array<Quadruple<Int, Int, Int, String>>,ArtiFull: String  ,  PenjelasanHadist: String) {
+    constructor(judul: String, subjudul: String, arr_lokasi_U: Array<Pair<Int, Int>>, arr_indo: Array<String>, arr_arab: Array<String>, lokasilogat: Array<Quadruple<Int, Int, Int, String>>,ArtiFull: String  ,  PenjelasanHadist: String, arr_lokasi_B: Array<Pair<Int, String>>) {
         this.judul = judul
         this.subjudul = subjudul
         this.arti = arti
@@ -93,9 +94,10 @@ class HalamanBelajar {
         this.PenjelasanHadist = PenjelasanHadist
         this.ArtiFull = ArtiFull
         this.arr_lokasi_U = arr_lokasi_U
+        this.arr_lokasi_B = arr_lokasi_B
     }
 
-    constructor(judul: String, subjudul: String, arr_lokasi_U: Array<Pair<Int, Int>>, arr_indo: Array<String>, arr_arab: Array<String>, lokasilogat: Array<Quadruple<Int, Int, Int, String>>,ArtiFull: String) {
+    constructor(judul: String, subjudul: String, arr_lokasi_U: Array<Pair<Int, Int>>, arr_indo: Array<String>, arr_arab: Array<String>, lokasilogat: Array<Quadruple<Int, Int, Int, String>>,ArtiFull: String, arr_lokasi_B: Array<Pair<Int, String>>) {
         this.judul = judul
         this.subjudul = subjudul
         this.arti = arti
@@ -104,6 +106,7 @@ class HalamanBelajar {
         this.arr_lokasi = lokasilogat
         this.ArtiFull = ArtiFull
         this.arr_lokasi_U = arr_lokasi_U
+        this.arr_lokasi_B = arr_lokasi_B
     }
 
     fun setjudul(judul: String) {
@@ -136,16 +139,6 @@ class HalamanBelajar {
 
     fun getarab(): String {
         return this.arab
-    }
-
-    fun getmaxcolored(index: Int = 0): Int {
-        var maxSecond = 0
-        for (item in arr_lokasi) {
-            if (item.first == index && item.second > maxSecond) {
-                maxSecond = item.second
-            }
-        }
-        return maxSecond
     }
 
     fun Coloredchar(str: String, indexesToColor: List<Int>, colorIds: List<Int>): AnnotatedString {
@@ -276,6 +269,7 @@ class HalamanBelajar {
                 )
 
                 var iterasi: Int = 0
+                var iterasi_B: Int = 0
                 CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
                     FlowRow(
                         modifier = Modifier
@@ -283,6 +277,8 @@ class HalamanBelajar {
                             .fillMaxSize(),
                         horizontalArrangement = Arrangement.Center
                     ) {
+                        var buffer_logat: Int = 0
+                        var last_buffer: Int = 0
                         arr_arab.forEachIndexed { index, item ->
                             val logatInfo = arr_lokasi.filter { it.first == index }
 
@@ -314,9 +310,43 @@ class HalamanBelajar {
                                     maxLines = 1
                                 )
 
+//                                dari sini
+
                                 if (showLogat && iterasi < arr_lokasi_U.size && arr_lokasi_U[iterasi].first == index) {
-                                    logat.tombol(Simbol = arr_lokasi[arr_lokasi_U[iterasi].second].fourth)
-                                    iterasi++
+                                    if (iterasi == 0 || (arr_lokasi[arr_lokasi_U[iterasi].second].fourth != arr_lokasi[arr_lokasi_U[iterasi - 1].second].fourth)){
+                                            logat.tombol(Simbol = arr_lokasi[arr_lokasi_U[iterasi].second].fourth)
+                                            iterasi++
+                                            buffer_logat = 0
+                                    }
+
+                                    else if (buffer_logat - 1 > 1){
+                                        logat.tombol(Simbol = arr_lokasi[arr_lokasi_U[iterasi].second].fourth)
+                                        iterasi++
+                                        buffer_logat = 0
+                                    }
+                                    else  {
+                                        buffer_logat--
+                                        iterasi++
+                                    }
+                                }
+                                buffer_logat++
+
+                                if (showLogat && iterasi < arr_lokasi_U.size && arr_lokasi_B[iterasi_B].first == index) {
+                                    Row(){
+                                        if (iterasi_B <  arr_lokasi_B.size - 1){
+                                            logat.tombol_bawah(Simbol = arr_lokasi_B[iterasi_B].second)
+
+                                            if(arr_lokasi_B [iterasi_B + 1].first == arr_lokasi_B[iterasi_B].first){
+                                                logat.tombol_bawah(Simbol = arr_lokasi_B[iterasi_B + 1].second)
+                                                while(iterasi_B <  arr_lokasi_B.size - 2 && arr_lokasi_B[iterasi_B].first == arr_lokasi_B[iterasi_B + 1].first){
+                                                    logat.tombol_bawah(Simbol = arr_lokasi_B[iterasi_B].second)
+                                                    iterasi_B++
+                                                }
+                                            }
+                                            iterasi_B++
+                                        }
+//                                        sampe sini jangan di kotak katik
+                                    }
                                 }
                             }
                         }
@@ -347,7 +377,13 @@ class HalamanBelajar {
                                         modifier = Modifier
                                             .fillMaxWidth()
                                             .height(10.dp)
-                                            .background(color = Color(android.graphics.Color.parseColor("#457b9d")))
+                                            .background(
+                                                color = Color(
+                                                    android.graphics.Color.parseColor(
+                                                        "#457b9d"
+                                                    )
+                                                )
+                                            )
                                     ) {
                                     }
                                     Text(text = PenjelasanHadist)
@@ -361,5 +397,4 @@ class HalamanBelajar {
             }
         }
     }
-
 }

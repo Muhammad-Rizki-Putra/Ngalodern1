@@ -27,6 +27,7 @@ fun Data(){
     var Array_logat = arrayOf<Quadruple<Int, Int, Int, String>>()
     var ArtiFull: String = ""
     var Penjelasan: String = ""
+    var Array_logat_B = arrayOf<Pair<Int, String>>()
 
     fun clearArrays() {
         // Option 1: Clear elements by setting to empty strings
@@ -43,6 +44,14 @@ fun Data(){
             Array_arab[i] = Array_arab[i] + " "
         }
     }
+
+//    fun detect_dups(){
+//        if (Array_logat.isNotEmpty()){
+//            for (i in Array_logat){
+//                if (Arra)
+//            }
+//        }
+//    }
 
 //    untuk penggunaan array pakai saja yang diatas supaya tidak perlu menulis ulang (nambah memori)
 
@@ -196,8 +205,13 @@ fun Data(){
         Array_logat += Quadruple(15,i,1, "S1")
     }
 
-    for (i in 0..12){
+    for (i in 0..6){
         Array_logat += Quadruple(16,i,2, "P1")
+    }
+
+    //contoh doang
+    for (i in 7..12){
+        Array_logat += Quadruple(16,i,1, "S2")
     }
 
     for (i in 2..5){
@@ -226,6 +240,12 @@ fun Data(){
         Pair(uniqueElement, index)
     }.toTypedArray()
 
+    Array_logat_B += Pair(0,"Pp")
+    Array_logat_B += Pair(1,"N1")
+    Array_logat_B += Pair(2,"N1")
+    Array_logat_B += Pair(2,"P2")
+    Array_logat_B += Pair(2,"S2")
+
 
 
     ArtiFull = "Dari Amirul Mukminin, Abu Hafsh ‘Umar bin Al-Khattab radhiyallahu ‘anhu, ia berkata bahwa ia mendengar Rasulullah shallallahu ‘alaihi wa sallam bersabda: “Sesungguhnya setiap amalan tergantung pada niatnya. Setiap orang akan mendapatkan apa yang ia niatkan. Siapa yang hijrahnya karena Allah dan Rasul-Nya, maka hijrahnya untuk Allah dan Rasul-Nya. Siapa yang hijrahnya karena mencari dunia atau karena wanita yang dinikahinya, maka hijrahnya kepada yang ia tuju.”"
@@ -236,7 +256,7 @@ fun Data(){
             "Hijrah itu artinya berpindah atau meninggalkan tempat, dapat diartikan pula berpindah dari maksiat menuju ketaatan. \n" +
             "Dalam beramal perlu niat yang ikhlas.\n"
 
-    val hadist1: HalamanBelajar = HalamanBelajar("Hadist Arbain No. 1", "Setiap Amalan Tergantung Pada Niat", resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Penjelasan)
+    val hadist1: HalamanBelajar = HalamanBelajar("Hadist Arbain No. 1", "Setiap Amalan Tergantung Pada Niat", resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Penjelasan, Array_logat_B)
 //    val dongeng1: HalamanBelajar = HalamanBelajar("Judul 1", "Sub judul 1", "isi 1" ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull)
     Hadist += listOf(hadist1)
     sizehd = Hadist.size
