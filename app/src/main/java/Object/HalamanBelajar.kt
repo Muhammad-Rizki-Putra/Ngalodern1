@@ -37,6 +37,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.wrapContentWidth
@@ -60,6 +61,14 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.LayoutDirection
 import com.example.ngalodern.ui.theme.ui.theme.dmsansFontFamily
 
+data class Quadruple<A, B, C, D>(
+    val first: A,
+    val second: B,
+    val third: C,
+    val fourth: D
+)
+
+
 @OptIn(ExperimentalMaterial3Api::class)
 class HalamanBelajar {
     var judul: String = ""
@@ -68,12 +77,13 @@ class HalamanBelajar {
     var arab: String = ""
     var arr_arab = arrayOf<String>()
     var arr_indo = arrayOf<String>()
-    var arr_lokasi = arrayOf<Triple<Int, Int, Int>>()
+    var arr_lokasi = arrayOf<Quadruple<Int, Int, Int, String>>()
     var logat: Logat = Logat()
     var PenjelasanHadist: String = ""
     var ArtiFull: String = ""
+    var arr_lokasi_U = arrayOf<Pair<Int, Int>>()
 
-    constructor(judul: String, subjudul: String, arti: String, arr_indo: Array<String>, arr_arab: Array<String>, lokasilogat: Array<Triple<Int, Int, Int>>,ArtiFull: String  ,  PenjelasanHadist: String) {
+    constructor(judul: String, subjudul: String, arr_lokasi_U: Array<Pair<Int, Int>>, arr_indo: Array<String>, arr_arab: Array<String>, lokasilogat: Array<Quadruple<Int, Int, Int, String>>,ArtiFull: String  ,  PenjelasanHadist: String) {
         this.judul = judul
         this.subjudul = subjudul
         this.arti = arti
@@ -82,9 +92,10 @@ class HalamanBelajar {
         this.arr_lokasi = lokasilogat
         this.PenjelasanHadist = PenjelasanHadist
         this.ArtiFull = ArtiFull
+        this.arr_lokasi_U = arr_lokasi_U
     }
 
-    constructor(judul: String, subjudul: String, arti: String, arr_indo: Array<String>, arr_arab: Array<String>, lokasilogat: Array<Triple<Int, Int, Int>>,ArtiFull: String) {
+    constructor(judul: String, subjudul: String, arr_lokasi_U: Array<Pair<Int, Int>>, arr_indo: Array<String>, arr_arab: Array<String>, lokasilogat: Array<Quadruple<Int, Int, Int, String>>,ArtiFull: String) {
         this.judul = judul
         this.subjudul = subjudul
         this.arti = arti
@@ -92,6 +103,7 @@ class HalamanBelajar {
         this.arr_indo = arr_indo
         this.arr_lokasi = lokasilogat
         this.ArtiFull = ArtiFull
+        this.arr_lokasi_U = arr_lokasi_U
     }
 
     fun setjudul(judul: String) {
@@ -126,6 +138,15 @@ class HalamanBelajar {
         return this.arab
     }
 
+    fun getmaxcolored(index: Int = 0): Int {
+        var maxSecond = 0
+        for (item in arr_lokasi) {
+            if (item.first == index && item.second > maxSecond) {
+                maxSecond = item.second
+            }
+        }
+        return maxSecond
+    }
 
     fun Coloredchar(str: String, indexesToColor: List<Int>, colorIds: List<Int>): AnnotatedString {
         return buildAnnotatedString {
@@ -221,22 +242,17 @@ class HalamanBelajar {
         val (dialogArti, setArti) = remember { mutableStateOf("") }
         val (dialogPembahasan, setPembahasan) = remember { mutableStateOf("") }
         val (showLogat, setShowLogat) = remember { mutableStateOf(false) }
-        var (lastindex, setLastIndex) = remember { mutableStateOf(-1) }
-        var (lastchar, setlastchar) = remember { mutableStateOf(-1) }
 
         Scaffold(
             topBar = {
                 topbar(navController = navController)
             }
-            
         ) { innerPadding ->
             val SheetState = rememberModalBottomSheetState()
-            var isSheetOpen by rememberSaveable {
-                mutableStateOf(false)
-            }
+            var isSheetOpen by rememberSaveable { mutableStateOf(false) }
             val scaffoldState = rememberBottomSheetScaffoldState()
             val scope = rememberCoroutineScope()
-            var checked by remember { mutableStateOf(false)}
+            var checked by remember { mutableStateOf(false) }
 
             Column(
                 modifier = Modifier
@@ -259,6 +275,7 @@ class HalamanBelajar {
                     )
                 )
 
+                var iterasi: Int = 0
                 CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
                     FlowRow(
                         modifier = Modifier
@@ -268,10 +285,6 @@ class HalamanBelajar {
                     ) {
                         arr_arab.forEachIndexed { index, item ->
                             val logatInfo = arr_lokasi.filter { it.first == index }
-                            if (index < arr_lokasi.size && arr_lokasi[index].first != lastindex) {
-                                lastindex = arr_lokasi[index].first
-                            }
-
 
                             Box(
                                 modifier = Modifier
@@ -284,8 +297,7 @@ class HalamanBelajar {
                                     }
                             ) {
                                 Text(
-                                    text =
-                                    if (showLogat) {
+                                    text = if (showLogat) {
                                         if (logatInfo.isNotEmpty()) {
                                             Coloredchar(item, logatInfo.map { it.second }, logatInfo.map { it.third })
                                         } else {
@@ -301,15 +313,15 @@ class HalamanBelajar {
                                     overflow = TextOverflow.Ellipsis,
                                     maxLines = 1
                                 )
-                                if (lastindex == index && showLogat) {
-                                    logat.tombol(Simbol = "S1")
+
+                                if (showLogat && iterasi < arr_lokasi_U.size && arr_lokasi_U[iterasi].first == index) {
+                                    logat.tombol(Simbol = arr_lokasi[arr_lokasi_U[iterasi].second].fourth)
+                                    iterasi++
                                 }
                             }
                         }
                     }
                 }
-
-
             }
 
             if (showDialog) {
@@ -325,30 +337,29 @@ class HalamanBelajar {
                 scaffoldState = scaffoldState,
                 sheetContent = {
                     Box(
-                        modifier = Modifier
-                            ,
-                    ){
-                        Text(
-                            text = ArtiFull
-                        )
-
-                        if (PenjelasanHadist != ""){
-                            Box(modifier = Modifier){
-                                Box(
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .height(10.dp)
-                                        .background(color = Color(android.graphics.Color.parseColor("#457b9d")))
-                                ){
+                        modifier = Modifier,
+                    ) {
+                        Column {
+                            Text(text = ArtiFull)
+                            if (PenjelasanHadist.isNotEmpty()) {
+                                Box(modifier = Modifier) {
+                                    Box(
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .height(10.dp)
+                                            .background(color = Color(android.graphics.Color.parseColor("#457b9d")))
+                                    ) {
+                                    }
+                                    Text(text = PenjelasanHadist)
                                 }
-                                Text(text = PenjelasanHadist)
                             }
                         }
                     }
                 },
                 sheetPeekHeight = 45.dp
-                ) {
+            ) {
             }
         }
     }
+
 }

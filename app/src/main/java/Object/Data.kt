@@ -24,7 +24,7 @@ fun Data(){
 
     var Array_arab = arrayOf<String>()
     var Array_indo = arrayOf<String>()
-    var Array_logat = arrayOf<Triple<Int, Int, Int>>()
+    var Array_logat = arrayOf<Quadruple<Int, Int, Int, String>>()
     var ArtiFull: String = ""
     var Penjelasan: String = ""
 
@@ -56,11 +56,11 @@ fun Data(){
     Array_arab += "يَنْكِحُهَا"
     Array_arab += "امرأةٍ"
     Array_arab += "أو"
-    Array_arab += "يُصِيْبُهَا"
+    Array_arab += "يُصِيْبُهَا" //40
     Array_arab += "لِدُنْيَا"
     Array_arab += "هِجْرَتُهُ"
     Array_arab += "كَانَتْ"
-    Array_arab += "مَنْ"
+    Array_arab += "مَنْ"// 36
     Array_arab += "و"
     Array_arab += "رَسُوْلِهِ"
     Array_arab += "و"
@@ -84,7 +84,7 @@ fun Data(){
     Array_arab += "الأعمَالُ"
     Array_arab += "إنَّمَا"
     Array_arab += "سَلَّمَ"
-    Array_arab += "و"
+    Array_arab += "و" //12
     Array_arab += "عليه"
     Array_arab += "الله"
     Array_arab += "صلّى"
@@ -92,11 +92,11 @@ fun Data(){
     Array_arab += "سَمِعْتُ"
     Array_arab += "قَالَ"
     Array_arab += "عَنْهُ"
-    Array_arab += " اللهُ"
+    Array_arab += "اللهُ"
     Array_arab += "رَضِيَ"
     Array_arab += "أَبِيْ حَفْصٍ عُمَرَ بْنِ الْخَطَّابِ"
     Array_arab += "أَمِيْرِالْمُؤْمِنِيْنَ"
-    Array_arab += "عَنْ"
+    Array_arab += "عن"
     init_arabic()
 
     Array_indo += "Kepadanya"
@@ -155,8 +155,78 @@ fun Data(){
     Array_indo += "Pemimpin bagi orang-orang beriman"
     Array_indo += "Dari"
 
-    Array_logat += Triple(0,1,1)
-    Array_logat += Triple(2,1,1)
+//    Array_logat += Triple(3,1,1)
+    for (i in 0..5){
+        Array_logat += Quadruple(3,i,2,"P2")
+    }
+
+    for (i in 0..4){
+        Array_logat += Quadruple(4,i,1, "S2")
+    }
+
+    for (i in 0..4){
+        Array_logat += Quadruple(6,i,2, "P2")
+    }
+
+    for (i in 0..13){
+        Array_logat += Quadruple(8,i,3, "O")
+    }
+
+    for (i in 0..4){
+        Array_logat += Quadruple(9,i,3, "O")
+    }
+
+    for (i in 0..4){
+        Array_logat += Quadruple(10,i,3, "O")
+    }
+
+    for (i in 0..4){
+        Array_logat += Quadruple(11,i,3, "O")
+    }
+
+    for (i in 0..1){
+        Array_logat += Quadruple(12,i,3, "O")
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(13,i,3, "O")
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(15,i,1, "S1")
+    }
+
+    for (i in 0..12){
+        Array_logat += Quadruple(16,i,2, "P1")
+    }
+
+    for (i in 2..5){
+        Array_logat += Quadruple(23,i,1, "S1")
+    }
+
+    for (i in 0..3){
+        Array_logat += Quadruple(36,i,1, "S1")
+    }
+
+    for (i in 0..11){
+        Array_logat += Quadruple(40,i,2, "P2")
+    }
+
+    for (i in 0..11){
+        Array_logat += Quadruple(43,i,2, "P2")
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(47,i,2, "P2")
+    }
+
+    val uniqueFirstElements = Array_logat.map { it.first }.toSet()
+    val resultArray = uniqueFirstElements.map { uniqueElement ->
+        val index = Array_logat.indexOfFirst { it.first == uniqueElement }
+        Pair(uniqueElement, index)
+    }.toTypedArray()
+
+
 
     ArtiFull = "Dari Amirul Mukminin, Abu Hafsh ‘Umar bin Al-Khattab radhiyallahu ‘anhu, ia berkata bahwa ia mendengar Rasulullah shallallahu ‘alaihi wa sallam bersabda: “Sesungguhnya setiap amalan tergantung pada niatnya. Setiap orang akan mendapatkan apa yang ia niatkan. Siapa yang hijrahnya karena Allah dan Rasul-Nya, maka hijrahnya untuk Allah dan Rasul-Nya. Siapa yang hijrahnya karena mencari dunia atau karena wanita yang dinikahinya, maka hijrahnya kepada yang ia tuju.”"
     Penjelasan = "Penjelasan hadist\n" +
@@ -166,11 +236,11 @@ fun Data(){
             "Hijrah itu artinya berpindah atau meninggalkan tempat, dapat diartikan pula berpindah dari maksiat menuju ketaatan. \n" +
             "Dalam beramal perlu niat yang ikhlas.\n"
 
-    val hadist1: HalamanBelajar = HalamanBelajar("Judul 1", "Sub judul 1", "isi 1" ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Penjelasan)
-    val dongeng1: HalamanBelajar = HalamanBelajar("Judul 1", "Sub judul 1", "isi 1" ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull)
+    val hadist1: HalamanBelajar = HalamanBelajar("Hadist Arbain No. 1", "Setiap Amalan Tergantung Pada Niat", resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Penjelasan)
+//    val dongeng1: HalamanBelajar = HalamanBelajar("Judul 1", "Sub judul 1", "isi 1" ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull)
     Hadist += listOf(hadist1)
     sizehd = Hadist.size
-    Dongeng += listOf(dongeng1)
+//    Dongeng += listOf(dongeng1)
     sizedg = Dongeng.size
 
 }

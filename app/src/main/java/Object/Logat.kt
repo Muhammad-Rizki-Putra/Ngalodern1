@@ -54,25 +54,40 @@ class Logat {
                 "Ko" -> "Konjungsi atau kata penghubung dalam bahasa Arab disebut huruf ‘athaf."
                 "S1" -> "Subjek mubtada dalam bahasa Arab, subjek yang berada di awal kalimat, keadaannya marfu’ (memiliki kasus rafa’)."
                 "S2" -> "Subjek fa’il adalah subjek pelaku yang terletak setelah verba aktif, memiliki kasus rafa’."
-                "S3" -> "Subjek naibul fa’il adalah subjek pengganti pelaku (asalnya objek) yang terletak setelah verba pasif."
-                "P1" -> "Predikat khabar adalah predikat yang menjelaskan subjek mubtada, biasanya terletak setelah subjek mubtada, memiliki kasus rafa’."
-                "P2" -> "Predikat fi’il adalah predikat verba (kata kerja) berhubungan dengan kala."
-                "P3" -> "Fi’il pasif dalam bahasa arab dikenal dengan fi’il majhul, yaitu fi'il/kata kerja yang pelakunya (الفاعِل) tidak diketahui atau tidak disebutkan."
-                "O" -> "Objek adalah sesuatu yang dikenai tindakan oleh subjek. Objek terdapat dalam kalimat aktif, itu pun hanya aktif yang transitif."
-                "K" -> "Keterangan adalah unsur kalimat yang memberikan informasi lebih lanjut tentang sesuatu yang dinyatakan dalam kalimat."
-                "Fp" -> "Frasa Preposisi adalah frasa yang didahului oleh partikel jar atau partikel lokatif."
-                "Fi" -> "Frasa Idhafy adalah frasa yang terdiri dari dua nomina atau lebih bersifat nonpredikatif."
-                "Fn" -> "Frasa Na'ty disebut juga frasa sifat-maushuf. Frasa ini berinduk satu yang induknya adjektiva."
+                "S3" -> "Subjek pengganti pelaku (asalnya objek) yang terletak setelah verba pasif."
+                "P1" -> "Predikat yang menjelaskan subjek mubtada, biasanya terletak setelah subjek mubtada, memiliki kasus rafa’."
+                "P2" -> "Predikat verba (kata kerja) berhubungan dengan kala, dalam bahasa Arab terbagi menjadi 3; Verba lampau, verba non-lampau, dan verba imperatif"
+                "P3" -> "Fi’il pasif dalam bahasa arab dikenal dengan fi’il majhul, yaitu fi'il/kata kerja yang pelakunya (الفاعِل) tidak diketahui atau tidak disebutkan. Untuk itu, dalam Fi’il pasif dikenal istilah Naibul Fa’il ( نَائِبُ الْفَاعِل ) atau pengganti Fa’il (Pelaku). \n" +
+                        "Rumusnya:\n" +
+                        "-Untuk fi'il madhi (tsulatsi/ruba'iy) huruf pertama di-dhammah-kan + 1 huruf sebelum huruf terakhir di-kasrah-kan.\n" +
+                        "-Untuk fi'il mudhari: Huruf pertama di-dhammah-kan + 1 huruf sebelum huruf terakhir di-fathah-kan.\n"
+                "O" -> "Sesuatu yang dikenai tindakan oleh subjek. Objek terdapat dalam kalimat aktif, itu pun hanya aktif yang transitif, sedangkan aktif intransitif tidak memerlukan objek."
+                "K" -> "Unsur kalimat yang memberikan informasi lebih lanjut tentang sesuatu yang dinyatakan dalam kalimat, misalnya memberi informasi tentang tempat, waktu, cara, sebab, tujuan, dan lain-lain."
+                "Fp" -> "Frasa yang didahului oleh partikel jar atau partikel lokatif."
+                "Fi" -> "Frasa yang terdiri dari dua nomina atau lebih bersifat nonpredikatif. Nomina pertama sebagai induknya, nomina kedua sebagai atributnya. Hubungan kedua nomina tersebut memiliki arti kepemilikan, bermakna lokatif, bermakna temporal, bermakna substantif, dan bermakna penyerupaan."
+                "Fn" -> "Frasa ini disebut juga frasa sifat-maushuf. Frasa ini berinduk satu yang induknya adjektiva. Ciri kata dalam frasanya ال+ال atau tanwin+tanwin."
                 else -> "Simbol tidak dikenal."
-        }
+            }
+        this.warna =
+            when (this.simbol){
+                "S1" , "S2" , "S3" -> 1
+                "P1" , "P2" , "P3"-> 2
+                "O" -> 3
+                else -> 10
+            }
     }
-
 
     @Preview
     @Composable
     fun tombol(Simbol: String){
         this.simbol = Simbol
-        init_fr_simbol()
+        this.warna =
+            when (this.simbol){
+                "S1" , "S2" , "S3" -> 1
+                "P1" , "P2" , "P3"-> 2
+                "O" -> 3
+                else -> 10
+            }
         val (showDialog, setShowDialog) = remember { mutableStateOf(false) }
         val (dialogTitle, setDialogTitle) = remember { mutableStateOf("") }
         val (dialogArti, setArti) = remember { mutableStateOf("") }
@@ -92,6 +107,15 @@ class Logat {
                 )
                 .padding(2.dp)
                 .clickable(onClick = {
+                    this.simbol = Simbol
+                    this.warna =
+                        when (this.simbol){
+                            "S1" , "S2" , "S3" -> 1
+                            "P1" , "P2" , "P3"-> 2
+                            "O" -> 3
+                            else -> 10
+                        }
+                    init_fr_simbol()
                     setDialogTitle(simbol)
                     setArti("")
                     setPembahasan(penjelasan)
