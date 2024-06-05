@@ -60,12 +60,12 @@ fun Penjelasan(
                     )
                 )
                 .width(120.dp)
-                .height(300.dp)
+                .heightIn(min = 100.dp, max = 500.dp)
                 .background(color = Color.White),
         ){
             Column (
                 modifier = Modifier
-                    .fillMaxSize()
+                    .wrapContentHeight()
                     .padding(15.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.SpaceBetween
@@ -80,7 +80,8 @@ fun Penjelasan(
 
                 Column(
                     modifier = Modifier
-                        .fillMaxWidth(),
+                        .fillMaxWidth()
+                        .padding(top = 30.dp, bottom = 30.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ){ // box deskrispi
                     Text(
