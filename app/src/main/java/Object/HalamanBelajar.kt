@@ -281,10 +281,14 @@ class HalamanBelajar {
                         var buffer_logat: Int = 0
                         arr_arab.forEachIndexed { index, item ->
                             val logatInfo = arr_lokasi.filter { it.first == index }
-
+                            var bottom: Int = 0
+                            when (showLogat){
+                                true -> bottom = 45
+                                else -> bottom = 25
+                            }
                             Box(
                                 modifier = Modifier
-                                    .padding(bottom = 25.dp, end = 10.dp)
+                                    .padding(bottom = bottom.dp, end = 10.dp)
                                     .clickable {
                                         if (PenjelasanHadist != ""){
                                             setDialogTitle("$item")
