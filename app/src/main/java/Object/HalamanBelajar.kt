@@ -88,7 +88,6 @@ class HalamanBelajar {
     constructor(judul: String, subjudul: String, arr_lokasi_U: Array<Pair<Int, Int>>, arr_indo: Array<String>, arr_arab: Array<String>, lokasilogat: Array<Quadruple<Int, Int, Int, String>>,ArtiFull: String  , arr_lokasi_B: Array<Pair<Int, String>> , arr_duplicate: Array<Pair<Int, Int>> ,  PenjelasanHadist: String) {
         this.judul = judul
         this.subjudul = subjudul
-        this.arti = arti
         this.arr_arab = arr_arab
         this.arr_indo = arr_indo
         this.arr_lokasi = lokasilogat
@@ -99,12 +98,10 @@ class HalamanBelajar {
         this.arr_duplicate = arr_duplicate
     }
 
-    constructor(judul: String, subjudul: String, arr_lokasi_U: Array<Pair<Int, Int>>, arr_indo: Array<String>, arr_arab: Array<String>, lokasilogat: Array<Quadruple<Int, Int, Int, String>>,ArtiFull: String, arr_lokasi_B: Array<Pair<Int, String>>, arr_duplicate: Array<Pair<Int, Int>>) {
+    constructor(judul: String, subjudul: String, arr_lokasi_U: Array<Pair<Int, Int>>, arr_arab: Array<String>, lokasilogat: Array<Quadruple<Int, Int, Int, String>>,ArtiFull: String, arr_lokasi_B: Array<Pair<Int, String>>, arr_duplicate: Array<Pair<Int, Int>>) {
         this.judul = judul
         this.subjudul = subjudul
-        this.arti = arti
         this.arr_arab = arr_arab
-        this.arr_indo = arr_indo
         this.arr_lokasi = lokasilogat
         this.ArtiFull = ArtiFull
         this.arr_lokasi_U = arr_lokasi_U
@@ -247,10 +244,7 @@ class HalamanBelajar {
                 topbar(navController = navController)
             }
         ) { innerPadding ->
-            val SheetState = rememberModalBottomSheetState()
-            var isSheetOpen by rememberSaveable { mutableStateOf(false) }
             val scaffoldState = rememberBottomSheetScaffoldState()
-            val scope = rememberCoroutineScope()
             var checked by remember { mutableStateOf(false) }
 
             Column(
@@ -285,7 +279,6 @@ class HalamanBelajar {
                         horizontalArrangement = Arrangement.Center
                     ) {
                         var buffer_logat: Int = 0
-                        var last_buffer: Int = 0
                         arr_arab.forEachIndexed { index, item ->
                             val logatInfo = arr_lokasi.filter { it.first == index }
 
@@ -293,10 +286,12 @@ class HalamanBelajar {
                                 modifier = Modifier
                                     .padding(bottom = 25.dp, end = 10.dp)
                                     .clickable {
-                                        setDialogTitle("$item")
-                                        setArti(arr_indo[index])
-                                        setPembahasan("")
-                                        setShowDialog(true)
+                                        if (PenjelasanHadist != ""){
+                                            setDialogTitle("$item")
+                                            setArti(arr_indo[index])
+                                            setPembahasan("")
+                                            setShowDialog(true)
+                                        }
                                     }
                             ) {
                                 Text(
