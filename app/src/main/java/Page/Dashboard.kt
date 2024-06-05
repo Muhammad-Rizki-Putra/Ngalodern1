@@ -33,6 +33,7 @@ import androidx.compose.ui.unit.sp
 import com.example.ngalodern.R
 import androidx.compose.ui.text.style.TextOverflow
 import Page.*
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -466,6 +467,7 @@ fun Dashboard(scrollState: ScrollState, navController: NavController) {
                     Row ( // button buat select hadits / dongeng
                         modifier = Modifier
                             .padding(top = 10.dp)
+                            .offset(y = (-5).dp)
                     ){
                         Box(){
                             Button(

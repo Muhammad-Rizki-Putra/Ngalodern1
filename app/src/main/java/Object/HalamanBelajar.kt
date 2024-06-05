@@ -1,64 +1,64 @@
 package Object
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.ScrollState
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.BottomSheetScaffold
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Switch
+import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.rememberBottomSheetScaffoldState
+import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.ngalodern.R
-import androidx.compose.foundation.ScrollState
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.ExperimentalLayoutApi
-import androidx.compose.foundation.layout.FlowRow
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.heightIn
-import androidx.compose.foundation.layout.wrapContentWidth
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.BottomSheetScaffold
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Switch
-import androidx.compose.material3.SwitchDefaults
-import androidx.compose.material3.rememberBottomSheetScaffoldState
-import androidx.compose.material3.rememberModalBottomSheetState
-import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.platform.LocalLayoutDirection
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.unit.LayoutDirection
 import com.example.ngalodern.ui.theme.ui.theme.dmsansFontFamily
 
 data class Quadruple<A, B, C, D>(
@@ -150,8 +150,8 @@ class HalamanBelajar {
                 val color = if (index in indexesToColor) {
                     val colorId = colorIds[indexesToColor.indexOf(index)]
                     when (colorId) {
-                        1 -> Color.Red
-                        2 -> Color.Blue
+                        1 -> Color(android.graphics.Color.parseColor("#FF0000"))
+                        2 -> Color(android.graphics.Color.parseColor("#479DDC"))
                         3 -> Color(android.graphics.Color.parseColor("#964B00"))
                         4 -> Color(android.graphics.Color.parseColor("#800080"))
                         else -> Color.Black
@@ -193,23 +193,26 @@ class HalamanBelajar {
             ) {
                 Column(
                     modifier = Modifier
-                        .padding(top = 8.dp)
-                        .fillMaxWidth(),
-                    horizontalAlignment = Alignment.CenterHorizontally
+                        .fillMaxWidth()
+                        .fillMaxHeight(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
                 ) {
                     Text(
                         modifier = Modifier,
                         text = judul,
-                        fontSize = 32.sp,
+                        fontSize = 28.sp,
                         color = Color.White,
+                        fontFamily = dmsansFontFamily,
                         fontWeight = FontWeight.Bold
                     )
 
                     Text(
                         modifier = Modifier,
                         text = subjudul,
-                        fontSize = 16.sp,
+                        fontSize = 12.sp,
                         color = Color.White,
+                        fontFamily = dmsansFontFamily,
                         fontWeight = FontWeight.Bold
                     )
                 }
@@ -288,7 +291,7 @@ class HalamanBelajar {
 
                             Box(
                                 modifier = Modifier
-                                    .padding(bottom = 20.dp, end = 5.dp)
+                                    .padding(bottom = 25.dp, end = 10.dp)
                                     .clickable {
                                         setDialogTitle("$item")
                                         setArti(arr_indo[index])
@@ -342,7 +345,10 @@ class HalamanBelajar {
                                 buffer_logat++
 
                                 if (showLogat && iterasi < arr_lokasi_U.size && arr_lokasi_B[iterasi_B].first == index) {
-                                    Row(){
+                                    Row(
+                                        modifier = Modifier
+                                            .offset(x = (-10).dp)
+                                    ){
                                         if (iterasi_B <  arr_lokasi_B.size - 1){
                                             logat.tombol_bawah(Simbol = arr_lokasi_B[iterasi_B].second)
 
@@ -380,13 +386,24 @@ class HalamanBelajar {
                         modifier = Modifier,
                     ) {
                         Column {
-                            Text(text = ArtiFull)
+                            Text(
+                                modifier = Modifier
+                                    .padding(start = 15.dp, end = 15.dp, top = 10.dp, bottom = 15.dp),
+                                text = ArtiFull,
+                                fontFamily = dmsansFontFamily,
+                                fontWeight = FontWeight.Bold,
+                                color = Color(
+                                    android.graphics.Color.parseColor(
+                                        "#457b9d"
+                                    )
+                                )
+                            )
                             if (PenjelasanHadist.isNotEmpty()) {
                                 Box(modifier = Modifier) {
                                     Box(
                                         modifier = Modifier
                                             .fillMaxWidth()
-                                            .height(10.dp)
+                                            .height(5.dp)
                                             .background(
                                                 color = Color(
                                                     android.graphics.Color.parseColor(
@@ -396,7 +413,18 @@ class HalamanBelajar {
                                             )
                                     ) {
                                     }
-                                    Text(text = PenjelasanHadist)
+                                    Text(
+                                        modifier = Modifier
+                                            .padding(start = 15.dp, end = 15.dp, top = 10.dp, bottom = 15.dp),
+                                        text = PenjelasanHadist,
+                                        fontFamily = dmsansFontFamily,
+                                        fontWeight = FontWeight.Bold,
+                                        color = Color(
+                                            android.graphics.Color.parseColor(
+                                                "#457b9d"
+                                            )
+                                        )
+                                    )
                                 }
                             }
                         }

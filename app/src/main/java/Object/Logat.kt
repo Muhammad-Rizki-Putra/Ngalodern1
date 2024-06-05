@@ -22,6 +22,8 @@ import Object.Penjelasan
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.offset
+import androidx.compose.ui.text.font.FontWeight
+import com.example.ngalodern.ui.theme.ui.theme.dmsansFontFamily
 
 class Logat {
     var penjelasan: String = ""
@@ -98,8 +100,8 @@ class Logat {
                 .clip(RoundedCornerShape(50))
                 .background(
                     when (warna) {
-                        1 -> Color.Red
-                        2 -> Color.Blue
+                        1 -> Color(android.graphics.Color.parseColor("#FF0000"))
+                        2 -> Color(android.graphics.Color.parseColor("#479DDC"))
                         3 -> Color(android.graphics.Color.parseColor("#964B00"))
                         4 -> Color(android.graphics.Color.parseColor("#800080"))
                         else -> Color.Black
@@ -125,6 +127,8 @@ class Logat {
         ) {
             Text(
                 text = Simbol,
+                fontFamily = dmsansFontFamily,
+                fontWeight = FontWeight.Bold,
                 fontSize = 8.sp,
                 color = Color.White,
                 modifier = Modifier.padding(4.dp)
@@ -153,7 +157,7 @@ class Logat {
                 .offset(y = (30).dp)
                 .clip(RoundedCornerShape(50))
                 .background(Color.Black)
-                .padding(2.dp)
+                .padding(1.dp)
                 .clickable(onClick = {
                     this.simbol = Simbol
                     init_fr_simbol()
@@ -166,9 +170,11 @@ class Logat {
         ) {
             Text(
                 text = Simbol,
-                fontSize = 8.sp,
+                fontFamily = dmsansFontFamily,
+                fontWeight = FontWeight.Bold,
+                fontSize = 7.sp,
                 color = Color.White,
-                modifier = Modifier.padding(4.dp)
+                modifier = Modifier.padding(3.dp)
             )
         }
         if (showDialog) {

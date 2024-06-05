@@ -45,6 +45,7 @@ import androidx.compose.material3.*
 import androidx.compose.ui.text.style.TextAlign
 import androidx.navigation.NavController
 import Object.get_sizehd
+import com.example.ngalodern.ui.theme.ui.theme.leaguespartanFontFamily
 
 @Preview
 @Composable
@@ -226,55 +227,43 @@ fun box_materi(judul: String = "None", route: String, navController: NavControll
             }
             .clip(
                 RoundedCornerShape(
-                    topStart = 10.dp,
-                    bottomStart = 10.dp,
-                    topEnd = 10.dp,
-                    bottomEnd = 10.dp,
+                    topStart = 15.dp,
+                    bottomStart = 15.dp,
+                    topEnd = 15.dp,
+                    bottomEnd = 15.dp,
                 )
             )
             .fillMaxWidth()
             .background(color = Color(android.graphics.Color.parseColor("#A9C0CF")))
-            .height(68.dp)
+            .height(60.dp)
         ,
 
         ){
         Row (
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(10.dp)
-                .fillMaxWidth(),
+                .padding(start = 10.dp, end = 10.dp)
+                .fillMaxHeight(),
             horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
 
             ){
-            Box(){
-                Row{
-                    Image(
-                        modifier = Modifier
-                            .height(60.dp)
-                            .width(60.dp),
-                        painter = painterResource(id = R.drawable.buku_1),
-                        contentDescription = "Logo buku"
-                    )
-                    Column {
-                        Text(
-                            text = judul,
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 16.sp,
-                            color = Color.White
-                        )
-                    }
-                }
-
-            }
+            Text(
+                text = judul,
+                fontFamily = leaguespartanFontFamily,
+                fontWeight = FontWeight.Bold,
+                fontSize = 20.sp,
+                color = Color.White
+            )
 
             Image(
                 modifier = Modifier
-                    .height(60.dp)
-                    .width(60.dp)
+                    .height(30.dp)
+                    .width(30.dp)
                     .clickable {
-
+                        navController.navigate(route)
                     },
-                painter = painterResource(id = R.drawable.tombol_play_1),
+                painter = painterResource(id = R.drawable.next_logo),
                 contentDescription = "Logo buku",
             )
         }
