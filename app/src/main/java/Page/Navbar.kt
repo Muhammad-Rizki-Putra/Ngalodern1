@@ -15,6 +15,7 @@ import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -56,6 +57,10 @@ fun navbar(navController: NavController){
 
     Box (
         modifier = Modifier
+            .shadow(
+                elevation = 5.dp,
+                clip = false
+            )
             .fillMaxWidth()
             .height(68.dp)
             .background(color = Color(android.graphics.Color.parseColor("#E8E5DE")))

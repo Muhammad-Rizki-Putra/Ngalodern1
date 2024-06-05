@@ -188,7 +188,7 @@ class HalamanBelajar {
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(start = 30.dp, end = 30.dp)
+                    .padding(start = 20.dp, end = 20.dp)
             ) {
                 Column(
                     modifier = Modifier
@@ -219,8 +219,8 @@ class HalamanBelajar {
                 Image(
                     modifier = Modifier
                         .clip(RoundedCornerShape(100.dp))
-                        .width(35.dp)
-                        .height(35.dp)
+                        .width(32.dp)
+                        .height(32.dp)
                         .align(Alignment.CenterStart)
 
                         .clickable { navController.navigate("Belajar") },
@@ -301,12 +301,12 @@ class HalamanBelajar {
                             val logatInfo = arr_lokasi.filter { it.first == index }
                             var bottom: Int = 0
                             when (showLogat){
-                                true -> bottom = 45
-                                else -> bottom = 25
+                                true -> bottom = 32
+                                else -> bottom = 32
                             }
                             Box(
                                 modifier = Modifier
-                                    .padding(bottom = bottom.dp, end = 10.dp)
+                                    .padding(bottom = bottom.dp, end = 5.dp)
                                     .clickable {
                                         if (PenjelasanHadist != "") {
                                             setDialogTitle("$item")
@@ -364,7 +364,7 @@ class HalamanBelajar {
                                 if (showLogat && iterasi < arr_lokasi_U.size && arr_lokasi_B[iterasi_B].first == index) {
                                     Row(
                                         modifier = Modifier
-                                            .offset(x = (-10).dp)
+                                            .offset(x = (-12).dp)
                                     ){
                                         if (iterasi_B <  arr_lokasi_B.size - 1){
                                             logat.tombol_bawah(Simbol = arr_lokasi_B[iterasi_B].second)

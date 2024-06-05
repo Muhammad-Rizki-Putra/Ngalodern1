@@ -45,6 +45,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.*
 import androidx.compose.ui.draw.shadow
 import androidx.navigation.NavController
+import com.example.ngalodern.ui.theme.ui.theme.dmsansFontFamily
 import com.example.ngalodern.ui.theme.ui.theme.leaguespartanFontFamily
 
 
@@ -131,10 +132,12 @@ fun box_materi(waktu: String = "00.00",durasi: String = "00.00", judul: String =
     Box(
         modifier = Modifier
             .shadow(
-                elevation = 15.dp,
+                elevation = 5.dp,
                 shape = RoundedCornerShape(
+                    topStart = 10.dp,
                     bottomStart = 10.dp,
-                    bottomEnd = 10.dp
+                    topEnd = 10.dp,
+                    bottomEnd = 10.dp,
                 ),
                 clip = false
             )
@@ -211,10 +214,12 @@ fun box_belajar_2(judul: String = "None", route: String, navController: NavContr
                 navController.navigate(route)
             }
             .shadow(
-                elevation = 15.dp,
+                elevation = 5.dp,
                 shape = RoundedCornerShape(
+                    topStart = 10.dp,
                     bottomStart = 10.dp,
-                    bottomEnd = 10.dp
+                    topEnd = 10.dp,
+                    bottomEnd = 10.dp,
                 ),
                 clip = false
             )
@@ -263,6 +268,7 @@ fun box_belajar_2(judul: String = "None", route: String, navController: NavContr
                     Text(
                         text = judul,
                         color = Color.White,
+                        fontFamily = dmsansFontFamily,
                         fontWeight = FontWeight.Bold,
                         maxLines = 2,
                         overflow = TextOverflow.Ellipsis,
@@ -405,6 +411,7 @@ fun Dashboard(scrollState: ScrollState, navController: NavController) {
                     Text(
                         modifier = Modifier.padding(bottom = 10.dp),
                         text = "Materi yang terakhir dilihat",
+                        fontFamily = dmsansFontFamily,
                         fontWeight = FontWeight.Bold,
                         fontSize = 14.sp
                     )
@@ -422,6 +429,7 @@ fun Dashboard(scrollState: ScrollState, navController: NavController) {
                     Text(
                         modifier = Modifier.padding(bottom = 10.dp),
                         text = "Materi",
+                        fontFamily = dmsansFontFamily,
                         fontWeight = FontWeight.Bold,
                         fontSize = 14.sp
                     )
@@ -451,11 +459,13 @@ fun Dashboard(scrollState: ScrollState, navController: NavController) {
                         Text(
                             text = "Belajar",
                             fontSize = 14.sp,
+                            fontFamily = dmsansFontFamily,
                             fontWeight = FontWeight.Bold)
 
                         Text(
                             text = "Lihat semua",
                             fontSize = 14.sp,
+                            fontFamily = dmsansFontFamily,
                             fontWeight = FontWeight.Bold,
                             color =  Color(android.graphics.Color.parseColor("#457B9D")),
                             modifier = Modifier

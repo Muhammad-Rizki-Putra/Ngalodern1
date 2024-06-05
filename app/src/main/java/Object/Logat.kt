@@ -100,7 +100,7 @@ class Logat {
         val (dialogPembahasan, setPembahasan) = remember { mutableStateOf("") }
         Box(
             modifier = Modifier
-                .size(20.dp)
+                .size(25.dp)
                 .offset(y = (-20).dp)
                 .clip(RoundedCornerShape(50))
                 .background(
@@ -129,16 +129,17 @@ class Logat {
                     setShowDialog(true)
                 }
                 )
+
         ) {
             Text(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(4.dp),
+                    .padding(3.dp),
                 text = Simbol,
                 fontFamily = dmsansFontFamily,
                 textAlign = TextAlign.Center,
                 fontWeight = FontWeight.Bold,
-                fontSize = 8.sp,
+                fontSize = 12.sp,
                 color = Color.White,
             )
         }
@@ -162,7 +163,7 @@ class Logat {
         val (dialogPembahasan, setPembahasan) = remember { mutableStateOf("") }
         Box(
             modifier = Modifier
-                .size(20.dp)
+                .size(18.dp)
                 .offset(y = (30).dp)
                 .clip(RoundedCornerShape(50))
                 .background(Color.Black)
@@ -180,12 +181,12 @@ class Logat {
             Text(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(4.dp),
+                    .padding(2.dp),
                 text = Simbol,
                 textAlign = TextAlign.Center,
                 fontFamily = dmsansFontFamily,
                 fontWeight = FontWeight.Bold,
-                fontSize = 7.sp,
+                fontSize = 9.sp,
                 color = Color.White,
             )
         }

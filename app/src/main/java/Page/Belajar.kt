@@ -45,6 +45,7 @@ import androidx.compose.material3.*
 import androidx.compose.ui.text.style.TextAlign
 import androidx.navigation.NavController
 import Object.get_sizehd
+import com.example.ngalodern.ui.theme.ui.theme.dmsansFontFamily
 import com.example.ngalodern.ui.theme.ui.theme.leaguespartanFontFamily
 
 @Preview
@@ -120,14 +121,14 @@ fun topbar(navController: NavController) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(bottom = 8.dp)
         ) {
             Text(
                 modifier = Modifier
                     .align(Alignment.Center),
                 text = "Belajar",
-                fontSize = 35.sp,
+                fontSize = 32.sp,
                 color = Color.White,
+                fontFamily = dmsansFontFamily,
                 fontWeight = FontWeight.Bold
             )
         }
