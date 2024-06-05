@@ -21,8 +21,12 @@ import androidx.compose.ui.unit.sp
 import Object.Penjelasan
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.size
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import com.example.ngalodern.ui.theme.ui.theme.dmsansFontFamily
 
 class Logat {
@@ -96,6 +100,7 @@ class Logat {
         val (dialogPembahasan, setPembahasan) = remember { mutableStateOf("") }
         Box(
             modifier = Modifier
+                .size(20.dp)
                 .offset(y = (-20).dp)
                 .clip(RoundedCornerShape(50))
                 .background(
@@ -126,12 +131,15 @@ class Logat {
                 )
         ) {
             Text(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(4.dp),
                 text = Simbol,
                 fontFamily = dmsansFontFamily,
+                textAlign = TextAlign.Center,
                 fontWeight = FontWeight.Bold,
                 fontSize = 8.sp,
                 color = Color.White,
-                modifier = Modifier.padding(4.dp)
             )
         }
         if (showDialog) {
@@ -154,6 +162,7 @@ class Logat {
         val (dialogPembahasan, setPembahasan) = remember { mutableStateOf("") }
         Box(
             modifier = Modifier
+                .size(20.dp)
                 .offset(y = (30).dp)
                 .clip(RoundedCornerShape(50))
                 .background(Color.Black)
@@ -166,15 +175,18 @@ class Logat {
                     setPembahasan(penjelasan)
                     setShowDialog(true)
                 }
-                )
+                ),
         ) {
             Text(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(4.dp),
                 text = Simbol,
+                textAlign = TextAlign.Center,
                 fontFamily = dmsansFontFamily,
                 fontWeight = FontWeight.Bold,
                 fontSize = 7.sp,
                 color = Color.White,
-                modifier = Modifier.padding(3.dp)
             )
         }
         if (showDialog) {
