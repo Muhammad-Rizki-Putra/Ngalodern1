@@ -308,12 +308,10 @@ class HalamanBelajar {
                                 modifier = Modifier
                                     .padding(bottom = bottom.dp, end = 5.dp)
                                     .clickable {
-                                        if (PenjelasanHadist != "") {
                                             setDialogTitle("$item")
                                             setArti(arr_indo[index])
                                             setPembahasan("")
                                             setShowDialog(true)
-                                        }
                                     }
                             ) {
                                 Text(
