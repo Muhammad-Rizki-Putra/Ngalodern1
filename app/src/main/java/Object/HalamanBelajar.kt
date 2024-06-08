@@ -361,7 +361,7 @@ class HalamanBelajar {
                                 }
                                 buffer_logat++
 
-                                if (showLogat && iterasi < arr_lokasi_U.size && arr_lokasi_B[iterasi_B].first == index) {
+                                if (showLogat && iterasi <= arr_lokasi_U.size && arr_lokasi_B[iterasi_B].first == index) {
                                     Row(modifier = Modifier.offset(x = (-12).dp)) {
                                         if (iterasi_B < arr_lokasi_B.size) {
                                             logat.tombol_bawah(Simbol = arr_lokasi_B[iterasi_B].second)
