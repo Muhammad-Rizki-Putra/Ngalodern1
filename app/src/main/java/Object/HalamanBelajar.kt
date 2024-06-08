@@ -449,27 +449,29 @@ class HalamanBelajar {
                 },
                 sheetPeekHeight = 50.dp,
                 sheetDragHandle = {
-                    Column(
+                    Box(
                         modifier = Modifier
-                            .offset(y = (-10).dp),
-                        horizontalAlignment = Alignment.CenterHorizontally
+                            .fillMaxWidth()
+                            .background(color = Color(android.graphics.Color.parseColor("#457b9d"))),
                     ) {
-
-                        BottomSheetDefaults.DragHandle()
-                        Text(
+                        Column(
                             modifier = Modifier
-                                .offset(y = (-15).dp),
-                            text  = "Arti Lengkap",
-                            fontFamily = dmsansFontFamily,
-                            fontWeight = FontWeight.Bold,
-                            color = Color(
-                                android.graphics.Color.parseColor(
-                                    "#457b9d"
-                                )
-                            )
-                        )
-                    }
+                                .offset(y = (-10).dp)
+                                .fillMaxWidth(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            BottomSheetDefaults.DragHandle()
+                            Text(
+                                modifier = Modifier
+                                    .offset(y = (-15).dp),
+                                text  = "Arti Lengkap",
+                                fontFamily = dmsansFontFamily,
+                                fontWeight = FontWeight.Bold,
+                                color = Color.White
 
+                            )
+                        }
+                    }
                 }
             ) {
             }

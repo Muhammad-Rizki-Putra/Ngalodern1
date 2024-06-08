@@ -34,6 +34,7 @@ import com.example.ngalodern.R
 import androidx.compose.ui.text.style.TextOverflow
 import Page.*
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -103,8 +104,11 @@ fun box_belajar(judul: String = "None"){
                 Box (
                     modifier = Modifier
                         .padding(end = 10.dp)
+                        .widthIn(min = 1.dp, max = 10.dp),
                 ){
                     Text(
+
+
                         text = judul,
                         color = Color.White,
                         fontWeight = FontWeight.Bold,
@@ -256,9 +260,9 @@ fun box_belajar_2(judul: String = "None", route: String, navController: NavContr
 
             Row (
                 modifier = Modifier
-                    .fillMaxWidth()
                     .padding(10.dp)
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
+                    .widthIn(min = 1.dp, max = 10.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
             ){
                 Box (
