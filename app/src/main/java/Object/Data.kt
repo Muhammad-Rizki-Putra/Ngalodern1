@@ -32,35 +32,22 @@ fun Data(){
     var iterasi: Int = 0
 
     fun clearArrays() {
-        // Option 1: Clear elements by setting to empty strings
-        for (i in Array_arab.indices) {
-            Array_arab[i] = ""
-        }
-        for (i in Array_indo.indices) {
-            Array_arab[i] = ""
-        }
+        Array_arab = arrayOf<String>()
+        Array_indo = arrayOf<String>()
+        Array_logat = arrayOf<Quadruple<Int, Int, Int, String>>()
+        ArtiFull = ""
+        Penjelasan = ""
+        Array_logat_B = arrayOf<Pair<Int, String>>()
+        Array_Duplicate = arrayOf<Pair<Int, Int>>()
+        iterasi = 0
     }
+
 
     fun init_arabic(){
         for (i in Array_arab.indices) {
             Array_arab[i] = Array_arab[i] + " "
         }
     }
-
-//    fun detect_dups(): IntArray{
-//        val firstElementMap = mutableMapOf<Int, MutableSet<Int>>()
-//
-//        Array_logat.forEach { quad ->
-//            if (firstElementMap.containsKey(quad.a)) {
-//                firstElementMap[quad.a]?.add(quad.c)
-//            } else {
-//                firstElementMap[quad.a] = mutableSetOf(quad.c)
-//            }
-//        }
-//
-//        val duplicates = firstElementMap.filter { it.value.size > 1 }.keys
-//        return duplicates.toIntArray()
-//    }
 
 //    untuk penggunaan array pakai saja yang diatas supaya tidak perlu menulis ulang (nambah memori)
 
@@ -224,17 +211,17 @@ fun Data(){
         iterasi++
     }
 
-    for (i in 0..6){
+    for (i in 0..12){
         Array_logat += Quadruple(16,i,2, "P1")
         iterasi++
     }
 
     //contoh doang duplikat ada di arr 11
-    for (i in 7..12){
-        Array_logat += Quadruple(16,i,1, "S2")
-        iterasi++
-    }
-    Array_Duplicate += Pair(16,iterasi - 1)
+//    for (i in 7..12){
+//        Array_logat += Quadruple(16,i,1, "S2")
+//        iterasi++
+//    }
+//    Array_Duplicate += Pair(16,iterasi - 1)
 
     for (i in 2..5){
         Array_logat += Quadruple(23,i,1, "S1")
@@ -265,10 +252,26 @@ fun Data(){
     Array_logat_B += Pair(0,"Pp")
     Array_logat_B += Pair(1,"N1")
     Array_logat_B += Pair(2,"N1")
-    Array_logat_B += Pair(2,"P2")
-    Array_logat_B += Pair(2,"S2")
-    Array_logat_B += Pair(3,"P2")
-
+    Array_logat_B += Pair(3,"Vl")
+    Array_logat_B += Pair(4,"Pp")
+    Array_logat_B += Pair(6,"Vl")
+    Array_logat_B += Pair(8,"N1")
+    Array_logat_B += Pair(15,"N")
+    Array_logat_B += Pair(16,"Pp")
+    Array_logat_B += Pair(17,"Ko")
+    Array_logat_B += Pair(26,"Pp")
+    Array_logat_B += Pair(28,"Ko")
+    Array_logat_B += Pair(30,"Ko")
+    Array_logat_B += Pair(33,"Pp")
+    Array_logat_B += Pair(35,"Ko")
+    Array_logat_B += Pair(39,"Pp")
+    Array_logat_B += Pair(40,"Vnl")
+    Array_logat_B += Pair(41,"Ko")
+    Array_logat_B += Pair(42,"N1")
+    Array_logat_B += Pair(43,"Vnl")
+    Array_logat_B += Pair(45,"Pp")
+    Array_logat_B += Pair(47,"Vl")
+    Array_logat_B += Pair(48,"Pp")
 
     ArtiFull = "Dari Amirul Mukminin, Abu Hafsh ‘Umar bin Al-Khattab radhiyallahu ‘anhu, ia berkata bahwa ia mendengar Rasulullah shallallahu ‘alaihi wa sallam bersabda: “Sesungguhnya setiap amalan tergantung pada niatnya. Setiap orang akan mendapatkan apa yang ia niatkan. Siapa yang hijrahnya karena Allah dan Rasul-Nya, maka hijrahnya untuk Allah dan Rasul-Nya. Siapa yang hijrahnya karena mencari dunia atau karena wanita yang dinikahinya, maka hijrahnya kepada yang ia tuju.”"
     Penjelasan = "\nPenjelasan hadist\n" +
@@ -279,12 +282,36 @@ fun Data(){
             "Dalam beramal perlu niat yang ikhlas.\n"
 
     val hadist1: HalamanBelajar = HalamanBelajar("Hadist Arbain No. 1", "Setiap Amalan Tergantung Pada Niat", resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
-//    val dongeng1: HalamanBelajar = HalamanBelajar("Judul 1", "Sub judul 1", "isi 1" ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull)
-    Hadist += listOf(hadist1)
-    sizehd = Hadist.size
-//    Dongeng += listOf(dongeng1)
-    sizedg = Dongeng.size
+    clearArrays()
 
+    // hadist 2
+
+
+
+
+
+    Hadist += listOf(hadist1)
+
+//    Dongeng
+//    Contoh buat dongeng:
+
+
+//    Dongeng 1
+
+//    Dongeng 2
+
+//    Dongeng 3
+
+//    Dongeng 4
+
+//    Dongeng 5
+
+
+//    taroh sini buat List dongengnya
+    Dongeng += listOf()
+
+    sizehd = Hadist.size
+    sizedg = Dongeng.size
 }
 
 
