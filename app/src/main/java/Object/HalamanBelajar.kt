@@ -361,24 +361,23 @@ class HalamanBelajar {
                                 }
                                 buffer_logat++
 
-                                if (showLogat && iterasi < arr_lokasi_U.size && arr_lokasi_B[iterasi_B].first == index) {
-                                    Row(
-                                        modifier = Modifier
-                                            .offset(x = (-12).dp)
-                                    ){
-                                        if (iterasi_B <  arr_lokasi_B.size - 1){
+                                if (showLogat && iterasi <= arr_lokasi_U.size && arr_lokasi_B[iterasi_B].first == index) {
+                                    Row(modifier = Modifier.offset(x = (-12).dp)) {
+                                        if (iterasi_B < arr_lokasi_B.size) {
                                             logat.tombol_bawah(Simbol = arr_lokasi_B[iterasi_B].second)
 
-                                            if(arr_lokasi_B [iterasi_B + 1].first == arr_lokasi_B[iterasi_B].first){
+                                            if (iterasi_B != arr_lokasi_B.size - 1 && arr_lokasi_B[iterasi_B + 1].first == arr_lokasi_B[iterasi_B].first) {
                                                 logat.tombol_bawah(Simbol = arr_lokasi_B[iterasi_B + 1].second)
-                                                while(iterasi_B <  arr_lokasi_B.size - 2 && arr_lokasi_B[iterasi_B].first == arr_lokasi_B[iterasi_B + 1].first){
-                                                    logat.tombol_bawah(Simbol = arr_lokasi_B[iterasi_B].second)
+                                                iterasi_B++
+                                                while (iterasi_B < arr_lokasi_B.size - 1 && arr_lokasi_B[iterasi_B].first == arr_lokasi_B[iterasi_B + 1].first) {
+                                                    logat.tombol_bawah(Simbol = arr_lokasi_B[iterasi_B + 1].second)
                                                     iterasi_B++
                                                 }
                                             }
-                                            iterasi_B++
+                                            if (iterasi_B != arr_lokasi_B.size - 1) {
+                                                iterasi_B++
+                                            }
                                         }
-//                                        sampe sini jangan di kotak katik
                                     }
                                 }
                             }

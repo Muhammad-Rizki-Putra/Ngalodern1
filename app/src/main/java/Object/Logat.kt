@@ -157,6 +157,13 @@ class Logat {
     @Composable
     fun tombol_bawah(Simbol: String){
         this.simbol = Simbol
+        this.warna =
+            when (this.simbol){
+                "S1" , "S2" , "S3" -> 1
+                "P1" , "P2" , "P3"-> 2
+                "O" -> 3
+                else -> 10
+            }
         val (showDialog, setShowDialog) = remember { mutableStateOf(false) }
         val (dialogTitle, setDialogTitle) = remember { mutableStateOf("") }
         val (dialogArti, setArti) = remember { mutableStateOf("") }
@@ -164,19 +171,35 @@ class Logat {
         Box(
             modifier = Modifier
                 .size(18.dp)
-                .offset(y = (30).dp)
+                .offset(y = 30.dp)
                 .clip(RoundedCornerShape(50))
-                .background(Color.Black)
-                .padding(1.dp)
+                .background(
+                    when (warna) {
+                        1 -> Color(android.graphics.Color.parseColor("#FF0000"))
+                        2 -> Color(android.graphics.Color.parseColor("#479DDC"))
+                        3 -> Color(android.graphics.Color.parseColor("#964B00"))
+                        4 -> Color(android.graphics.Color.parseColor("#800080"))
+                        else -> Color.Black
+                    }
+                )
+                .padding(2.dp)
                 .clickable(onClick = {
                     this.simbol = Simbol
+                    this.warna =
+                        when (this.simbol){
+                            "S1" , "S2" , "S3" -> 1
+                            "P1" , "P2" , "P3"-> 2
+                            "O" -> 3
+                            else -> 10
+                        }
                     init_fr_simbol()
                     setDialogTitle(simbol)
                     setArti("")
                     setPembahasan(penjelasan)
                     setShowDialog(true)
                 }
-                ),
+                )
+
         ) {
             Text(
                 modifier = Modifier
