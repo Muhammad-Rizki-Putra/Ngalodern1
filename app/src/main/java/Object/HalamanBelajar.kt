@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -397,9 +398,15 @@ class HalamanBelajar {
                 scaffoldState = scaffoldState,
                 sheetContent = {
                     Box(
-                        modifier = Modifier,
+                        modifier = Modifier
+                            .heightIn(max = 500.dp)
+
                     ) {
-                        Column {
+                        Column(
+                            modifier = Modifier
+                                .verticalScroll(rememberScrollState())
+                                .fillMaxSize()
+                        ) {
                             Text(
                                 modifier = Modifier
                                     .padding(start = 15.dp, end = 15.dp, bottom = 15.dp),
@@ -446,27 +453,29 @@ class HalamanBelajar {
                 },
                 sheetPeekHeight = 50.dp,
                 sheetDragHandle = {
-                    Column(
+                    Box(
                         modifier = Modifier
-                            .offset(y = (-10).dp),
-                        horizontalAlignment = Alignment.CenterHorizontally
+                            .fillMaxWidth()
+                            .background(color = Color(android.graphics.Color.parseColor("#457b9d"))),
                     ) {
-
-                        BottomSheetDefaults.DragHandle()
-                        Text(
+                        Column(
                             modifier = Modifier
-                                .offset(y = (-15).dp),
-                            text  = "Arti Lengkap",
-                            fontFamily = dmsansFontFamily,
-                            fontWeight = FontWeight.Bold,
-                            color = Color(
-                                android.graphics.Color.parseColor(
-                                    "#457b9d"
-                                )
-                            )
-                        )
-                    }
+                                .offset(y = (-10).dp)
+                                .fillMaxWidth(),
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            BottomSheetDefaults.DragHandle()
+                            Text(
+                                modifier = Modifier
+                                    .offset(y = (-15).dp),
+                                text  = "Arti Lengkap",
+                                fontFamily = dmsansFontFamily,
+                                fontWeight = FontWeight.Bold,
+                                color = Color.White
 
+                            )
+                        }
+                    }
                 }
             ) {
             }
