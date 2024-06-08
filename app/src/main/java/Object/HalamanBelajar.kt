@@ -399,9 +399,14 @@ class HalamanBelajar {
                 sheetContent = {
                     Box(
                         modifier = Modifier
+                            .heightIn(max = 500.dp)
 
                     ) {
-                        Column {
+                        Column(
+                            modifier = Modifier
+                                .verticalScroll(rememberScrollState())
+                                .fillMaxSize()
+                        ) {
                             Text(
                                 modifier = Modifier
                                     .padding(start = 15.dp, end = 15.dp, bottom = 15.dp),
