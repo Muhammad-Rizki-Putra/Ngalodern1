@@ -17,7 +17,7 @@ fun Data(){
     //    text indonesia juga sama di simpan dalam bentuk String of array seperti contoh dibawah
     //    untuk lokasi logat dapat di simpan dalam bentuk array of tripple
     //    Keterangan warna:
-    //  1 = red
+    //          1 = red
     //          2 = blue
     //          3 = brown
     //          4 = purple
@@ -283,14 +283,13 @@ fun Data(){
 
     val hadist1: HalamanBelajar = HalamanBelajar("Hadist Arbain No. 1", "Setiap Amalan Tergantung Pada Niat", resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
     clearArrays()
-    uniqueFirstElements = emptySet()
-    resultArray = emptyArray()
+
 
     // hadist 2
 
     Array_arab += "مسلم"
-   Array_arab += "رواه"
-   Array_arab += "دِيْنَكُمْ"
+    Array_arab += "رواه"
+    Array_arab += "دِيْنَكُمْ"
 
     Array_arab += "يُعَلِّمَكُمْ"
     Array_arab += "أَتَاكُمْ"
@@ -303,16 +302,16 @@ fun Data(){
     Array_arab += "اللهُ"
     Array_arab += "قُلْتُ"
 
-   Array_arab += "السَّائِلُ"
-   Array_arab += "مَنْ"
-   Array_arab += "أَتَدْرِي"
-   Array_arab += "عُمَرُ"
-   Array_arab += "يَا"
-   Array_arab += "قَالَ"
-   Array_arab += "ثُمَّ"
-   Array_arab += "مَلِيًا"
-   Array_arab += "فَلَبِثْتُ"
-   Array_arab += "انْطَلَقَ"
+    Array_arab += "السَّائِلُ"
+    Array_arab += "مَنْ"
+    Array_arab += "أَتَدْرِي"
+    Array_arab += "عُمَرُ"
+    Array_arab += "يَا"
+    Array_arab += "قَالَ"
+    Array_arab += "ثُمَّ"
+    Array_arab += "مَلِيًا"
+    Array_arab += "فَلَبِثْتُ"
+    Array_arab += "انْطَلَقَ"
 
     Array_arab += "ثُمَّ"
     Array_arab += "البُنْيَانِ"
@@ -325,16 +324,16 @@ fun Data(){
     Array_arab += "وَ"
     Array_arab += "رَبَّتَهَا"
 
-   Array_arab += "الأَمَةُ"
-   Array_arab += "أنْ تَلِدَ"
-   Array_arab += "قَالَ"
-   Array_arab += "أَمارَاتِهَا"
-   Array_arab += "عَنْ"
-   Array_arab += "فَأَخْبِرْنِي"
-   Array_arab += "قَالَ"
-   Array_arab += "السَّائِلِ"
-   Array_arab += "مِنْ"
-   Array_arab += "بِأَعْلَمَ"
+    Array_arab += "الأَمَةُ"
+    Array_arab += "أنْ تَلِدَ"
+    Array_arab += "قَالَ"
+    Array_arab += "أَمارَاتِهَا"
+    Array_arab += "عَنْ"
+    Array_arab += "فَأَخْبِرْنِي"
+    Array_arab += "قَالَ"
+    Array_arab += "السَّائِلِ"
+    Array_arab += "مِنْ"
+    Array_arab += "بِأَعْلَمَ"
     Array_arab += "المَسْؤُلُ"
     Array_arab += "مَا"
     Array_arab += "قَالَ"
@@ -780,6 +779,17 @@ fun Data(){
     Array_indo += "Abi ‘Abdirrahman Abdullah bin Umar bin Khattab"
     Array_indo += "Dari"
 
+    for (i in 0..5){
+        Array_logat += Quadruple(5,i,2,"P2")
+        iterasi++
+    }
+
+    var uniqueFirstElements1 = Array_logat.map { it.first }.toSet()
+    var resultArray1 = uniqueFirstElements1.map { uniqueElement ->
+        val index = Array_logat.indexOfFirst { it.first == uniqueElement }
+        Pair(uniqueElement, index)
+    }.toTypedArray()
+
     ArtiFull = "Dari Abu ‘Abdurrahman ‘Abdullah bin ‘Umar bin Al-Khattab radhiyallahu ‘anhuma, ia mengatakan bahwa ia mendengar Rasulullah shallallahu ‘alaihi wa sallam bersabda: “Islam dibangun di atas lima perkara: bersaksi bahwa tidak ada yang berhak disembah melainkan Allah dan Muhammad adalah utusan Allah; menunaikan shalat; menunaikan zakat; menunaikan haji (ke Baitullah); dan berpuasa Ramadhan.” \n"
     Penjelasan = "Penjelasan hadist\n" +
             "Islam diibaratkan seperti sebuah bangunan yang memiliki lima tiang pokok; 1). Syahadat 2). Shalat 3). Zakat 4). Shaum 5). Ibadah Haji \n" +
@@ -790,9 +800,12 @@ fun Data(){
             "Zakat merupakan amalan maliyah (harta). \n" +
             "Ibadah haji merupakan amalan badaniyah dan maliyah bagi yang mampu\n"
 
-    val hadist3 = HalamanBelajar("Hadist Arbain No. 3","(Rukun Islam) Hana", resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
+    val hadist3 = HalamanBelajar("Hadist Arbain No. 3","(Rukun Islam) Hana", resultArray1 ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
     clearArrays()
 
+
+
+    //hadist 4
     Array_arab += "مسلم"
     Array_arab += "و"
     Array_arab += "البخاري"
