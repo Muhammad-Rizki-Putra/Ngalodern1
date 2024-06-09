@@ -784,11 +784,61 @@ fun Data(){
         iterasi++
     }
 
-    var uniqueFirstElements1 = Array_logat.map { it.first }.toSet()
-    var resultArray1 = uniqueFirstElements1.map { uniqueElement ->
-        val index = Array_logat.indexOfFirst { it.first == uniqueElement }
-        Pair(uniqueElement, index)
-    }.toTypedArray()
+    for (i in 0..5){
+        Array_logat += Quadruple(6,i,2, "P2")
+        iterasi++
+    }
+
+    for (i in 6..7){
+        Array_logat += Quadruple(6,i,1, "S2")
+        iterasi++
+    }
+    Array_Duplicate += Pair(6, iterasi - 1)
+
+    for (i in 0..13){
+        Array_logat += Quadruple(7,i,3, "O")
+        iterasi++
+    }
+
+    for (i in 0..3){
+        Array_logat += Quadruple(8,i,3, "O")
+        iterasi++
+    }
+
+    for (i in 0..4){
+        Array_logat += Quadruple(9,i,3, "O")
+        iterasi++
+    }
+
+    for (i in 0..4){
+        Array_logat += Quadruple(10,i,3, "O")
+        iterasi++
+    }
+
+    for (i in 0..1){
+        Array_logat += Quadruple(11,i,3, "O")
+        iterasi++
+    }
+
+    for (i in 0..3){
+        Array_logat += Quadruple(12,i,3, "O")
+        iterasi++
+    }
+
+    for (i in 0..7){
+        Array_logat += Quadruple(13,i,2, "P2")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(14,i,2, "P3")
+        iterasi++
+    }
+
+    for (i in 0..10){
+        Array_logat += Quadruple(15,i,1, "S3")
+        iterasi++
+    }
 
     ArtiFull = "Dari Abu ‘Abdurrahman ‘Abdullah bin ‘Umar bin Al-Khattab radhiyallahu ‘anhuma, ia mengatakan bahwa ia mendengar Rasulullah shallallahu ‘alaihi wa sallam bersabda: “Islam dibangun di atas lima perkara: bersaksi bahwa tidak ada yang berhak disembah melainkan Allah dan Muhammad adalah utusan Allah; menunaikan shalat; menunaikan zakat; menunaikan haji (ke Baitullah); dan berpuasa Ramadhan.” \n"
     Penjelasan = "Penjelasan hadist\n" +
@@ -800,10 +850,26 @@ fun Data(){
             "Zakat merupakan amalan maliyah (harta). \n" +
             "Ibadah haji merupakan amalan badaniyah dan maliyah bagi yang mampu\n"
 
-    val hadist3 = HalamanBelajar("Hadist Arbain No. 3","(Rukun Islam) Hana", resultArray1 ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
+    var uniqueFirstElements3 = Array_logat.map { it.first }.toSet()
+    var resultArray3 = uniqueFirstElements3.map { uniqueElement ->
+        val index = Array_logat.indexOfFirst { it.first == uniqueElement }
+        Pair(uniqueElement, index)
+    }.toTypedArray()
+
+    Array_logat_B += Pair(0,"Pp")
+    Array_logat_B += Pair(1,"N1")
+    Array_logat_B += Pair(5,"V1")
+    Array_logat_B += Pair(6,"V1")
+    Array_logat_B += Pair(13,"Vnl")
+    Array_logat_B += Pair(14,"V1")
+    Array_logat_B += Pair(16,"Pp")
+    Array_logat_B += Pair(18,"K")
+    Array_logat_B += Pair(24,"Ko")
+    Array_logat_B += Pair(28,"Ko")
+    Array_logat_B += Pair(40,"Ko")
+
+    val hadist3 = HalamanBelajar("Hadist Arbain No. 3","(Rukun Islam) Hana", resultArray3 ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
     clearArrays()
-
-
 
     //hadist 4
     Array_arab += "مسلم"
@@ -1042,6 +1108,7 @@ fun Data(){
     val hadist4 = HalamanBelajar("Hadist Arbain No. 4","(Proses Penciptaan Manusia dan Iman Kepada Takdir) Hana" , resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
     clearArrays()
 
+    //hadist 5
     Array_arab += "رَدٌّ"
     Array_arab += "فَهُوَ"
     Array_arab += "أَمْرُنَا"
@@ -1119,6 +1186,115 @@ fun Data(){
     Array_indo += "Ibu kaum mukmin"
     Array_indo += "Dari"
 
+    for (i in 0..5){
+        Array_logat += Quadruple(4,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(5,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(7,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(8,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(9,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..3){
+        Array_logat += Quadruple(11,i,1,"S1")
+        iterasi++
+    }
+
+    for (i in 0..7){
+        Array_logat += Quadruple(12,i,1,"P1")
+        iterasi++
+    }
+
+    for (i in 0..3){
+        Array_logat += Quadruple(13,i,4,"K")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(14,i,4,"K")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(15,i,4,"K")
+        iterasi++
+    }
+
+    for (i in 0..3){
+        Array_logat += Quadruple(16,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(17,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(18,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 1..6){
+        Array_logat += Quadruple(19,i,1,"S1")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(20,i,2,"P1")
+        iterasi++
+    }
+
+    for (i in 0..4){
+        Array_logat += Quadruple(29,i,1,"S1")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(30,i,2,"P1")
+        iterasi++
+    }
+
+    for (i in 0..7){
+        Array_logat += Quadruple(31,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(32,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(34,i,1,"S1")
+        iterasi++
+    }
+
+    for (i in 1..6){
+        Array_logat += Quadruple(35,i,1,"S1")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(36,i,2,"P1")
+        iterasi++
+    }
     ArtiFull = "Dari Ummul Mu’minin; Ummu Abdillah; ‘Aisyah Radhiyallahu ‘Anha dia berkata: Rasulullah Shallallahu ’Alaihi wa Sallam bersabda: “Siapa yang mengada-ada dalam urusan (agama) kami ini yang bukan bagian darinya, maka dia tertolak.” (Riwayat Bukhari dan Muslim), dalam riwayat Muslim disebutkan: “Siapa yang melakukan suatu amalan yang tidak ada contohnya dari kami, maka dia tertolak.”"
     Penjelasan = "Penjelasan hadist:\n" +
             "Larangan mengada-ada ibadah atau melakukan ibadah yang tidak ada dalilnya dari al-Quran dan Sunnah atau yang disebut denyan bid’ah\n" +
@@ -1127,96 +1303,122 @@ fun Data(){
             "Tidak ada satupun kemaksiatan kecuali Rasulullah telah memberikan peringatan\n" +
             "Syarat diterima ibadah ada 2, yaitu ikhlas—menjadikan Allah sebagai satu-satunya tujuan dalam ibadah, dan ittiba—mengikuti contoh yang telah Rasulullah jelaskan.\n"
 
-    val hadist5 = HalamanBelajar("Hadist Arbain No. 5","(Larangan Bid’ah) Faiha" , resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
+    var uniqueFirstElements5 = Array_logat.map { it.first }.toSet()
+    var resultArray5 = uniqueFirstElements5.map { uniqueElement ->
+        val index = Array_logat.indexOfFirst { it.first == uniqueElement }
+        Pair(uniqueElement, index)
+    }.toTypedArray()
+
+    Array_logat_B += Pair(0,"Pp")
+    Array_logat_B += Pair(1,"N1")
+    Array_logat_B += Pair(1,"N")
+    Array_logat_B += Pair(2,"N1")
+    Array_logat_B += Pair(4,"V1")
+    Array_logat_B += Pair(6,"Pp")
+    Array_logat_B += Pair(7,"V1")
+    Array_logat_B += Pair(9,"N1")
+    Array_logat_B += Pair(12,"V1")
+    Array_logat_B += Pair(13,"Pp")
+    Array_logat_B += Pair(14,"N1")
+    Array_logat_B += Pair(17,"V1")
+    Array_logat_B += Pair(18,"Pp")
+    Array_logat_B += Pair(19,"Ko")
+    Array_logat_B += Pair(30,"V1")
+    Array_logat_B += Pair(31,"Nt")
+    Array_logat_B += Pair(32,"V1")
+    Array_logat_B += Pair(33,"Pp")
+
+
+    val hadist5 = HalamanBelajar("Hadist Arbain No. 5","(Larangan Bid’ah) Faiha" , resultArray5 ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
     clearArrays()
 
-   Array_arab +=  "مُسْلِمٌ"
-   Array_arab +=  "وَ"
-   Array_arab +=  "البُخَارِي"
-   Array_arab +=  "رَوَاهُ"
-   Array_arab +=  "القَلْبُ"
-   Array_arab +=  "هِيَ"
-   Array_arab +=  "وَ"
-   Array_arab +=  "أَلَا"
-   Array_arab +=  "كُلُّهُ"
-   Array_arab +=  "الجَسَدُ"
-   Array_arab +=  "فَسَدَ"
-   Array_arab +=  "فَسَدَتْ"
-   Array_arab +=  "إِذَا"
-   Array_arab +=  "وَ"
-   Array_arab +=  "كُلُّهُ"
-   Array_arab +=  "الجَسَدُ"
-   Array_arab +=  "صَلُحَ"
-   Array_arab +=  "صَلُحَتْ"
-   Array_arab +=  "إِذَا"
-   Array_arab +=  "مُضْغَةً"
-   Array_arab +=  "الجَسَدِ"
-   Array_arab +=  "فِي"
-   Array_arab +=  "إِنَّ"
-   Array_arab +=  "وَ"
-   Array_arab +=  "أَلَا"
-   Array_arab +=  "مَحَارِمُهُ"
-   Array_arab +=  "اللهِ"
-   Array_arab +=  "حِمَى"
-   Array_arab +=  "إِنَّ"
-   Array_arab +=  "وَ"
-   Array_arab +=  "أَلاَ"
-   Array_arab +=  "حِمًى"
-   Array_arab +=  "مَلِكٍ"
-   Array_arab +=  "لِكُلِّ"
-   Array_arab +=  "إِنَّ"
-   Array_arab +=  "وَ"
-   Array_arab +=  "أَلاَ"
-   Array_arab +=  "فيه"
-   Array_arab +=  "أَنْ يرتع"
-   Array_arab +=  "يُوْشِكُ"
-   Array_arab +=  "الحِمَى"
-   Array_arab +=  "حَوْلَ"
-   Array_arab +=  "يَرْعَى"
-   Array_arab +=  "كَالرَّاعِي"
-   Array_arab +=  "الحَرَامِ"
-   Array_arab +=  "فِي"
-   Array_arab +=  "وَقَعَ"
-   Array_arab +=  "الشُّبُهَاتِ"
-   Array_arab +=  "فِي"
-   Array_arab +=  "وَقَعَ"
-   Array_arab +=  "مَنْ"
-   Array_arab +=  "وَ"
-   Array_arab +=  "عِرْضِهِ"
-   Array_arab +=  "وَ"
-   Array_arab +=  "لِدِيْنِهِ"
-   Array_arab +=  "اسْتَبْرَأَ"
-   Array_arab +=  "فَقَدِ"
-   Array_arab +=  "الشُّبُهَاتِ"
-   Array_arab +=  "اتَّقَى"
-   Array_arab +=  "فَمَنِ"
-   Array_arab +=  "النَّاسِ"
-   Array_arab +=  "مِنَ"
-   Array_arab +=  "كَثِيْرٌ"
-   Array_arab +=  "يَعْلَمُهُنَّ"
-   Array_arab +=  "لاَ"
-   Array_arab +=  "مُشْتَبِهَاتٌ"
-   Array_arab +=  "أُمُوْرٌ"
-   Array_arab +=  "بَيْنَهُمَا"
-   Array_arab +=  "وَ"
-   Array_arab +=  "بَيِّنٌ"
-   Array_arab +=  "الَحرَامَ"
-   Array_arab +=  "إِنَّ"
-   Array_arab +=  "وَ"
-   Array_arab +=  "بَيِّنٌ"
-   Array_arab +=  "الحَلاَلَ"
-   Array_arab +=  "إِنَّ"
-   Array_arab +=  "يَقُوْلُ"
-   Array_arab +=  "صَلَّى اللهُ عَلَيْهِ وَآلِهِ وَسَلَّمَ"
-   Array_arab +=  "رَسُوْلَ اللهِ"
-   Array_arab +=  "سَمِعْتُ"
-   Array_arab +=  "قَالَ"
-   Array_arab +=  "عَنْهُمَا"
-   Array_arab +=  "اللهُ"
-   Array_arab +=  "رَضِيَ"
-   Array_arab +=  "النُّعْمَان بْنِ بَشِيْرٍ"
-   Array_arab +=  "أَبِي عَبْدِ اللهِ"
-   Array_arab +=  "عَنْ"
+    Array_arab +=  "مُسْلِمٌ"
+    Array_arab +=  "وَ"
+    Array_arab +=  "البُخَارِي"
+    Array_arab +=  "رَوَاهُ"
+    Array_arab +=  "القَلْبُ"
+    Array_arab +=  "هِيَ"
+    Array_arab +=  "وَ"
+    Array_arab +=  "أَلَا"
+    Array_arab +=  "كُلُّهُ"
+    Array_arab +=  "الجَسَدُ"
+    Array_arab +=  "فَسَدَ"
+    Array_arab +=  "فَسَدَتْ"
+    Array_arab +=  "إِذَا"
+    Array_arab +=  "وَ"
+    Array_arab +=  "كُلُّهُ"
+    Array_arab +=  "الجَسَدُ"
+    Array_arab +=  "صَلُحَ"
+    Array_arab +=  "صَلُحَتْ"
+    Array_arab +=  "إِذَا"
+    Array_arab +=  "مُضْغَةً"
+    Array_arab +=  "الجَسَدِ"
+    Array_arab +=  "فِي"
+    Array_arab +=  "إِنَّ"
+    Array_arab +=  "وَ"
+    Array_arab +=  "أَلَا"
+    Array_arab +=  "مَحَارِمُهُ"
+    Array_arab +=  "اللهِ"
+    Array_arab +=  "حِمَى"
+    Array_arab +=  "إِنَّ"
+    Array_arab +=  "وَ"
+    Array_arab +=  "أَلاَ"
+    Array_arab +=  "حِمًى"
+    Array_arab +=  "مَلِكٍ"
+    Array_arab +=  "لِكُلِّ"
+    Array_arab +=  "إِنَّ"
+    Array_arab +=  "وَ"
+    Array_arab +=  "أَلاَ"
+    Array_arab +=  "فيه"
+    Array_arab +=  "أَنْ يرتع"
+    Array_arab +=  "يُوْشِكُ"
+    Array_arab +=  "الحِمَى"
+    Array_arab +=  "حَوْلَ"
+    Array_arab +=  "يَرْعَى"
+    Array_arab +=  "كَالرَّاعِي"
+    Array_arab +=  "الحَرَامِ"
+    Array_arab +=  "فِي"
+    Array_arab +=  "وَقَعَ"
+    Array_arab +=  "الشُّبُهَاتِ"
+    Array_arab +=  "فِي"
+    Array_arab +=  "وَقَعَ"
+    Array_arab +=  "مَنْ"
+    Array_arab +=  "وَ"
+    Array_arab +=  "عِرْضِهِ"
+    Array_arab +=  "وَ"
+    Array_arab +=  "لِدِيْنِهِ"
+    Array_arab +=  "اسْتَبْرَأَ"
+    Array_arab +=  "فَقَدِ"
+    Array_arab +=  "الشُّبُهَاتِ"
+    Array_arab +=  "اتَّقَى"
+    Array_arab +=  "فَمَنِ"
+    Array_arab +=  "النَّاسِ"
+    Array_arab +=  "مِنَ"
+    Array_arab +=  "كَثِيْرٌ"
+    Array_arab +=  "يَعْلَمُهُنَّ"
+    Array_arab +=  "لاَ"
+    Array_arab +=  "مُشْتَبِهَاتٌ"
+    Array_arab +=  "أُمُوْرٌ"
+    Array_arab +=  "بَيْنَهُمَا"
+    Array_arab +=  "وَ"
+    Array_arab +=  "بَيِّنٌ"
+    Array_arab +=  "الَحرَامَ"
+    Array_arab +=  "إِنَّ"
+    Array_arab +=  "وَ"
+    Array_arab +=  "بَيِّنٌ"
+    Array_arab +=  "الحَلاَلَ"
+    Array_arab +=  "إِنَّ"
+    Array_arab +=  "يَقُوْلُ"
+    Array_arab +=  "صَلَّى اللهُ عَلَيْهِ وَآلِهِ وَسَلَّمَ"
+    Array_arab +=  "رَسُوْلَ اللهِ"
+    Array_arab +=  "سَمِعْتُ"
+    Array_arab +=  "قَالَ"
+    Array_arab +=  "عَنْهُمَا"
+    Array_arab +=  "اللهُ"
+    Array_arab +=  "رَضِيَ"
+    Array_arab +=  "النُّعْمَان بْنِ بَشِيْرٍ"
+    Array_arab +=  "أَبِي عَبْدِ اللهِ"
+    Array_arab +=  "عَنْ"
     init_arabic()
 
     Array_indo += "Muslim"
@@ -1481,6 +1683,7 @@ fun Data(){
     val hadist7 = HalamanBelajar("Hadist Arbain No. 7","Agama Ini adalah Nasehat" , resultArray7 ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
     clearArrays()
 
+    //hadist 8
     Array_arab += "مُسْلِمٌ"
     Array_arab += "وَ"
     Array_arab += "اْلبُخَارِي"
