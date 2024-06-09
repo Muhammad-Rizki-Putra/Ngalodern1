@@ -342,6 +342,7 @@ class HalamanBelajar {
                                                 if (iterasi_D < arr_duplicate.size && arr_duplicate[iterasi_D].first == index){
                                                         logat.tombol(Simbol = arr_lokasi[arr_duplicate[iterasi_D].second].fourth)
                                                     iterasi_D++
+                                                    buffer_logat = 0
                                                 }
                                                 iterasi++
                                                 buffer_logat = 0
@@ -349,11 +350,21 @@ class HalamanBelajar {
                                     }
 
                                     else if (buffer_logat - 1 > 1){
+                                        if (iterasi_D < arr_duplicate.size && arr_duplicate[iterasi_D].first == index){
+                                            logat.tombol(Simbol = arr_lokasi[arr_duplicate[iterasi_D].second].fourth)
+                                            iterasi_D++
+                                            buffer_logat = 0
+                                        }
                                         logat.tombol(Simbol = arr_lokasi[arr_lokasi_U[iterasi].second].fourth)
                                         iterasi++
                                         buffer_logat = 0
                                     }
                                     else  {
+                                        if (iterasi_D < arr_duplicate.size && arr_duplicate[iterasi_D].first == index){
+                                            logat.tombol(Simbol = arr_lokasi[arr_duplicate[iterasi_D].second].fourth)
+                                            iterasi_D++
+                                            buffer_logat = 0
+                                        }
                                         buffer_logat--
                                         iterasi++
                                     }
