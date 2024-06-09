@@ -283,8 +283,7 @@ fun Data(){
 
     val hadist1: HalamanBelajar = HalamanBelajar("Hadist Arbain No. 1", "Setiap Amalan Tergantung Pada Niat", resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
     clearArrays()
-    uniqueFirstElements = emptySet()
-    resultArray = emptyArray()
+
 
     // hadist 2
 
@@ -1373,8 +1372,99 @@ fun Data(){
     Array_indo += "Abu Ruqayyah Tamim bin Aus Ad"
     Array_indo += "Dari"
 
+    for (i in 0..45){
+        Array_logat += Quadruple(1,i,1,"S1")
+        iterasi++
+    }
 
-    val hadist7 = HalamanBelajar("Hadist Arbain No. 7","Agama Ini adalah Nasehat) Rai" , resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
+    for (i in 0..5){
+        Array_logat += Quadruple(2,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..3){
+        Array_logat += Quadruple(3,i,1,"S1")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(8,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(9,i,1,"S1")
+        iterasi++
+    }
+
+    for (i in 0..12){
+        Array_logat += Quadruple(10,i,2,"P1")
+        iterasi++
+    }
+
+    for (i in 0..3){
+        Array_logat += Quadruple(11,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 4..7){
+        Array_logat += Quadruple(11,i,1,"S2")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(11,iterasi - 1)
+
+    for (i in 0..5){
+        Array_logat += Quadruple(13,i,2,"P2")
+        iterasi++
+    }
+
+    ArtiFull = "Dari Abu Ruqayyah Tamim bin Aus Ad radhiyallahu ‘anhu, dia berkata: “Sesungguhnya Rasulullah shallallahu ‘alaihi wa sallam bersabda: ”Agama itu nasihat.” Kami bertanya: ”Untuk siapa?” Beliau shallallahu ‘alaihi wa sallam menjawab: ”Untuk Allah, untuk kitab-Nya, untuk Rasul-Nya, untuk pemimpin kaum muslimin dan seluruh kaum muslimin.”\n" +
+            "Diriwayatkan oleh Muslim (no 55) \n"
+
+    Penjelasan = "Penjelasan hadist\n" +
+            "\n" +
+            "1. Nasihat untuk mengesakan Allah Subhanahu wa Ta’ala. Baik dengan tauhid rububiyyah, uluhiyyah, dan asma’ wa shifat. Kemudian melakukan ketaatan kepadaNya, ikhlas dalam menjalankan ibadah kepadaNya, mencintai karena Allah Subhanahu wa Ta’ala, membenci karena Allah Subhanahu wa Ta’ala, berjihad melawan orang-orang kafir, dan berdakwah.\n" +
+            "\n" +
+            "2. Nasihat untuk kitab-kitab Allah Subhanahu wa Ta’ala. Di antaranya adalah mengimani bahwasanya kitab-kitab tersebut adalah wahyu dari Allah Subhanahu wa Ta’ala yang diturunkan kepada para nabi dan rasul untuk dijadikan sebagai petunjuk dan pedoman dalam kehidupan hamba-hambaNya. \n" +
+            "\n" +
+            "3. Nasihat untuk rasul-rasulNya. Maknanya yaitu beriman kepada para rasul Allah Subhanahu wa Ta’ala, secara khusus yaitu beriman kepada Nabi Muhammad Shallallahu ‘Alaihi wa Sallam bahwasanya beliau adalah rasul akhir zaman yang diutus untuk semua umat manusia yang hidup sampai akhir zaman. Akan tetapi kita tidak meyakini para rasul sebagai tuhan, keluarga tuhan, anak tuhan, atau yang lainnya. \n" +
+            "\n" +
+            "4. Nasihat untuk para pemimpin umat Islam. Di antara bentuk nasihat kepada para pemimpin adalah mendukung mereka di atas kebenaran, mentaati mereka dalam kebaikan, wajib menasehati mereka dengan lemah lembut dan secara tertutup (empat mata), mendoakan mereka dengan kebaikan, serta tidak mengkudeta/ memberontak kepada mereka selama mereka adalah muslim.\n" +
+            "\n" +
+            "5. Nasihat untuk orang awam dalam kalangan umat Islam. Di antaranya adalah memberikan mereka petunjuk kepada maslahat mereka, menegur mereka saat mereka berbuat salah dalam keadaan menyendiri (tidak di depan umum), membantu dalam urusan dunia mereka dalam kebaikan, mengajari mereka dalam urusan dunia dan agama mereka, menutupi aib mereka, peduli pada kebutuhan mereka yang fakir miskin, membela mereka, dan tidak berbuat curang kepada mereka.\n"
+
+    var uniqueFirstElements7 = Array_logat.map { it.first }.toSet()
+    var resultArray7 = uniqueFirstElements7.map { uniqueElement ->
+        val index = Array_logat.indexOfFirst { it.first == uniqueElement }
+        Pair(uniqueElement, index)
+    }.toTypedArray()
+
+    Array_logat_B += Pair(0,"Pp")
+    Array_logat_B += Pair(1,"N1")
+    Array_logat_B += Pair(2,"Vl")
+    Array_logat_B += Pair(4,"Pp")
+    Array_logat_B += Pair(6,"N1")
+    Array_logat_B += Pair(7,"Pp")
+    Array_logat_B += Pair(7,"K")
+    Array_logat_B += Pair(8,"Vl")
+    Array_logat_B += Pair(9,"N1")
+    Array_logat_B += Pair(10,"N1")
+    Array_logat_B += Pair(11,"Vl")
+    Array_logat_B += Pair(12,"Pp")
+    Array_logat_B += Pair(13,"Vl")
+    Array_logat_B += Pair(14,"Pp")
+    Array_logat_B += Pair(15,"Ko")
+    Array_logat_B += Pair(15,"Pp")
+    Array_logat_B += Pair(17,"Ko")
+    Array_logat_B += Pair(17,"Pp")
+    Array_logat_B += Pair(19,"Ko")
+    Array_logat_B += Pair(19,"Pp")
+    Array_logat_B += Pair(21,"N+")
+    Array_logat_B += Pair(22,"Ko")
+    Array_logat_B += Pair(22,"N+")
+
+    val hadist7 = HalamanBelajar("Hadist Arbain No. 7","Agama Ini adalah Nasehat" , resultArray7 ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
     clearArrays()
 
     Array_arab += "مُسْلِمٌ"
@@ -1384,24 +1474,24 @@ fun Data(){
     Array_arab += "تَعَالَى"
     Array_arab += "اللهِ"
     Array_arab += "عَلَى"
-    Array_arab += "حِسَابُهُمْ"
+    Array_arab += "حِسَابُهُمْ" // 39
     Array_arab += "وَ"
     Array_arab += "الإِسْلاَمِ"
     Array_arab += "بِحَقِّ"
     Array_arab += "إِلاَّ"
     Array_arab += "أَمْوَالَهُمْ"
     Array_arab += "وَ"
-    Array_arab += "دِمَاءَهُمْ"
+    Array_arab += "دِمَاءَهُمْ" // 32
     Array_arab += "مِنِّيْ"
-    Array_arab += "عَصَمُوْا"
+    Array_arab += "عَصَمُوْا" // 30
     Array_arab += "ذَلِكَ"
-    Array_arab += "فَعَلُوْا"
+    Array_arab += "فَعَلُوْا" // 28
     Array_arab += "فَإِذَا"
-    Array_arab += "الزَّكَاةَ"
-    Array_arab += "يُؤْتُوْا"
+    Array_arab += "الزَّكَاةَ" // 26
+    Array_arab += "يُؤْتُوْا" // 25
     Array_arab += "وَ"
-    Array_arab += "الصَّلاةَ"
-    Array_arab += "يُقِيْمُوْا"
+    Array_arab += "الصَّلاةَ" // 23
+    Array_arab += "يُقِيْمُوْا" // 22
     Array_arab += "وَ"
     Array_arab += "رَسُوْلُ اللهِ"
     Array_arab += "مُحَمَّداً"
@@ -1409,13 +1499,13 @@ fun Data(){
     Array_arab += "وَ"
     Array_arab += "لاَ إِلَهَ إِلاَّ اللهُ"
     Array_arab += "أَنْ"
-    Array_arab += "يَشْهَدُوْا"
+    Array_arab += "يَشْهَدُوْا" //14
     Array_arab += "حَتَّى"
-    Array_arab += "النَّاسَ"
+    Array_arab += "النَّاسَ" // 12
     Array_arab += "أُقَاتِلَ"
     Array_arab += "أَنْ"
     Array_arab += "أُمِرْتُ"
-    Array_arab += "قَالَ"
+    Array_arab += "قَالَ" // 8
     Array_arab += "صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ"
     Array_arab += "رَسُوْلَ اللهِ"
     Array_arab += "أَنَّ"
@@ -1493,7 +1583,167 @@ fun Data(){
             "8. Barangsiapa yang tidak menunaikan sholat/ zakat, maka pemerintah Islam boleh memaksa mereka untuk melakukan keduanya. Dan jika mereka tetap tidak mau melakukan keduanya, sementara mereka memiliki kekuatan, maka boleh bagi pemerintah Islam untuk memerangi mereka.\n" +
             "\n" +
             "9. Makna hak Islam. Jika seandainya ada seorang muslim yang telah mengucapkan dua kalimat syahadat, menegakkan sholat, dan menunaikan zakat, kemudian dia melakukan dosa yang dalam Islam hukumnya adalah dibunuh seperti ; berzina dalam keadaan sudah menikah, atau membunuh sesama muslim, atau murtad, maka perkara-perkara ini adalah hak Islam yang membolehkan kembali bagi pemerintah muslim untuk menumpahkan darah mereka.\n"
-    val hadist8 = HalamanBelajar("Hadist Arbain No. 8","Terjaganya Darah dan Harta Seorang Muslim" , resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
+
+    for (i in 0..6){
+        Array_logat += Quadruple(2,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..4){
+        Array_logat += Quadruple(3,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..4){
+        Array_logat += Quadruple(8,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(9,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 6..7){
+        Array_logat += Quadruple(9,i,1,"S2")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(9,iterasi - 1)
+
+    for (i in 0..7){
+        Array_logat += Quadruple(12,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..1){
+        Array_logat += Quadruple(14,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 2..7){
+        Array_logat += Quadruple(14,i,2,"P2")
+        iterasi++
+    }
+    Array_Duplicate += Pair(14,iterasi - 1)
+
+    for (i in 8..11){
+        Array_logat += Quadruple(14,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..1){
+        Array_logat += Quadruple(22,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 2..7){
+        Array_logat += Quadruple(22,i,2,"P2")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(22,iterasi - 1)
+
+    for (i in 7..11){
+        Array_logat += Quadruple(22,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(23,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..1){
+        Array_logat += Quadruple(25,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 2..5){
+        Array_logat += Quadruple(25,i,2,"P2")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(25,iterasi - 1)
+
+    for (i in 6..9){
+        Array_logat += Quadruple(25,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..10){
+        Array_logat += Quadruple(26,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(28,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 6..9){
+        Array_logat += Quadruple(28,i,1,"S2")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(28,iterasi - 1)
+
+    for (i in 0..5){
+        Array_logat += Quadruple(30,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 6..9){
+        Array_logat += Quadruple(30,i,1,"S2")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(30,iterasi - 1)
+
+    for (i in 0..11){
+        Array_logat += Quadruple(32,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..11){
+        Array_logat += Quadruple(39,i,1,"S1")
+        iterasi++
+    }
+
+    Array_logat_B += Pair(0,"Pp")
+    Array_logat_B += Pair(2,"Vl")
+    Array_logat_B += Pair(4,"Pp")
+    Array_logat_B += Pair(7,"Pp")
+    Array_logat_B += Pair(7,"K")
+    Array_logat_B += Pair(8,"Vl")
+    Array_logat_B += Pair(9,"Vl")
+    Array_logat_B += Pair(11,"Vnl")
+    Array_logat_B += Pair(12,"N+")
+    Array_logat_B += Pair(13,"Ko")
+    Array_logat_B += Pair(14,"Vnl")
+    Array_logat_B += Pair(16,"Ko")
+    Array_logat_B += Pair(17,"Ko")
+    Array_logat_B += Pair(21,"Ko")
+    Array_logat_B += Pair(22,"Vnl")
+    Array_logat_B += Pair(24,"Ko")
+    Array_logat_B += Pair(25,"Vnl")
+    Array_logat_B += Pair(27,"Ko")
+    Array_logat_B += Pair(28,"Vl")
+    Array_logat_B += Pair(30,"Vl")
+    Array_logat_B += Pair(32,"N+")
+    Array_logat_B += Pair(33,"Ko")
+    Array_logat_B += Pair(34,"N+")
+    Array_logat_B += Pair(36,"Pp")
+    Array_logat_B += Pair(38,"Ko")
+    Array_logat_B += Pair(40,"Pp")
+
+    var uniqueFirstElements8 = Array_logat.map { it.first }.toSet()
+    var resultArray8 = uniqueFirstElements8.map { uniqueElement ->
+        val index = Array_logat.indexOfFirst { it.first == uniqueElement }
+        Pair(uniqueElement, index)
+    }.toTypedArray()
+
+    val hadist8 = HalamanBelajar("Hadist Arbain No. 8","Terjaganya Darah dan Harta Seorang Muslim" , resultArray8 ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
     clearArrays()
 
     Array_arab += ("مُسْلِمٌ")
@@ -1586,7 +1836,13 @@ fun Data(){
             "\n" +
             "5. Peringatan untuk jangan sampai jatuh ke dalam kesalahan yang pernah dilakukan oleh orang-orang ahlul kitab sebelum kita. Yaitu banyak bertanya terhadap hal-hal yang tidak perlu, dengan pertanyaan-pertanyaan yang tercela yang bisa membuat beban ibadah umat Islam bertambah, atau pun bisa membuat umat Islam justru malah loyo dalam menjalankan perintah-perintah Allah Subhanahu wa Ta’ala dan Rasulullah Shallallahu ‘Alaihi wa Sallam.\n"
 
-    val hadist9 = HalamanBelajar("Hadist Arbain No. 9","Kerjakanlah Perintah yang Kamu Mampu" , resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
+    var uniqueFirstElements9 = Array_logat.map { it.first }.toSet()
+    var resultArray9 = uniqueFirstElements9.map { uniqueElement ->
+        val index = Array_logat.indexOfFirst { it.first == uniqueElement }
+        Pair(uniqueElement, index)
+    }.toTypedArray()
+
+    val hadist9 = HalamanBelajar("Hadist Arbain No. 9","Kerjakanlah Perintah yang Kamu Mampu" , resultArray9 ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
     clearArrays()
 
     Array_arab += "مُسْلِمٌ"
@@ -3022,4 +3278,3 @@ fun get_Hadist(): List<HalamanBelajar>{
 fun get_Dongeng(): List<HalamanBelajar>{
     return Dongeng
 }
-
