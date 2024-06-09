@@ -800,11 +800,11 @@ fun Data(){
     Array_arab += "فَ"
     Array_arab += "الجَنَّةِ"
     Array_arab += "أَهْلِ"
-    Array_arab += "بِعَمَلِ"
+    Array_arab += "بِعَمَلِ" // 106
     Array_arab += "فَيَعْمَلُ"
     Array_arab += "الكِتَابُ"
     Array_arab += "عليْهِ"
-    Array_arab += "فَيَسْبِقُ"
+    Array_arab += "فَيَسْبِقُ"// 102
     Array_arab += "ذِراعٌ"
     Array_arab += "إلّا"
     Array_arab += "بَيْنَهَا"
@@ -813,9 +813,9 @@ fun Data(){
     Array_arab += "يَكُونُ"
     Array_arab += "مَا"
     Array_arab += "حَتَّى"
-    Array_arab += "النَّارِ"
+    Array_arab += "النَّارِ" // 93
     Array_arab += "أَهْلِ"
-    Array_arab += "بِعَمَلِ"
+    Array_arab += "بِعَمَلِ"  //91
     Array_arab += "لَيَعْمَلُ"
     Array_arab += "أَحَدَكُمْ"
     Array_arab += "إنَّ"
@@ -823,11 +823,11 @@ fun Data(){
     Array_arab += "فَيَدْخَلُهَا"
     Array_arab += "النَّارِ"
     Array_arab += "أَهْلِ"
-    Array_arab += "بِعمَلِ"
+    Array_arab += "بِعمَلِ" // 83
     Array_arab += "فَيَعْمَلُ"
     Array_arab += "الكِتَابُ"
     Array_arab += "عليهِ"
-    Array_arab += "فَيَسْبِقُ"
+    Array_arab += "فَيَسْبِقُ" // 79
     Array_arab += "ذِراعٌ"
     Array_arab += "إلّا"
     Array_arab += "بَيْنَهَا"
@@ -835,10 +835,10 @@ fun Data(){
     Array_arab += "بَيْنَهُ"
     Array_arab += "يَكُونُ"
     Array_arab += "ما"
-    Array_arab += "حَتَّى"
+    Array_arab += "حَتَّى" // 71
     Array_arab += "الجَنَّةِ"
     Array_arab += "أَهْلِ"
-    Array_arab += "بِعَمَلِ"
+    Array_arab += "بِعَمَلِ" // 68
     Array_arab += "لَيَعْمَلُ"
     Array_arab += "أَحَدَكُمْ"
     Array_arab += "إنَّ"
@@ -850,7 +850,7 @@ fun Data(){
     Array_arab += "وَ"
     Array_arab += "فَ"
     Array_arab += "سَعِيدٌ"
-    Array_arab += "أَوْ"
+    Array_arab += "أَوْ" // 56
     Array_arab += "شَقِيٌّ"
     Array_arab += "وَ"
     Array_arab += "عَمَلِهِ"
@@ -858,7 +858,7 @@ fun Data(){
     Array_arab += "أَجَلِهِ"
     Array_arab += "وَ"
     Array_arab += "رِزْقِهِ"
-    Array_arab += "بِكَتْبِ"
+    Array_arab += "بِكَتْبِ" // 48
     Array_arab += "كَلِماتٍ"
     Array_arab += "بِأرْبَعِ"
     Array_arab += "يُؤْمَرُ"
@@ -870,29 +870,29 @@ fun Data(){
     Array_arab += "إلَيْهِ"
     Array_arab += "يُرْسَلُ"
     Array_arab += "ثُمَّ"
-    Array_arab += "ذَلِكَ"
-    Array_arab += "مِثْلَ"
+    Array_arab += "ذَلِكَ" // 36
+    Array_arab += "مِثْلَ" //35
     Array_arab += "مُضْغَةً"
     Array_arab += "يَكُونُ"
     Array_arab += "ثُمَّ"
-    Array_arab += "ذَلِكَ"
-    Array_arab += "مِثْلَ"
+    Array_arab += "ذَلِكَ" // 31
+    Array_arab += "مِثْلَ" // 30
     Array_arab += "عَلَقَةً"
     Array_arab += "يَكُونُ"
     Array_arab += "ثُمَّ"
-    Array_arab += "نُطْفَةً"
+    Array_arab += "نُطْفَةً" // 26
     Array_arab += "يَوْمًا"
     Array_arab += "أرْبَعِيْنَ"
     Array_arab += "أُمِّهِ"
     Array_arab += "بَطْنِ"
     Array_arab += "فِي"
-    Array_arab += "خَلْقُهُ"
-    Array_arab += "يُجْمَعُ"
+    Array_arab += "خَلْقُهُ" // 20
+    Array_arab += "يُجْمَعُ" // 19
     Array_arab += "أَحَدَكُمْ"
     Array_arab += "إنَّ"
-    Array_arab += "المَصْدُوْقُ"
-    Array_arab += "الصَّادِقُ"
-    Array_arab += "هو"
+    Array_arab += "المَصْدُوْقُ" // 16
+    Array_arab += "الصَّادِقُ" // 15
+    Array_arab += "هو" // 14
     Array_arab += "و"
     Array_arab += "سلم"
     Array_arab += "و"
@@ -901,12 +901,12 @@ fun Data(){
     Array_arab += "صلى"
     Array_arab += "رَسُولُ الله"
     Array_arab += "حدَّثَنَا"
-    Array_arab += "قَالَ"
+    Array_arab += "قَالَ" // 5
     Array_arab += "عَنْهُ"
-    Array_arab += "الله"
-    Array_arab += "رَضِيَ"
-    Array_arab += "أَبِي عَبْدِ الرَّحْمَنِ  عَبْدِ اللهِ بنِ مَسْعُوْدٍ"
-    Array_arab += "عَن"
+    Array_arab += "الله" // 3
+    Array_arab += "رَضِيَ" // 2
+    Array_arab += "أَبِي عَبْدِ الرَّحْمَنِ  عَبْدِ اللهِ بنِ مَسْعُوْدٍ" // 1
+    Array_arab += "عَن" // 0
     init_arabic()
 
     Array_indo += "Imam Muslim"
@@ -1025,7 +1025,356 @@ fun Data(){
     Array_indo += "Abu abdurrahman Abdullah bin Mas'ud"
     Array_indo += "Dari"
 
-    val hadist4 = HalamanBelajar("Hadist Arbain No. 4","(Proses Penciptaan Manusia dan Iman Kepada Takdir) Hana" , resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
+    Array_logat_B += Pair(0,"Pp")
+    Array_logat_B += Pair(1,"N1")
+    Array_logat_B += Pair(2,"Vl")
+    Array_logat_B += Pair(4,"Pp")
+    Array_logat_B += Pair(6,"Vl")
+    Array_logat_B += Pair(27,"Ko")
+    Array_logat_B += Pair(32,"Ko")
+    Array_logat_B += Pair(38,"Vnl")
+    Array_logat_B += Pair(39,"Pp")
+    Array_logat_B += Pair(40,"N1")
+    Array_logat_B += Pair(42,"Pp")
+    Array_logat_B += Pair(45,"Vnl")
+    Array_logat_B += Pair(46,"Pp")
+    Array_logat_B += Pair(48,"Pp")
+    Array_logat_B += Pair(50,"Ko")
+    Array_logat_B += Pair(56,"Ko")
+    Array_logat_B += Pair(68,"Pp")
+    Array_logat_B += Pair(71,"Ko")
+    Array_logat_B += Pair(79,"Ko")
+    Array_logat_B += Pair(83,"Pp")
+    Array_logat_B += Pair(91,"Pp")
+    Array_logat_B += Pair(104,"N1")
+    Array_logat_B += Pair(106,"Pp")
+
+    for (i in 0..6){
+        Array_logat += Quadruple(2,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..4){
+        Array_logat += Quadruple(3,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(5,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(6,i,2,"P2")
+        iterasi++
+    }
+    
+    for (i in 6..9){
+        Array_logat += Quadruple(6,i,3,"O")
+        iterasi++
+    }
+    
+    Array_Duplicate += Pair(6,iterasi - 1)
+
+    for (i in 0..12){
+        Array_logat += Quadruple(7,i,1,"S2")
+        iterasi++
+    }
+    
+    for (i in 0..2){
+        Array_logat += Quadruple(14,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..2){
+        Array_logat += Quadruple(14,i,1,"S1")
+        iterasi++
+    }
+
+    for (i in 0..10){
+        Array_logat += Quadruple(15,i,2,"P1")
+        iterasi++
+    }
+    
+    for (i in 0..12){
+        Array_logat += Quadruple(16,i,2,"P1")
+        iterasi++
+    }
+    
+    for (i in 0..8){
+        Array_logat += Quadruple(19,i,2,"P3")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(20,i,1,"S3")
+        iterasi++
+    }
+
+    for (i in 0..3){
+        Array_logat += Quadruple(21,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(22,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..7){
+        Array_logat += Quadruple(23,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..11){
+        Array_logat += Quadruple(24,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..7){
+        Array_logat += Quadruple(25,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(26,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(35,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(36,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(38,i,2,"P3")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(40,i,1,"S3")
+        iterasi++
+    }
+
+    for (i in 1..10){
+        Array_logat += Quadruple(41,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(43,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(45,i,2,"P3")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(46,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(47,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(48,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(49,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..2){
+        Array_logat += Quadruple(50,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(51,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..2){
+        Array_logat += Quadruple(52,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(53,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..2){
+        Array_logat += Quadruple(54,i,2,"P1")
+        iterasi++
+    }
+
+    for (i in 0..7){
+        Array_logat += Quadruple(55,i,2,"P1")
+        iterasi++
+    }
+
+    for (i in 0..4){
+        Array_logat += Quadruple(56,i,2,"P1")
+        iterasi++
+    }
+
+    for (i in 0..7){
+        Array_logat += Quadruple(57,i,2,"P1")
+        iterasi++
+    }
+
+    for (i in 1..10){
+        Array_logat += Quadruple(67,i,2,"P1")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(68,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(69,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(70,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 1..10){
+        Array_logat += Quadruple(79,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(81,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 1..10){
+        Array_logat += Quadruple(82,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..7){
+        Array_logat += Quadruple(83,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(84,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(85,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 1..9){
+        Array_logat += Quadruple(86,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 10..13){
+        Array_logat += Quadruple(86,i,3,"K")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(86,iterasi - 1)
+
+    for (i in 1..10){
+        Array_logat += Quadruple(90,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(91,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(92,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(93,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..10){
+        Array_logat += Quadruple(102,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(104,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 1..10){
+        Array_logat += Quadruple(105,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(106,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(107,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(108,i,3,"K")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(110,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 10..13){
+        Array_logat += Quadruple(110,i,3,"O")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(110,iterasi - 1)
+
+    var uniqueFirstElements4 = Array_logat.map { it.first }.toSet()
+    var resultArray4 = uniqueFirstElements4.map { uniqueElement ->
+        val index = Array_logat.indexOfFirst { it.first == uniqueElement }
+        Pair(uniqueElement, index)
+    }.toTypedArray()
+
+    ArtiFull = "Dari Abu Abdurrahman Abdullah bin Mas’ud radhiyallahu ‘anhu beliau berkata, Rasulullah shallallahu ’alaihi wa sallam menyampaikan kepada kami dan beliau adalah orang yang benar dan dibenarkan, “Sesungguhnya setiap kalian dikumpulkan penciptaannya di perut ibunya sebagai setetes mani (nuthfah) selama empat puluh hari, kemudian berubah menjadi setetes darah (‘alaqah) selama empat puluh hari, kemudian menjadi segumpal daging (mudhgah) selama empat puluh hari. Kemudian diutus kepadanya seorang malaikat lalu ditiupkan padanya ruh dan diperintahkan untuk ditetapkan empat perkara, yaitu rezekinya, ajalnya, amalnya dan kecelakaan atau kebahagiaannya. Demi Allah yang tidak ada sesembahan yang berhak disembah selain-Nya. Sesungguhnya di antara kalian ada yang melakukan perbuatan ahli surga hingga jarak antara dirinya dan surga tinggal sehasta. Akan tetapi telah ditetapkan baginya ketentuan, dia melakukan perbuatan ahli neraka maka masuklah dia ke dalam neraka. Sesungguhnya di antara kalian ada yang melakukan perbuatan ahli neraka hingga jarak antara dirinya dan neraka tinggal sehasta. Akan tetapi telah ditetapkan baginya ketentuan, dia melakukan perbuatan ahli surga  maka masuklah dia ke dalam surga.”"
+
+    Penjelasan = "Penjelasan hadist: \n" +
+            "Hadist ini membuktikan kebenaran apa yang disampaikan Rasulullah SAW. sesuai dengan apa ilmu pengetahuan saat ini, dimana pembentukan manusia dalam rahim mulai dari nuthfah (setetes mani), ‘alaqah (segumpal darah), mudhgah (segumpal daging) masing-masing selama 40 hari dan ditiupkan ruh pada usia 120 hari. Dan Allah mengurus manusia dalam rahim melalui malaikat.\n" +
+            "Rezeki, ajal, amal, bahagia atau sengsara dari setiap manusia sudah diketahui, dicatat, dikehendaki dan ditetapkan oleh Allah. Maka sebenarnya tidak ada yang perlu kita khawatirkan terkait sesuatu yang telah Allah tentukan.\n" +
+            "Manusia tidak mengetahui takdir yang ditetapkan untuknya. Sehingga manusia tetap harus ada usaha dan amal, tidak boleh ia hanya sekedar pasrah pada takdir.\n" +
+            "Bahagia atau sengsara tergantung dari amalan akhir seseorang itu seperti apa.\n"
+
+    val hadist4 = HalamanBelajar("Hadist Arbain No. 4","Proses Penciptaan Manusia dan Iman Kepada Takdir" , resultArray4 ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
     clearArrays()
 
     Array_arab += "رَدٌّ"
@@ -1759,27 +2108,27 @@ fun Data(){
     Array_arab += ("قَبْلِكُمْ")
     Array_arab += ("مِنْ")
     Array_arab += ("الَّذِيْنَ")
-    Array_arab += ("أَهْلَكَ")
+    Array_arab += ("أَهْلَكَ") // 23
     Array_arab += ("فَإِنَّمَا")
-    Array_arab += ("اسْتَطَعْتُمْ")
+    Array_arab += ("اسْتَطَعْتُمْ") // 21
     Array_arab += ("مَا")
     Array_arab += ("مِنْهُ")
-    Array_arab += ("فأْتُوْا")
+    Array_arab += ("فأْتُوْا") // 18
     Array_arab += ("بِهِ")
-    Array_arab += ("أَمَرْتُكُمْ")
+    Array_arab += ("أَمَرْتُكُمْ") // 16
     Array_arab += ("مَا")
     Array_arab += ("وَ")
-    Array_arab += ("فَاجْتَنِبُوْهُ")
+    Array_arab += ("فَاجْتَنِبُوْهُ") //13
     Array_arab += ("عَنْهُ")
-    Array_arab += ("نَهَيْتُكُمْ")
+    Array_arab += ("نَهَيْتُكُمْ") //12
     Array_arab += ("مَا")
-    Array_arab += ("يَقُوْلُ")
+    Array_arab += ("يَقُوْلُ") // 10
     Array_arab += ("صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ")
-    Array_arab += ("رَسُوْلَ اللهِ")
-    Array_arab += ("سَمِعْتُ")
-    Array_arab += ("قَالَ")
+    Array_arab += ("رَسُوْلَ اللهِ") // 8
+    Array_arab += ("سَمِعْتُ") // 7
+    Array_arab += ("قَالَ") // 6
     Array_arab += ("عَنْهُ")
-    Array_arab += ("اللهُ")
+    Array_arab += ("اللهُ") // 4
     Array_arab += ("رَضِيَ")
     Array_arab += ("أَبِي هُرَيْرَةَ عَبْدِ الرَّحْمَنِ بْنِ صَخْرٍ")
     Array_arab += ("عَنْ")
@@ -1835,6 +2184,142 @@ fun Data(){
             "4. Larangan itu lebih berat dari pada perintah. Karena larangan itu dilarang secara mutlak, sedangkan perintah itu diperintahkan namun diikat dengan semampu kita. \n" +
             "\n" +
             "5. Peringatan untuk jangan sampai jatuh ke dalam kesalahan yang pernah dilakukan oleh orang-orang ahlul kitab sebelum kita. Yaitu banyak bertanya terhadap hal-hal yang tidak perlu, dengan pertanyaan-pertanyaan yang tercela yang bisa membuat beban ibadah umat Islam bertambah, atau pun bisa membuat umat Islam justru malah loyo dalam menjalankan perintah-perintah Allah Subhanahu wa Ta’ala dan Rasulullah Shallallahu ‘Alaihi wa Sallam.\n"
+
+    Array_logat_B += Pair(0,"Pp")
+    Array_logat_B += Pair(1,"N1")
+    Array_logat_B += Pair(1,"N1")
+    Array_logat_B += Pair(2,"Vl")
+    Array_logat_B += Pair(4,"Pp")
+    Array_logat_B += Pair(5,"Vl")
+    Array_logat_B += Pair(6,"Vl")
+    Array_logat_B += Pair(8,"Pp")
+    Array_logat_B += Pair(8,"K")
+    Array_logat_B += Pair(9,"Vnl")
+    Array_logat_B += Pair(11,"Vl")
+    Array_logat_B += Pair(12,"Pp")
+    Array_logat_B += Pair(13,"Ko")
+    Array_logat_B += Pair(14,"Ko")
+    Array_logat_B += Pair(16,"Vl")
+    Array_logat_B += Pair(18,"Ko")
+    Array_logat_B += Pair(19,"Pp")
+    Array_logat_B += Pair(20,"Ko")
+    Array_logat_B += Pair(21,"N+")
+    Array_logat_B += Pair(21,"K")
+    Array_logat_B += Pair(21,"Vl")
+    Array_logat_B += Pair(22,"Ko")
+    Array_logat_B += Pair(23,"Vl")
+    Array_logat_B += Pair(24,"Ko")
+    Array_logat_B += Pair(25,"Pp")
+    Array_logat_B += Pair(26,"Pt")
+    Array_logat_B += Pair(28,"N+")
+    Array_logat_B += Pair(29,"N+")
+    Array_logat_B += Pair(29,"Ko")
+    Array_logat_B += Pair(31,"Pp")
+    Array_logat_B += Pair(32,"N+")
+
+    for (i in 0..47){
+        Array_logat += Quadruple(1,i,1,"S1")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(2,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(3,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(5,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..3){
+        Array_logat += Quadruple(6,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 4..8){
+        Array_logat += Quadruple(6,i,1,"S2")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(6,iterasi - 1)
+
+    for (i in 0..14){
+        Array_logat += Quadruple(7,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(9,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(11,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 6..7){
+        Array_logat += Quadruple(11,i,1,"S2")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(11,iterasi - 1)
+
+    for (i in 8..12){
+        Array_logat += Quadruple(11,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 12..14){
+        Array_logat += Quadruple(13,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(16,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 6..7){
+        Array_logat += Quadruple(16,i,1,"S2")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(16,iterasi - 1)
+
+    for (i in 8..12){
+        Array_logat += Quadruple(16,i,3,"O")
+        iterasi++
+    }
+
+
+    for (i in 0..8){
+        Array_logat += Quadruple(18,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(21,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 9..13){
+        Array_logat += Quadruple(21,i,1,"S2")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(21,iterasi - 1)
+
+    for (i in 0..8){
+        Array_logat += Quadruple(23,i,2,"P2")
+        iterasi++
+    }
 
     var uniqueFirstElements9 = Array_logat.map { it.first }.toSet()
     var resultArray9 = uniqueFirstElements9.map { uniqueElement ->
@@ -1900,26 +2385,26 @@ fun Data(){
     Array_arab += "أَمَرَ"
     Array_arab += "بِمَا"
     Array_arab += "المُؤْمِنِيْنَ"
-    Array_arab += "أَمَرَ"
+    Array_arab += "أَمَرَ" // 19
     Array_arab += "اللهَ"
     Array_arab += "إِنَّ"
     Array_arab += "وَ"
     Array_arab += "طَيِّباً"
-    Array_arab += "إِلاَّ"
-    Array_arab += "يَقْبَلُ"
-    Array_arab += "لاَ"
-    Array_arab += "طَيِّبٌ"
+    Array_arab += "إِلاَّ" //14
+    Array_arab += "يَقْبَلُ" // 13
+    Array_arab += "لاَ" // 12
+    Array_arab += "طَيِّبٌ" // 11
     Array_arab += "اللهَ"
     Array_arab += "إِنَّ"
     Array_arab += "صَلَّى اللهُ عَلَيْهِ وَسَلَّمَ"
-    Array_arab += "رَسُوْلُ اللهِ"
-    Array_arab += "قَالَ"
-    Array_arab += "قَالَ"
-    Array_arab += "عَنْهُ"
+    Array_arab += "رَسُوْلُ اللهِ" // 7
+    Array_arab += "قَالَ" // 6
+    Array_arab += "قَالَ" // 5
+    Array_arab += "عَنْهُ" // 4
     Array_arab += "اللهُ"
     Array_arab += "رَضِيَ"
-    Array_arab += "أَبِي هُرَيْرَةَ"
-    Array_arab += "عَنْ"
+    Array_arab += "أَبِي هُرَيْرَةَ" // 1
+    Array_arab += "عَنْ" // 0
     init_arabic()
 
     Array_indo += "Oleh Muslim"
@@ -2005,7 +2490,13 @@ fun Data(){
             "Syarat dikabulkannya doa adalah kita bersih dari hal-hal haram.\n" +
             "Jika doa kita tidak kunjung dikabulkan, maka kita harus intropeksi diri barangkali ada hal-hal haram yang masih kita gunakan.\n"
 
-    val hadist10 = HalamanBelajar("Hadist Arbain No. 10","Allah Maha Baik dan Hanya Menerima yang Baik" , resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
+    var uniqueFirstElements10 = Array_logat.map { it.first }.toSet()
+    var resultArray10 = uniqueFirstElements10.map { uniqueElement ->
+        val index = Array_logat.indexOfFirst { it.first == uniqueElement }
+        Pair(uniqueElement, index)
+    }.toTypedArray()
+
+    val hadist10 = HalamanBelajar("Hadist Arbain No. 10","Allah Maha Baik dan Hanya Menerima yang Baik" , resultArray10 ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
     clearArrays()
     Hadist += listOf(hadist1, hadist2, hadist3, hadist4, hadist5, hadist6, hadist7, hadist8, hadist9, hadist10)
 
