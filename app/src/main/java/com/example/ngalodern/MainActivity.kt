@@ -1,5 +1,6 @@
 package com.example.ngalodern
 
+import Data.Hadist.Data5
 import Page.Belajar
 import Page.Navigation
 import Page.Navigation
@@ -17,6 +18,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             Data()
+
             val scrollState = rememberScrollState()
             Navigation(scrollState = scrollState)
         }

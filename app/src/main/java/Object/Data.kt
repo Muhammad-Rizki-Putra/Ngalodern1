@@ -1,13 +1,13 @@
 package Object
 
+import Data.Hadist.Data5
 import androidx.compose.runtime.Composable
 
 var sizehd: Int = 0
 var sizedg: Int = 0
 
-var Dongeng: List<HalamanBelajar> = listOf()
 var Hadist: MutableList<HalamanBelajar> = mutableListOf()
-
+var Dongeng: MutableList<HalamanBelajar> = mutableListOf()
 
 @Composable
 fun Data(){
@@ -1453,10 +1453,8 @@ fun Data(){
             "Bahagia atau sengsara tergantung dari amalan akhir seseorang itu seperti apa.\n"
 
     val hadist4 = HalamanBelajar("Hadist Arbain No. 4","Proses Penciptaan Manusia dan Iman Kepada Takdir" , resultArray4 ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
-    clearArrays()
 
-    clearArrays()
-
+    //hadist 6
     Array_arab +=  "مُسْلِمٌ"
     Array_arab +=  "وَ"
     Array_arab +=  "البُخَارِي"
@@ -1666,6 +1664,7 @@ fun Data(){
     val hadist6 = HalamanBelajar("Hadist Arbain No. 6","(Halal, Haram & Syubhat) Faiha" , resultArray6 ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
     clearArrays()
 
+    //hadist 7
     Array_arab += "مُسْلِمٌ"
     Array_arab += "رَوَاهُ"
     Array_arab += "عَامَّتِهِمْ"
@@ -2100,6 +2099,7 @@ fun Data(){
     val hadist8 = HalamanBelajar("Hadist Arbain No. 8","Terjaganya Darah dan Harta Seorang Muslim" , resultArray8 ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
     clearArrays()
 
+    //hadist 9
     Array_arab += ("مُسْلِمٌ")
     Array_arab += ("وَ")
     Array_arab += ("اْلبُخَارِي")
@@ -2335,6 +2335,7 @@ fun Data(){
     val hadist9 = HalamanBelajar("Hadist Arbain No. 9","Kerjakanlah Perintah yang Kamu Mampu" , resultArray9 ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
     clearArrays()
 
+    //hadist 10
     Array_arab += "مُسْلِمٌ"
     Array_arab += "رَوَاهُ"
     Array_arab += "لَهُ"
@@ -2504,7 +2505,7 @@ fun Data(){
     val hadist10 = HalamanBelajar("Hadist Arbain No. 10","Allah Maha Baik dan Hanya Menerima yang Baik" , resultArray10 ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
     clearArrays()
     Hadist += listOf(hadist1, hadist2, hadist3, hadist4, hadist6, hadist7, hadist8, hadist9, hadist10)
-
+    Data5()
 //    Dongeng
 //    Contoh buat dongeng:
 
