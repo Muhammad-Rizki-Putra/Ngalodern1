@@ -1,4 +1,4 @@
-package Data.Hadist
+package Data.Dongeng
 
 import Object.Quadruple
 import Object.HalamanBelajar

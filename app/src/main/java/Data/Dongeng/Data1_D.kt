@@ -1,8 +1,7 @@
-package Data.Hadist
+package Data.Dongeng
 
 import Object.Quadruple
 import Object.HalamanBelajar
-import Object.Data
 import Object.Dongeng
 import androidx.compose.runtime.Composable
 

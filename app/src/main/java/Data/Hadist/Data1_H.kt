@@ -2,7 +2,6 @@ package Data.Hadist
 
 import Object.Quadruple
 import Object.HalamanBelajar
-import Object.Data
 import Object.Hadist
 import androidx.compose.runtime.Composable
 
