@@ -86,7 +86,7 @@ fun tomboldongeng(navController: NavController){
             verticalArrangement = Arrangement.spacedBy(20.dp),
             horizontalArrangement = Arrangement.spacedBy(20.dp)
         ) {
-            items(sizedg){
+            items(get_sizedg()){
                 box_belajar(
                     judul = Dongeng[it].judul,
                     route = "Dongeng_$it",

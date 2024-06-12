@@ -22,32 +22,6 @@ fun Data(){
     //          3 = brown
     //          4 = purple
 
-    var Array_arab = arrayOf<String>()
-    var Array_indo = arrayOf<String>()
-    var Array_logat = arrayOf<Quadruple<Int, Int, Int, String>>()
-    var ArtiFull: String = ""
-    var Penjelasan: String = ""
-    var Array_logat_B = arrayOf<Pair<Int, String>>()
-    var Array_Duplicate = arrayOf<Pair<Int, Int>>()
-    var iterasi: Int = 0
-
-    fun init_arabic(){
-        for (i in Array_arab.indices) {
-            Array_arab[i] = Array_arab[i] + " "
-        }
-    }
-
-    fun clearArrays() {
-        Array_arab = arrayOf<String>()
-        Array_indo = arrayOf<String>()
-        Array_logat = arrayOf<Quadruple<Int, Int, Int, String>>()
-        ArtiFull = ""
-        Penjelasan = ""
-        Array_logat_B = arrayOf<Pair<Int, String>>()
-        Array_Duplicate = arrayOf<Pair<Int, Int>>()
-        iterasi = 0
-    }
-
 //    untuk penggunaan array pakai saja yang diatas supaya tidak perlu menulis ulang (nambah memori)
 
 /*==Data==*/
@@ -69,14 +43,15 @@ fun Data(){
     Data3_D()
     Data4_D()
     Data5_D()
-
 }
 
 fun get_sizehd(): Int{
+    sizehd = Hadist.size
     return sizehd
 }
 
 fun get_sizedg(): Int{
+    sizedg = Dongeng.size
     return sizedg
 }
 
