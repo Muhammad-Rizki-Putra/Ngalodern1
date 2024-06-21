@@ -27,6 +27,13 @@ fun Navigation(scrollState: ScrollState){
             )
         }
 
+        composable("Materi") {
+            Materi(
+                scrollState = scrollState,
+                navController = navController
+            )
+        }
+
         composable("Latihan") {
             Latihan(
                 scrollState = scrollState,

@@ -430,15 +430,31 @@ fun Dashboard(scrollState: ScrollState, navController: NavController) {
                     .padding(top = 20.dp)
             ) {
                 Column {
-                    Text(
-                        modifier = Modifier.padding(bottom = 10.dp),
-                        text = "Materi",
-                        fontFamily = dmsansFontFamily,
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 14.sp
-                    )
+                    Row (
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
 
-                    Box(modifier = Modifier.padding(bottom = 13.dp)) {
+                        ){
+                        Text(
+                            text = "Materi",
+                            fontSize = 14.sp,
+                            fontFamily = dmsansFontFamily,
+                            fontWeight = FontWeight.Bold)
+
+                        Text(
+                            text = "Lihat semua",
+                            fontSize = 14.sp,
+                            fontFamily = dmsansFontFamily,
+                            fontWeight = FontWeight.Bold,
+                            color =  Color(android.graphics.Color.parseColor("#457B9D")),
+                            modifier = Modifier
+                                .clickable { navController.navigate("Materi") }
+                        )
+                    }
+
+                    Box(modifier = Modifier.padding(bottom = 13.dp).padding(top = 10.dp)) {
                         box_materi("00.00", "04.34")
                     }
 
