@@ -170,6 +170,110 @@ fun Data2_D(){
     Array_indo += "Mulanya"
     Array_indo += "Pada"
 
+    for (i in 0..12){
+        Array_logat += Quadruple(11,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 13..15){
+        Array_logat += Quadruple(11,i,3,"O")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(11, iterasi - 1)
+
+    for (i in 0..10){
+        Array_logat += Quadruple(12,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..20){
+        Array_logat += Quadruple(13,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(14,i,4,"K")
+        iterasi++
+    }
+
+    for (i in 0..13){
+        Array_logat += Quadruple(15,i,4,"K")
+        iterasi++
+    }
+
+    for (i in 0..4){
+        Array_logat += Quadruple(17,i,1,"S1")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(18,i,2,"P1")
+        iterasi++
+    }
+
+    for (i in 0..13){
+        Array_logat += Quadruple(19,i,2,"P1")
+        iterasi++
+    }
+
+    for (i in 0..15){
+        Array_logat += Quadruple(20,i,2,"P1")
+        iterasi++
+    }
+
+    for (i in 0..12){
+        Array_logat += Quadruple(32,i,4,"K")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(33,i,4,"K")
+        iterasi++
+    }
+
+    for (i in 0..2){
+        Array_logat += Quadruple(34,i,4,"K")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(35,i,4,"K")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(52,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(53,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(54,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..10 ){
+        Array_logat += Quadruple(55,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..4){
+        Array_logat += Quadruple(56,i,4,"K")
+        iterasi++
+    }
+
+    for (i in 0..18){
+        Array_logat += Quadruple(57,i,4,"K")
+        iterasi++
+    }
+
+    Array_logat_B += Pair(2,"N1")
+
     ArtiFull = "Pada mulanya, Pangandaran bernama Bojong Kalalar, yang artinya tempat yang hanya untuk dilewati musuh- musuh ketika zaman penjajah, yaitu ketika zaman Belanda dan Jepang, sampai tempat tersebut menjadi aman.\n" +
             "\n" +
             "Setelah maju, aman, serta subur, Bojong Kalalar berubah menjadi tempat mencari makanan sehingga banyak orang datang dari luar daerah. Akhirnya, lama kelamaan tempat itu berubah nama menjadi Pangan-daran, yang mempunyai arti tempat mencari makanan bagi para pendatang (andar-andar).\n" +

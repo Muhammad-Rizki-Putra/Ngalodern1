@@ -92,6 +92,7 @@ class Logat {
                 "S1" , "S2" , "S3" -> 1
                 "P1" , "P2" , "P3"-> 2
                 "O" -> 3
+                "K" -> 4
                 else -> 10
             }
         val (showDialog, setShowDialog) = remember { mutableStateOf(false) }
@@ -120,6 +121,7 @@ class Logat {
                             "S1" , "S2" , "S3" -> 1
                             "P1" , "P2" , "P3"-> 2
                             "O" -> 3
+                            "K" -> 4
                             else -> 10
                         }
                     init_fr_simbol()
@@ -162,6 +164,7 @@ class Logat {
                 "S1" , "S2" , "S3" -> 1
                 "P1" , "P2" , "P3"-> 2
                 "O" -> 3
+                "K" -> 4
                 else -> 10
             }
         val (showDialog, setShowDialog) = remember { mutableStateOf(false) }
@@ -190,6 +193,7 @@ class Logat {
                             "S1" , "S2" , "S3" -> 1
                             "P1" , "P2" , "P3"-> 2
                             "O" -> 3
+                            "K" -> 4
                             else -> 10
                         }
                     init_fr_simbol()

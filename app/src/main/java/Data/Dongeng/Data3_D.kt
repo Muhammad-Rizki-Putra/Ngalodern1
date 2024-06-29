@@ -167,6 +167,21 @@ fun Data3_D(){
     Array_arab += "فِي"
     init_arabic()
 
+    for (i in 0..7 ){
+        Array_logat += Quadruple(5,i,2,"P1")
+        iterasi++
+    }
+
+    for (i in 0..10 ){
+        Array_logat += Quadruple(6,i,1,"S1")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(7,i,1,"S1")
+        iterasi++
+    }
+
     Array_indo += "Menjadi lintah"
     Array_indo += "Telah berubah"
     Array_indo += "Bahwasannya (Nyi endit)"
@@ -323,6 +338,6 @@ fun Data3_D(){
         Pair(uniqueElement, index)
     }.toTypedArray()
 
-    val dongeng3: HalamanBelajar = HalamanBelajar("", "3. Situ Bagendit", resultArray3 ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
+    val dongeng3: HalamanBelajar = HalamanBelajar("سيتو باغينديت", "3. Situ Bagendit", resultArray3 ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)
     Dongeng.add(dongeng3)
 }

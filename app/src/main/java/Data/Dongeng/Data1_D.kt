@@ -138,7 +138,7 @@ fun Data1_D(){
     Array_arab += "وَأَخِيرًا"
     Array_arab += "الْمَلِكِ"
     Array_arab += "لِقَتْلِ"
-    Array_arab += "تِشَانْتَائِجْ بَارَاتْج"
+    Array_arab += "تِشَانْتَائِجْ بَارَاتْج" // 80
     Array_arab += "مِنْ"
     Array_arab += "النَّائِبُ"
     Array_arab += "فَطَلَبَ"
@@ -153,6 +153,7 @@ fun Data1_D(){
     Array_arab += "الْغَرَضِ"
     Array_arab += "هَذَا"
     Array_arab += "إِلَى"
+    Array_arab += "لِلْوُصُولِ"
     Array_arab += "الْوَحِيدُ"
     Array_arab += "وَ الطَّرِيقُ"
     Array_arab += "شَرْعِيٍّ"
@@ -213,7 +214,7 @@ fun Data1_D(){
     Array_arab += "اسْمُهَا"
     Array_arab += "مَمْلَكَةً"
     Array_arab += "مَايْ"
-    Array_arab += "تُشِيرُ"
+    Array_arab += "تُشِيرُ" // 4
     Array_arab += "جَبَلِ"
     Array_arab += "فِي وَادِي"
     Array_arab += "مِنْ الْعُصُورِ الْقَدِيمَةِ"
@@ -349,6 +350,7 @@ fun Data1_D(){
     Array_indo += "tercapai"
     Array_indo += "ini"
     Array_indo += "agar"
+    Array_indo += "agar" // todo fix translate
     Array_indo += "Salah satu"
     Array_indo += "cara"
     Array_indo += "Sesuai hukum"
@@ -414,6 +416,418 @@ fun Data1_D(){
     Array_indo += "Di lembah"
     Array_indo += "Zaman dahulu"
     Array_indo += "Pada zaman"
+
+    for (i in 0..10){
+        Array_logat += Quadruple(0,i,4,"K")
+        iterasi++
+    }
+
+    for (i in 0..28){
+        Array_logat += Quadruple(1,i,4,"K")
+        iterasi++
+    }
+
+    for (i in 0..7){
+        Array_logat += Quadruple(4,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(5,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..10){
+        Array_logat += Quadruple(6,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..20){
+        Array_logat += Quadruple(12,i,1,"S1")
+        iterasi++
+    }
+
+    for (i in 0..7){
+        Array_logat += Quadruple(13,i,2,"P1")
+        iterasi++
+    }
+
+    for (i in 0..26){
+        Array_logat += Quadruple(14,i,2,"P1")
+        iterasi++
+    }
+
+    for (i in 2..23){
+        Array_logat += Quadruple(15,i,1,"S1")
+        iterasi++
+    }
+
+    for (i in 0..7){
+        Array_logat += Quadruple(16,i,2,"P1")
+        iterasi++
+    }
+
+    for (i in 0..21){
+        Array_logat += Quadruple(17,i,2,"P1")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(20,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..24){
+        Array_logat += Quadruple(21,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(31,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..12){
+        Array_logat += Quadruple(32,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(38,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(42,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..7){
+        Array_logat += Quadruple(43,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 1..7){
+        Array_logat += Quadruple(50,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(60,i,4,"K")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(61,i,4,"K")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(62,i,4,"K")
+        iterasi++
+    }
+
+    for (i in 1..13){
+        Array_logat += Quadruple(63,i,1,"S1")
+        iterasi++
+    }
+
+    for (i in 0..10){
+        Array_logat += Quadruple(64,i,1,"S1")
+        iterasi++
+    }
+
+    for (i in 0..11){
+        Array_logat += Quadruple(65,i,2,"P1")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(74,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..10){
+        Array_logat += Quadruple(75,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 1..8){
+        Array_logat += Quadruple(77,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..10){
+        Array_logat += Quadruple(78,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(81,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(81,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(82,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(82,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(84,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(85,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(86,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(95,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..26){
+        Array_logat += Quadruple(96,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..11){
+        Array_logat += Quadruple(97,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..12){
+        Array_logat += Quadruple(98,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..7){
+        Array_logat += Quadruple(107,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 8..10){
+        Array_logat += Quadruple(107,i,1,"S2")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(107, iterasi - 1)
+
+    for (i in 0..8){
+        Array_logat += Quadruple(111,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..12){
+        Array_logat += Quadruple(112,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 1..8){
+        Array_logat += Quadruple(116,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 9..12){
+        Array_logat += Quadruple(116,i,3,"O")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(116, iterasi - 1)
+
+    for (i in 0..20){
+        Array_logat += Quadruple(117,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(121,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(121,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 6..7){
+        Array_logat += Quadruple(121,i,1,"S2")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(121, iterasi - 1)
+
+    for (i in 8..10){
+        Array_logat += Quadruple(121,i,3,"O")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(121, iterasi - 1)
+
+    for (i in 8..10){
+        Array_logat += Quadruple(121,i,3,"O")
+        iterasi++
+    }
+
+    Array_logat_B += Pair(2,"N1")
+
+    for (i in 0..6){
+        Array_logat += Quadruple(138,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..7){
+        Array_logat += Quadruple(139,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(140,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..11){
+        Array_logat += Quadruple(141,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..21){
+        Array_logat += Quadruple(142,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(145,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 6..8){
+        Array_logat += Quadruple(145,i,1,"S2")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(145, iterasi - 1)
+
+    for (i in 3..7){
+        Array_logat += Quadruple(158,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 9..16){
+        Array_logat += Quadruple(158,i,3,"O")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(158, iterasi - 1)
+
+    for (i in 0..8){
+        Array_logat += Quadruple(166,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 9..12){
+        Array_logat += Quadruple(166,i,3,"O")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(166, iterasi - 1)
+
+    for (i in 0..7){
+        Array_logat += Quadruple(167,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(169,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(170,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..10){
+        Array_logat += Quadruple(181,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 11..12){
+        Array_logat += Quadruple(181,i,1,"S2")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(181, iterasi - 1)
+
+    for (i in 0..5){
+        Array_logat += Quadruple(183,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 6..7){
+        Array_logat += Quadruple(183,i,1,"S2")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(183, iterasi - 1)
+
+    for (i in 0..8){
+        Array_logat += Quadruple(184,i,3,"O")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(185,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 9..11){
+        Array_logat += Quadruple(185,i,3,"O")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(185, iterasi - 1)
+
+    for (i in 0..12){
+        Array_logat += Quadruple(186,i,1,"S2")
+        iterasi++
+    }
+
+    for (i in 0..3){
+        Array_logat += Quadruple(189,i,4,"K")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(190,i,4,"K")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(192,i,2,"P2")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(193,i,1,"S2")
+        iterasi++
+    }
 
     ArtiFull = "Pada zaman dahulu di lembah Gunung Ciremai ada sebuah negara bernama Kerajaan Talagamanggung. Rajanya mempunyai dua orang putra. Yang sulung bernama Raden Panglurah dan yang bungsu bernama Simbarkancana.\n" +
             "\n" +
