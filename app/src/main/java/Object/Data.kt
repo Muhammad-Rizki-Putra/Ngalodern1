@@ -22,6 +22,15 @@ fun Data(){
     //          3 = brown
     //          4 = purple
 
+    //*== Format Logat Atas: ==*/
+    //      for (i in *awal*..*akhir*){
+    //          Array_logat += Quadruple(*urutan*,i,*warna*,"*logat*")
+    //          iterasi++
+    //      }
+
+    //*== Format Logat Bawah: ==*/
+    //      Array_logat_B += Pair(*urutan*,"*logat*")
+
 //    untuk penggunaan array pakai saja yang diatas supaya tidak perlu menulis ulang (nambah memori)
 
 /*==Data==*/

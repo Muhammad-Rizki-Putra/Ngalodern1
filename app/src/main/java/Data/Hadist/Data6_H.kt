@@ -210,6 +210,239 @@ fun Data6(){
     Array_indo += "Ayahnya Abdullah"
     Array_indo += "Dari"
 
+    for (i in 0..5){
+        Array_logat += Quadruple(1,i,1,"S2")
+        iterasi++
+    }
+    for (i in 0..6){
+        Array_logat += Quadruple(3,i,2,"P2")
+        iterasi++
+    }
+    for (i in 0..5){
+        Array_logat += Quadruple(4,i,1,"S2")
+        iterasi++
+    }
+    for (i in 0..5){
+        Array_logat += Quadruple(6,i,2,"P2")
+        iterasi++
+    }
+    for (i in 0..5){
+        Array_logat += Quadruple(7,i,2,"P2")
+        iterasi++
+    }
+    for (i in 6..8){
+        Array_logat += Quadruple(7,i,1,"S2")
+        iterasi++
+    }
+    for (i in 0..8){
+        Array_logat += Quadruple(8,i,3,"O")
+        iterasi++
+    }
+    for (i in 0..8){
+        Array_logat += Quadruple(10,i,2,"P2")
+        iterasi++
+    }
+    for (i in 0..9){
+        Array_logat += Quadruple(12,i,1,"S2")
+        iterasi++
+    }
+    for (i in 0..7){
+        Array_logat += Quadruple(13,i,2,"P2")
+        iterasi++
+    }
+    for (i in 0..9){
+        Array_logat += Quadruple(16,i,1,"S2")
+        iterasi++
+    }
+    for (i in 0..7){
+        Array_logat += Quadruple(17,i,2,"P2")
+        iterasi++
+    }
+    for (i in 0..2){
+        Array_logat += Quadruple(18,i,2,"P2")
+        iterasi++
+    }
+    for (i in 0..11){
+        Array_logat += Quadruple(19,i,2,"P2")
+        iterasi++
+    }
+    for (i in 0..13){
+        Array_logat += Quadruple(21,i,1,"S2")
+        iterasi++
+    }
+    for (i in 0..13){
+        Array_logat += Quadruple(23,i,2,"P2")
+        iterasi++
+    }
+    for (i in 0..8){
+        Array_logat += Quadruple(24,i,1,"S2")
+        iterasi++
+    }
+    for (i in 0..6){
+        Array_logat += Quadruple(27,i,1,"S1")
+        iterasi++
+    }
+    for (i in 0..7){
+        Array_logat += Quadruple(28,i,1,"P1")
+        iterasi++
+    }
+    for (i in 0..12){
+        Array_logat += Quadruple(29,i,3,"O")
+        iterasi++
+    }
+    for (i in 0..11){
+        Array_logat += Quadruple(31,i,2,"P2")
+        iterasi++
+    }
+    for (i in 0..10){
+        Array_logat += Quadruple(32,i,1,"S2")
+        iterasi++
+    }
+    for (i in 0..2){
+        Array_logat += Quadruple(33,i,1,"S2")
+        iterasi++
+    }
+    for (i in 0..8){
+        Array_logat += Quadruple(34,i,1,"S2")
+        iterasi++
+    }
+    for (i in 0..4){
+        Array_logat += Quadruple(36,i,1,"S2")
+        iterasi++
+    }
+    for (i in 0..6){
+        Array_logat += Quadruple(37,i,2,"P2")
+        iterasi++
+    }
+    for (i in 0..3){
+        Array_logat += Quadruple(38,i,4,"K")
+        iterasi++
+    }
+    for (i in 0..12){
+        Array_logat += Quadruple(39,i,4,"K")
+        iterasi++
+    }
+    for (i in 0..6){
+        Array_logat += Quadruple(40,i,2,"P2")
+        iterasi++
+    }
+    for (i in 0..3){
+        Array_logat += Quadruple(41,i,4,"K")
+        iterasi++
+    }
+    for (i in 0..9){
+        Array_logat += Quadruple(42,i,4,"K")
+        iterasi++
+    }
+    for (i in 0..11){
+        Array_logat += Quadruple(43,i,1,"S1")
+        iterasi++
+    }
+    for (i in 0..7){
+        Array_logat += Quadruple(44,i,2,"P1")
+        iterasi++
+    }
+    for (i in 0..6){
+        Array_logat += Quadruple(45,i,4,"K")
+        iterasi++
+    }
+    for (i in 0..8){
+        Array_logat += Quadruple(47,i,2,"P2")
+        iterasi++
+    }
+    for (i in 5..9){
+        Array_logat += Quadruple(48,i,2,"P2")
+        iterasi++
+    }
+    for (i in 0..3){
+        Array_logat += Quadruple(49,i,4,"K")
+        iterasi++
+    }
+    for (i in 0..7){
+        Array_logat += Quadruple(53,i,4,"K")
+        iterasi++
+    }
+    for (i in 0..6){
+        Array_logat += Quadruple(54,i,4,"K")
+        iterasi++
+    }
+    for (i in 0..5){
+        Array_logat += Quadruple(55,i,1,"S4")
+        iterasi++
+    }
+    for (i in 0..5){
+        Array_logat += Quadruple(59,i,1,"S4")
+        iterasi++
+    }
+    for (i in 0..5){
+        Array_logat += Quadruple(60,i,1,"S4")
+        iterasi++
+    }
+    for (i in 0..11){
+        Array_logat += Quadruple(61,i,2,"P2")
+        iterasi++
+    }
+    for (i in 0..3){
+        Array_logat += Quadruple(65,i,2,"P2")
+        iterasi++
+    }
+    for (i in 0..8){
+        Array_logat += Quadruple(66,i,2,"P2")
+        iterasi++
+    }
+    for (i in 0..8){
+        Array_logat += Quadruple(67,i,1,"S4")
+        iterasi++
+    }
+    for (i in 0..5){
+        Array_logat += Quadruple(69,i,2,"P2")
+        iterasi++
+    }
+    for (i in 6..8){
+        Array_logat += Quadruple(69,i,1,"S2")
+        iterasi++
+    }
+    for (i in 0..6){
+        Array_logat += Quadruple(70,i,2,"P2")
+        iterasi++
+    }
+    for (i in 0..8){
+        Array_logat += Quadruple(71,i,1,"S2")
+        iterasi++
+    }
+    for (i in 0..7){
+        Array_logat += Quadruple(72,i,4,"K")
+        iterasi++
+    }
+    for (i in 0..5){
+        Array_logat += Quadruple(75,i,2,"P2")
+        iterasi++
+    }
+    for (i in 6..8){
+        Array_logat += Quadruple(75,i,1,"S2")
+        iterasi++
+    }
+    for (i in 0..6){
+        Array_logat += Quadruple(76,i,2,"P2")
+        iterasi++
+    }
+    for (i in 0..8){
+        Array_logat += Quadruple(77,i,1,"S2")
+        iterasi++
+    }
+    for (i in 0..7){
+        Array_logat += Quadruple(78,i,4,"K")
+        iterasi++
+    }
+    for (i in 0..4){
+        Array_logat += Quadruple(81,i,1,"S1")
+        iterasi++
+    }
+    for (i in 0..8){
+        Array_logat += Quadruple(82,i,2,"P2")
+        iterasi++
+    }
+
     ArtiFull = "Dari An-Nu’man bin Basyir Radhiyallahu ‘Anhuma, beliau mengatakan, “Saya mendengar Rasulullah Shallallahu ‘Alaihi wa Sallam bersabda, ‘Sungguh yang halal itu jelas, yang haram pun jelas. Dan diantara keduanya ada perkara yang syubhat –perkara yang rancu– yang tidak diketahui oleh kebanyakan orang. Maka barangsiapa yang menghindari syubhat, maka berarti dia telah membebaskan agama dan kehormatannya. Dan barangsiapa yang terjatuh ke dalam perkara-perkara syubhat, maka dia jatuh dalam perkara yang diharamkan oleh Allah Subhanahu wa Ta’ala. Seperti seorang gembala menggembalakan di sekitar tanah larangan. Hampir saja dia masuk dalam tanah larangan itu. Dan sungguh setiap Raja itu memiliki tanah larangan. Dan tanah larangan Allah Subhanahu wa Ta’ala adalah perkara-perkara yang diharamkanNya. Dan sungguh dalam jasad ini ada sekerat daging yang jika dia baik maka seluruh anggota tubuh akan baik dan jika dia rusak maka seluruh anggota tubuh akan rusak dan itu adalah hati.'” (HR. Al-Bukhari dan Muslim)"
     Penjelasan = "Penjelasan hadist\n" +
             "Tema utama hadits ini adalah tentang 3 hukum dalam islam, yaitu halal, haram, dan sesuatu yang samar di antara keduanya, yaitu syubhat\n" +
@@ -224,6 +457,42 @@ fun Data6(){
     Array_logat_B += Pair(5,"Pp")
     Array_logat_B += Pair(7,"V1")
     Array_logat_B += Pair(10,"Vnl")
+    Array_logat_B += Pair(14,"K")
+    Array_logat_B += Pair(18,"Ko")
+    Array_logat_B += Pair(20,"N")
+    Array_logat_B += Pair(21,"N")
+    Array_logat_B += Pair(23,"Vnl")
+    Array_logat_B += Pair(25,"Pp")
+    Array_logat_B += Pair(28,"V1")
+    Array_logat_B += Pair(29,"N")
+    Array_logat_B += Pair(30,"Ko")
+    Array_logat_B += Pair(31,"V1")
+    Array_logat_B += Pair(33,"Ko")
+    Array_logat_B += Pair(35,"Ko")
+    Array_logat_B += Pair(36,"Pp")
+    Array_logat_B += Pair(37,"V1")
+    Array_logat_B += Pair(38,"Pp")
+    Array_logat_B += Pair(40,"V1")
+    Array_logat_B += Pair(41,"Pp")
+    Array_logat_B += Pair(43,"Pp")
+    Array_logat_B += Pair(44,"Vnl")
+    Array_logat_B += Pair(47,"Vnl")
+    Array_logat_B += Pair(48,"Vnl")
+    Array_logat_B += Pair(49,"Pp")
+    Array_logat_B += Pair(53,"Pp")
+    Array_logat_B += Pair(57,"Ko")
+    Array_logat_B += Pair(63,"Ko")
+    Array_logat_B += Pair(65,"Pp")
+    Array_logat_B += Pair(66,"N1")
+    Array_logat_B += Pair(69,"V1")
+    Array_logat_B += Pair(70,"V1")
+    Array_logat_B += Pair(71,"N1")
+    Array_logat_B += Pair(73,"Ko")
+    Array_logat_B += Pair(75,"V1")
+    Array_logat_B += Pair(76,"V1")
+    Array_logat_B += Pair(77,"N1")
+    Array_logat_B += Pair(80,"Ko")
+    Array_logat_B += Pair(82,"N1")
 
     var uniqueFirstElements6 = Array_logat.map { it.first }.toSet()
     var resultArray6 = uniqueFirstElements6.map { uniqueElement ->
