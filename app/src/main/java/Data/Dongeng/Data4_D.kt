@@ -25,6 +25,8 @@ fun Data4_D(){
     }
 
 //    Dongeng 4
+    Array_arab += "شَانْدَرَا مَاوَاتْ."
+    Array_arab += "الْقَطُّ"
     Array_arab += "يُرَافِقُهَا"
     Array_arab += "الْقَمَرِ"
     Array_arab += "إِلَى"
@@ -122,6 +124,8 @@ fun Data4_D(){
     Array_arab += "كَانَتْ"
     init_arabic()
 
+    Array_indo += "Chandra Mawat."
+    Array_indo += "Pemotongan"
     Array_indo += "Ditemaninya (oleh Candramawat)"
     Array_indo += "Bulan"
     Array_indo += "Ke"
@@ -217,6 +221,162 @@ fun Data4_D(){
     Array_indo += "zaman"
     Array_indo += "pada"
     Array_indo += "Tersebutlah"
+
+
+    for (i in 0..11){
+        Array_logat += Quadruple(11,i,2 ,"P2")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(12,i,1 ,"S2")
+        iterasi++
+    }
+
+    for (i in 0..11){
+        Array_logat += Quadruple(18,i,2 ,"P1")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(19,i,1 ,"S1")
+        iterasi++
+    }
+
+    for (i in 2..11){
+        Array_logat += Quadruple(20,i,2 ,"P2")
+        iterasi++
+    }
+
+    for (i in 0..12){
+        Array_logat += Quadruple(21,i,1 ,"S2")
+        iterasi++
+    }
+
+    for (i in 0..6){
+        Array_logat += Quadruple(22,i,2 ,"P2")
+        iterasi++
+    }
+
+    for (i in 7..10){
+        Array_logat += Quadruple(22,i,1 ,"S2")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(22, iterasi - 1)
+
+    for (i in 0..5){
+        Array_logat += Quadruple(27,i,2 ,"P2")
+        iterasi++
+    }
+
+    for (i in 0..13){
+        Array_logat += Quadruple(28,i,1 ,"S2")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(37,i,2 ,"P2")
+        iterasi++
+    }
+
+    for (i in 0..11){
+        Array_logat += Quadruple(39,i,1 ,"S2")
+        iterasi++
+    }
+
+    for (i in 0..15){
+        Array_logat += Quadruple(40,i,1 ,"S2")
+        iterasi++
+    }
+
+    for (i in 0..11){
+        Array_logat += Quadruple(41,i,3 ,"O")
+        iterasi++
+    }
+
+    for (i in 0..3){
+        Array_logat += Quadruple(46,i,4 ,"K")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(47,i,4 ,"K")
+        iterasi++
+    }
+
+    for (i in 0..5){
+        Array_logat += Quadruple(52,i,4 ,"K")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(53,i,4 ,"K")
+        iterasi++
+    }
+
+    for (i in 0..10){
+        Array_logat += Quadruple(54,i,4 ,"K")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(69,i,2 ,"P2")
+        iterasi++
+    }
+
+
+
+    for (i in 2..6){
+        Array_logat += Quadruple(75,i,2 ,"P2")
+        iterasi++
+    }
+
+    for (i in 7..9){
+        Array_logat += Quadruple(75,i,1 ,"S2")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(75, iterasi - 1)
+
+    for (i in 5..14){
+        Array_logat += Quadruple(83,i,2 ,"P2")
+        iterasi++
+    }
+
+    for (i in 0..9){
+        Array_logat += Quadruple(84,i,1 ,"S2")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(90,i,2 ,"P2")
+        iterasi++
+    }
+
+    for (i in 0..16){
+        Array_logat += Quadruple(91,i,1 ,"S2")
+        iterasi++
+    }
+
+    for (i in 0..8){
+        Array_logat += Quadruple(94,i,2 ,"P2")
+        iterasi++
+    }
+
+    for (i in 9..12){
+        Array_logat += Quadruple(94,i,3 ,"O")
+        iterasi++
+    }
+
+    Array_Duplicate += Pair(94, iterasi - 1)
+
+    for (i in 0..8){
+        Array_logat += Quadruple(95,i,1 ,"S2")
+        iterasi++
+    }
+
+    Array_logat_B += Pair(2,"N1")
 
     ArtiFull = "Tersebutlah pada zaman dahulu hidup seorang perempuan yang dikenal sebagai Nini Anteh. la menikah dengan Aki Balangantrang, sudah lama tidak memiliki anak. Karena sangat merindukan seorang anak, ia memelihara seekor kucing berbulu tiga warna, yang biasa dipanggil Candramawat.\n" +
             "\n" +

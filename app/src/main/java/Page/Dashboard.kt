@@ -2,6 +2,8 @@ package com.example.ngalodern.Page
 
 import Object.Dongeng
 import Object.Hadist
+import Object.get_sizedg
+import Object.get_sizehd
 import Object.sizedg
 import Object.sizehd
 import androidx.compose.foundation.BorderStroke
@@ -306,7 +308,7 @@ fun togglebelajar(indikator: Boolean = true, navController: NavController){
             Column {
                 LazyRow(
                 ) {
-                    items(sizedg){
+                    items(get_sizedg()){
                         box_belajar_2(
                             judul = Dongeng[it].judul,
                             route = "Dongeng_$it",
@@ -328,7 +330,7 @@ fun togglebelajar(indikator: Boolean = true, navController: NavController){
             Column {
                 LazyRow(
                 ) {
-                    items(sizehd){
+                    items(get_sizehd()){
                         box_belajar_2(
                             judul = Hadist[it].judul,
                             route = "Hadist_$it",
