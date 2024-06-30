@@ -285,6 +285,16 @@ fun Data4_D(){
         iterasi++
     }
 
+    for (i in 0..15){
+        Array_logat += Quadruple(40,i,1 ,"S2")
+        iterasi++
+    }
+
+    for (i in 0..11){
+        Array_logat += Quadruple(41,i,3 ,"O")
+        iterasi++
+    }
+
     for (i in 0..3){
         Array_logat += Quadruple(46,i,4 ,"K")
         iterasi++
@@ -315,15 +325,7 @@ fun Data4_D(){
         iterasi++
     }
 
-    for (i in 0..15){
-        Array_logat += Quadruple(40,i,1 ,"S2")
-        iterasi++
-    }
 
-    for (i in 0..11){
-        Array_logat += Quadruple(41,i,3 ,"O")
-        iterasi++
-    }
 
     for (i in 2..6){
         Array_logat += Quadruple(75,i,2 ,"P2")
