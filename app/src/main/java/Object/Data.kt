@@ -6,9 +6,16 @@ import androidx.compose.runtime.Composable
 
 var sizehd: Int = 0
 var sizedg: Int = 0
+// rai nambah ini
+var sizemd: Int = 0
+var sizevd: Int = 0
+
 
 var Hadist: MutableList<HalamanBelajar> = mutableListOf()
 var Dongeng: MutableList<HalamanBelajar> = mutableListOf()
+// rai nambah ini
+var Modul: MutableList<HalamanMateri> = mutableListOf()
+var Video: MutableList<HalamanMateri> = mutableListOf()
 
 @Composable
 fun Data(){
@@ -70,4 +77,22 @@ fun get_Hadist(): List<HalamanBelajar>{
 
 fun get_Dongeng(): List<HalamanBelajar>{
     return Dongeng
+}
+
+
+fun get_sizemd(): Int{
+    sizemd = Modul.size
+    return sizemd
+}
+fun get_sizevd(): Int{
+    sizevd = Video.size
+    return sizevd
+}
+
+fun get_Modul(): List<HalamanMateri>{
+    return Modul
+}
+
+fun get_Video(): List<HalamanMateri>{
+    return Video
 }
