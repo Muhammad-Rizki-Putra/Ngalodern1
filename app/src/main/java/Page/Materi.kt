@@ -31,7 +31,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.ngalodern.R
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Scaffold
@@ -46,9 +45,9 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material3.*
 import androidx.compose.ui.text.style.TextAlign
 import androidx.navigation.NavController
-import Object.get_sizehd
 import com.example.ngalodern.ui.theme.ui.theme.dmsansFontFamily
 import com.example.ngalodern.ui.theme.ui.theme.leaguespartanFontFamily
+
 
 
 /*@Preview
@@ -105,7 +104,7 @@ fun tombolmodul(navController: NavController){
             verticalArrangement = Arrangement.spacedBy(20.dp),
             horizontalArrangement = Arrangement.spacedBy(20.dp)
         ) {
-            items(get_sizehd()){
+            items(get_sizemd()){
                 box_modul(
                     judul = Modul[it].judul,
                     route = "Modul_$it",
@@ -125,11 +124,12 @@ fun tombolvideo(navController: NavController){
             .fillMaxWidth()
     ){
         LazyVerticalGrid(
-            columns = GridCells.Fixed(2),
+            modifier = Modifier,
+            columns = GridCells.Fixed(1),
             verticalArrangement = Arrangement.spacedBy(20.dp),
             horizontalArrangement = Arrangement.spacedBy(20.dp)
         ) {
-            items(get_sizedg()){
+            items(get_sizevd()){
                 box_video(
                     judul = Video[it].judul,
                     route = "Video_$it",
@@ -182,17 +182,19 @@ fun topbarmateri(navController: NavController) {
 
 @Preview
 @Composable
-fun box_video(judul: String = "None", route: String, navController: NavController){
+fun box_video(waktu: String = "00.00",durasi: String = "00.00", judul: String = "None", route: String, navController: NavController){
     Box(
         modifier = Modifier
             .clickable {
-                navController.navigate(route)
-            }
+            navController.navigate(route)
+        }
             .shadow(
-                elevation = 15.dp,
+                elevation = 5.dp,
                 shape = RoundedCornerShape(
+                    topStart = 10.dp,
                     bottomStart = 10.dp,
-                    bottomEnd = 10.dp
+                    topEnd = 10.dp,
+                    bottomEnd = 10.dp,
                 ),
                 clip = false
             )
@@ -204,58 +206,44 @@ fun box_video(judul: String = "None", route: String, navController: NavControlle
                     bottomEnd = 10.dp,
                 )
             )
-            .height(138.dp)
-            .width(160.dp)
+            .fillMaxWidth()
             .background(color = Color(android.graphics.Color.parseColor("#A9C0CF")))
+            .height(68.dp)
+        ,
 
-    ){
-        Column {
-            Box(
-                modifier = Modifier
-                    .clip(
-                        RoundedCornerShape(
-                            topStart = 21.dp,
-                            bottomStart = 21.dp,
-                            topEnd = 21.dp,
-                            bottomEnd = 21.dp,
+        ){
+        Row (
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp)
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+
+            ){
+            Box(){
+                Row{
+                    Image(
+                        modifier = Modifier
+                            .height(60.dp)
+                            .width(60.dp),
+                        painter = painterResource(id = R.drawable.tombolplayer2),
+                        contentDescription = "Logo play"
+                    )
+                    Column {
+                        Text(
+                            text = judul,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 16.sp,
+                            color = Color.White
                         )
-                    )
-                    .padding(5.dp)
-                    .height(80.dp)
-                    .width(150.dp)
-                    .background(color = Color(android.graphics.Color.parseColor("#FFFFFF")))
-            ){
 
-            }
-
-            Row (
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(10.dp)
-                    .fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-            ){
-                Box (
-                    modifier = Modifier
-                        .padding(end = 10.dp)
-                ){
-                    Text(
-                        text = judul,
-                        color = Color.White,
-                        fontWeight = FontWeight.Bold,
-                        maxLines = 2,
-                        overflow = TextOverflow.Ellipsis,
-                    )
+                        Text(
+                            text = waktu + " / " + durasi,
+                            fontSize = 12.sp,
+                            color = Color.White
+                        )
+                    }
                 }
-
-                Image(
-                    modifier = Modifier
-                        .width(31.dp)
-                        .height(31.dp),
-                    painter = painterResource(id = R.drawable.next_logo),
-                    contentDescription = "nextlogo",
-
-                    )
             }
         }
     }
@@ -320,7 +308,7 @@ fun box_modul(judul: String = "None", route: String, navController: NavControlle
 fun Materi(scrollState: ScrollState, navController: NavController){
     Scaffold(
         topBar = {
-            topbar(navController)
+            topbarmateri(navController)
         },
         bottomBar = {
             navbar(navController = navController)
@@ -423,7 +411,7 @@ fun Materi(scrollState: ScrollState, navController: NavController){
                         .padding(top = 30.dp)
 
                 ) {
-                    tombolhadist(navController)
+                    tombolmodul(navController)
                 }
             }
             else{
@@ -432,7 +420,7 @@ fun Materi(scrollState: ScrollState, navController: NavController){
                         .padding(top = 30.dp)
 
                 ) {
-                    tomboldongeng(navController)
+                    tombolvideo(navController)
                 }
             }
         }
