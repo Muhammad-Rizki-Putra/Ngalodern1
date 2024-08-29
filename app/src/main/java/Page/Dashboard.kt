@@ -461,7 +461,7 @@ fun Dashboard(scrollState: ScrollState, navController: NavController) {
                     }
 
                     Box(modifier = Modifier.padding(bottom = 13.dp)) {
-                        box_materi("00.00", "04.34", "Kata Arab-Sunda")
+                        box_materi("00.00", "07.21", "Kata Arab-Sunda")
                     }
                 }
             }

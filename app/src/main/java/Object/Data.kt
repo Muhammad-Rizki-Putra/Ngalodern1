@@ -8,6 +8,8 @@ import Data.Soal.Tingkat_1.Stage_3.*
 import Data.Soal.Tingkat_2.Stage_1.*
 import Data.Soal.Tingkat_2.Stage_2.*
 
+import Data.Modul.*
+import Data.Video.*
 import androidx.compose.runtime.Composable
 
 var sizehd: Int = 0
@@ -31,7 +33,7 @@ var Soal_21: MutableList<HalamanSoal> = mutableListOf()
 var Soal_22: MutableList<HalamanSoal> = mutableListOf()
 
 @Composable
-fun Data(){
+fun Data() {
     //    Untuk penempatan kata pada data :
     //    text arab di simpan dalam bentuk String of array seperti contoh dibawah
     //    text indonesia juga sama di simpan dalam bentuk String of array seperti contoh dibawah
@@ -53,8 +55,8 @@ fun Data(){
 
 //    untuk penggunaan array pakai saja yang diatas supaya tidak perlu menulis ulang (nambah memori)
 
-/*==Data==*/
-/*=============================================Hadist=============================================*/
+    /*==Data==*/
+    /*=============================================Hadist=============================================*/
     Data1()
     Data2()
     Data3()
@@ -66,7 +68,7 @@ fun Data(){
     Data9()
     Data10()
 
-/*=============================================Dongeng============================================*/
+    /*=============================================Dongeng============================================*/
     Data1_D()
     Data2_D()
     Data3_D()
@@ -124,6 +126,19 @@ fun Data(){
     Soal_2209()
     Soal_2210()
 
+
+    /*=============================================Modul============================================*/
+    Data1_M()
+    Data2_M()
+    Data3_M()
+    Data4_M()
+    Data5_M()
+
+    /*=============================================Video============================================*/
+    Data1_V()
+    Data2_V()
+    Data3_V()
+    Data4_V()
 }
 
 fun get_sizehd(): Int{
