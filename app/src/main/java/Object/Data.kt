@@ -2,54 +2,27 @@ package Object
 
 import Data.Hadist.*
 import Data.Dongeng.*
-import Data.Soal.Tingkat_1.Stage_1.Soal_1101
-import Data.Soal.Tingkat_1.Stage_1.Soal_1102
-import Data.Soal.Tingkat_1.Stage_1.Soal_1103
-import Data.Soal.Tingkat_1.Stage_1.Soal_1104
-import Data.Soal.Tingkat_1.Stage_1.Soal_1105
-import Data.Soal.Tingkat_1.Stage_1.Soal_1106
-import Data.Soal.Tingkat_1.Stage_1.Soal_1107
-import Data.Soal.Tingkat_1.Stage_1.Soal_1108
-import Data.Soal.Tingkat_1.Stage_1.Soal_1109
-import Data.Soal.Tingkat_1.Stage_1.Soal_1110
-import Data.Soal.Tingkat_1.Stage_2.Soal_1201
-import Data.Soal.Tingkat_1.Stage_2.Soal_1202
-import Data.Soal.Tingkat_1.Stage_2.Soal_1203
-import Data.Soal.Tingkat_1.Stage_2.Soal_1204
-import Data.Soal.Tingkat_1.Stage_2.Soal_1205
-import Data.Soal.Tingkat_1.Stage_3.Soal_1301
-import Data.Soal.Tingkat_1.Stage_3.Soal_1302
-import Data.Soal.Tingkat_1.Stage_3.Soal_1303
-import Data.Soal.Tingkat_1.Stage_3.Soal_1304
-import Data.Soal.Tingkat_1.Stage_3.Soal_1305
-import Data.Soal.Tingkat_2.Stage_1.Soal_2101
-import Data.Soal.Tingkat_2.Stage_1.Soal_2102
-import Data.Soal.Tingkat_2.Stage_1.Soal_2103
-import Data.Soal.Tingkat_2.Stage_1.Soal_2104
-import Data.Soal.Tingkat_2.Stage_1.Soal_2105
-import Data.Soal.Tingkat_2.Stage_1.Soal_2106
-import Data.Soal.Tingkat_2.Stage_1.Soal_2107
-import Data.Soal.Tingkat_2.Stage_1.Soal_2108
-import Data.Soal.Tingkat_2.Stage_1.Soal_2109
-import Data.Soal.Tingkat_2.Stage_1.Soal_2110
-import Data.Soal.Tingkat_2.Stage_2.Soal_2201
-import Data.Soal.Tingkat_2.Stage_2.Soal_2202
-import Data.Soal.Tingkat_2.Stage_2.Soal_2203
-import Data.Soal.Tingkat_2.Stage_2.Soal_2204
-import Data.Soal.Tingkat_2.Stage_2.Soal_2205
-import Data.Soal.Tingkat_2.Stage_2.Soal_2206
-import Data.Soal.Tingkat_2.Stage_2.Soal_2207
-import Data.Soal.Tingkat_2.Stage_2.Soal_2208
-import Data.Soal.Tingkat_2.Stage_2.Soal_2209
-import Data.Soal.Tingkat_2.Stage_2.Soal_2210
+import Data.Soal.Tingkat_1.Stage_1.*
+import Data.Soal.Tingkat_1.Stage_2.*
+import Data.Soal.Tingkat_1.Stage_3.*
+import Data.Soal.Tingkat_2.Stage_1.*
+import Data.Soal.Tingkat_2.Stage_2.*
+
 import androidx.compose.runtime.Composable
 
 var sizehd: Int = 0
 var sizedg: Int = 0
 var sizesl: Int = 0
+// rai nambah ini
+var sizemd: Int = 0
+var sizevd: Int = 0
+
 
 var Hadist: MutableList<HalamanBelajar> = mutableListOf()
 var Dongeng: MutableList<HalamanBelajar> = mutableListOf()
+// rai nambah ini
+var Modul: MutableList<HalamanMateri> = mutableListOf()
+var Video: MutableList<HalamanMateri> = mutableListOf()
 
 var Soal_11: MutableList<HalamanSoal> = mutableListOf()
 var Soal_12: MutableList<HalamanSoal> = mutableListOf()
@@ -189,4 +162,22 @@ fun get_Soal_21(): List<HalamanSoal>{
 
 fun get_Soal_22(): List<HalamanSoal>{
     return Soal_22
+}
+
+
+fun get_sizemd(): Int{
+    sizemd = Modul.size
+    return sizemd
+}
+fun get_sizevd(): Int{
+    sizevd = Video.size
+    return sizevd
+}
+
+fun get_Modul(): List<HalamanMateri>{
+    return Modul
+}
+
+fun get_Video(): List<HalamanMateri>{
+    return Video
 }
