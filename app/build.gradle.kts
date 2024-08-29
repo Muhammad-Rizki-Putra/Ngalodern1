@@ -72,5 +72,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:chromecast-sender:0.28")
+//    implementation ("com.github.HaarigerHarald:android-youtubeExtractor:v2.1.0")
+//    implementation ("com.google.android.youtube:youtube-android-player-api:1.2.2")
+
 
 }

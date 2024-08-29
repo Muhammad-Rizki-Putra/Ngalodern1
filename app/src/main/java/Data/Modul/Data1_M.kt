@@ -4,6 +4,16 @@ import Object.Quadruple
 import Object.HalamanMateri
 import Object.Modul
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.style.TextAlign
+import com.example.ngalodern.R
 
 @Composable
 fun Data1_M(){
@@ -12,7 +22,7 @@ fun Data1_M(){
     var Array_indo = arrayOf<String>()
     var Array_logat = arrayOf<Quadruple<Int, Int, Int, String>>()
     var ArtiFull: String = ""
-    var Penjelasan: String = ""
+//    var Penjelasan: String = ""
     var Array_logat_B = arrayOf<Pair<Int, String>>()
     var Array_Duplicate = arrayOf<Pair<Int, Int>>()
     var iterasi: Int = 0
@@ -227,91 +237,246 @@ fun Data1_M(){
     Array_logat_B += Pair(48,"Pp")
 
     ArtiFull = ""
-    Penjelasan = "\n1. Pengertian\n" +
+//    Penjelasan = "\n1. Pengertian\n" +
+//            "\n" + "Kata dalam bahasa Arab disebut sebagai الكلمة ‘al-kalimah’, yaitu suatu lafadz yang mempunyai makna tertentu. Secara istilah, al-kalimatu adakah kata yang mufrod (berdiri sendiri), artinya dia berdiri sendiri dan memiliki makna sendiri. \n" +
+//            "Kata merupakan satuan bahasa yang paling kecil, karena gabungan dari kata dapat membentuk satuan yang lebih besar, yaitu frasa, klausa, dan kalimat. Apa itu frasa, klausa, dan kalimat? Akan dibahas di modul lain, ya! \n" +
+//
+//            "\n2. Pembagian Kata dalam Bahasa Arab \n" +
+//            "Pembagian kelas kata dalam tradisi bahasa Arab sebenarnya sama dengan pembagian kelas kata secara umum, loh! Ada nomina (kata benda), verba (kata kerja), dan partikel. Istilah-istilah tersebut dikemukakan oleh aliran bahasa strukturalisme. Kalau dalam bahasa Indonesia, dikemukakan oleh Moeliono dan Ramlan, pembagian kelas kaa itu terdiri dari Nominal Verbal, dan Partikel. Sama saja bukan? Begitu pun dengan bahasa Arab. \n" +
+//
+//            "\na. Isim/Kata benda \n" +
+//            "Isim adalah kata yang menunjukan makna tertentu yang tidak terikat oleh waktu. Berikut ini yang termasuk ke dalam isim dalam kaidah bahasa Arab: \n" +
+//            "Manusia, Tumbuhan, dan Hewan. \n" +
+//            "Contoh : Zaid, Kurma, Unta, dll. \n" +
+//            "Benda Mati. \n" +
+//            "Contoh: bangku, meja, lemari dll. \n" +
+//            "Nama Suatu Tempat, Daerah atau Wilayah \n" +
+//            "Contoh: Bandung, Jakarta, Gunung, Pantai dll. \n" +
+//            "Nama Waktu / Masa \n" +
+//            "Contoh: Pagi, Siang, Sore, dll. \n" +
+//            "Kata Sifat \n" +
+//            "Contoh: Cantik, Tampan, Kecil, Besar, Panjang, Pendek, dll. \n" +
+//            "Bagaimana cara menentukan apakah suatu kata isim atau bukan? Selain melihat maknanya, secara umum, isim bisa dilihat dari ciri-cirinya: \n" +
+//            "\n" +
+//            "\n" +
+//            "باِلخَفْضِ = kasrah\u2028\n" +
+//            "Jadi, kalau kita menjumpai lafadz dalam bahasa arab yang huruf akhirnya dikasrah, itu sudah pasti isim. Kenapa? Karena tidak akan ada fi’il yang mendapatkan harakat kasrah. Sedangkan harf, harakat akhirnya tidak akan berubah.\n" +
+//            "Contohnya:\n" +
+//            "– بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ\u2028بَيْتُ المُدِيرِ\n" +
+//            "– المُدِيرِ (kalimat المُدِيرِ adalah isim karena dikasrah)\n" +
+//            "التَّنْوِينِ= tanwin\n" +
+//            "Tanwin itu adalah ً (fathatain), ٍ (kasrahtain), dan ٌ (dhomatain)\n" +
+//            "Jadi kalau kita menjumpai sebuah lafadz yang huruf akhirnya bertanwin, maka itu kata benda. Bukan fi’il, juga bukan huruf.\n" +
+//            "Contoh:\n" +
+//            "– زَيْدٌ atau زَيْدً atau زَيْدٍ.\n" +
+//            "Kenapa isim? Karena lafadz ini diakhiri dengan tanwin.\n" +
+//            "دُخُولِ الألف واللام = Dimasuki huruf alif dan lam\n" +
+//            "Jadi kalau kita menjumpai lafadz yang awalnya alif lam, maka itu isim.\n" +
+//            "Contoh:\n" +
+//            "– كِتَابٌ diberikan ال menjadi الكِتَابُ\n" +
+//            "Catatan: tidak akan bertemu antara alif lam dengan tanwin dalam satu lafadz. Kalau misalnya kita berbicara الكِتَابٌ, maka ini salah.\n" +
+//            "الخَفْضِ = huruf jar\n" +
+//            "Huruf jar adalah partikel-partikel yang menyebabkan kata selanjutnya harus ber’irab jar, atau secar umum, harakatnya harus menjadi kasrah. Tapi, sebenarnya, selain kasrah masih ada ciri-ciri lain dari i’rab jar yang harus dipelajari lebih lanjut dalam pembahasan tentang i’rab jar.\n" +
+//            "من ، إلى ، عَنَ ، عَلَى ، في ، رُبّ ، الباء ، الكاف ، اللام\n" +
+//            "Contoh: جَاءَ زَيْدٌ مِنَ المسجدِ\n" +
+//            "Kalimat المسجدِ adalah isim. Cirinya:\n" +
+//            "– ada ال,\n" +
+//            "– kasrah,\n" +
+//            "– kemasukan huruf jar (من).\n" +
+//            "Penjelasan: زَيدٌ فِي البيةِ\n" +
+//            "Kalimat البيةِ adalah isim. Cirinya ada ال, kemasukan huruf kasrah dan kemasukan jar. Kalau ال dibuang, maka kalimatnya menjadi زَيدٌ فِي بيةٍ.\n" +
+//            "Kalau tidak ada ال, pasti akhirannya adalah ٍ  (tanwin). Kalau ada ال, pasti ِ (i).\n" +
+//            "قَسَم = qasam\n" +
+//            "Huruf قَسَم ada tiga. Yaitu وَ ,بِ ,تَ.Ini disebut huruf qasam karena huruf tersebut adalah alat untuk bersumpah.\n" +
+//            "Contoh: وَالْعَصْرِ.\n" +
+//            "Kenapa الْعَصْرُ berubah menjadi kasrah? Karena وَ disini adalah وَ  qasam. Sering kita mendengar وَاللهِ, karena وَ  di sini adalah وَ qasam. Jadi kalau kita bersumpah, kata diakhiri dengan kasrah. Di al-Qur’an banyak dengan وَ.\n" +
+//            "b. Fi’il/ Kata kerja\n" +
+//            "\tFi’il secara bahasa, فِعْلٌ artinya pekerjaan. Fi’il ialah kata yang menunjukan makna mengandung kala (zaman). Kala dibagi menjadi 3, yaitu madhi (lampau/telah berlalu), hal (sedang terjadi), dan mustaqbal (akan terjadi). Pembagian fi’il juga terbagi menjadi tiga, sebagai berikut:\n \n" +
+//            "i. Fi’il madhi \n" +
+//            "Fi’il madhi adalah fi’il yang menunjukkan pada kejadian yang terjadinya sebelum waktu pembicaraan. \n" +
+//            "Contoh fi’il madhi sebagai berikut: \n" +
+//            "\n" +
+//            "حَضَرَ artinya telah hadir.\n" +
+//            "نَامَ artinya telah tidur.\n" +
+//            "قَامَ artinya telah berdiri.\n" +
+//            "جَلَسَ artinya telah duduk.\n" +
+//            "قَرَأَ artinya telah membaca.\n" +
+//            "اَكْرَمَ artiya telah memuliakan. \n" +
+//            "ii. Fi’il mudhari \n" +
+//            "Fi’il mudhari’ adalah fi’il yang menunjukkan peristiwa yang sedang terjadi atau akan terjadi setelah percakapan. Fi’il mudhari pasti diawali dengan salah satu dari 4 huruf mudhara’ah yang terkumpul dalam lafadz anaitu (اَنَيْتُ). \n" +
+//            "Contohnya: \n" +
+//            "\n" +
+//            "يَحْضُرُ artinya dia sedang atau akan hadir. \n" +
+//            "\n" +
+//            "يَنَامُ artinya dia sedang atau akan tidur. \n" +
+//            "\n" +
+//            "أَقُوْمُ artinya aku sedang atau akan berdiri. \n" +
+//            "\n" +
+//            "نَجْلِسُ artinya kami sedang atau akan duduk. \n" +
+//            "\n" +
+//            "تَقْرَأُ artinya kamu sedang atau akan membaca. \n" +
+//            "\n" +
+//            "يُكْرِمُ artinya dia sedang atau akan memuliakan. \n" +
+//            "iii. Fi’il Amar \n" +
+//            "Fi’il amar/kata kerja imperatif (perintah) adalah fi’il yang menunjukkan peristiwa yang mana hasilnya dituntut setelah waktu berbicara. \n" +
+//            "Contohnya: \n" +
+//            "\n" +
+//            "قُمْ artinya berdirilah. \n" +
+//            "\n" +
+//            "اجْلِسْ artinya duduklah. \n" +
+//            "\n" +
+//            "ادْخُلْ artinya masuklah. \n" +
+//            "c. Harf/ Partikel \n" +
+//            "Partikel adalah kata yang tidak akan bisa berubah. Dia hanya memiliki makna gramatikal. Artinya ketika dia berdiri sendiri, maknanya tidak bisa dipahami. Contoh partikel diantaranya, kata depan (partikel preposisi), konjungsi (penghubung), dll. Teman-teman akan lebih memahami tentang partikel ketika dia bergabung dengan kata lain dan membentuk frasa. Salah satu contoh partikel dalam bahasa Arab adalah harf jar yang sudah dibahas dalam ciri-ciri isim. Harf jar ini adalah apa yang kita sebut sebagai partikel preposisi.\n"
+
+    var Penjelasan: @Composable () -> Unit = {
+        Column(
+            modifier = Modifier.padding(16.dp)
+        ) {
+            // Teks penjelasan
+            Text(
+                text = "\n1. Pengertian\n" +
             "\n" + "Kata dalam bahasa Arab disebut sebagai الكلمة ‘al-kalimah’, yaitu suatu lafadz yang mempunyai makna tertentu. Secara istilah, al-kalimatu adakah kata yang mufrod (berdiri sendiri), artinya dia berdiri sendiri dan memiliki makna sendiri. \n" +
             "Kata merupakan satuan bahasa yang paling kecil, karena gabungan dari kata dapat membentuk satuan yang lebih besar, yaitu frasa, klausa, dan kalimat. Apa itu frasa, klausa, dan kalimat? Akan dibahas di modul lain, ya! \n" +
 
             "\n2. Pembagian Kata dalam Bahasa Arab \n" +
-            "Pembagian kelas kata dalam tradisi bahasa Arab sebenarnya sama dengan pembagian kelas kata secara umum, loh! Ada nomina (kata benda), verba (kata kerja), dan partikel. Istilah-istilah tersebut dikemukakan oleh aliran bahasa strukturalisme. Kalau dalam bahasa Indonesia, dikemukakan oleh Moeliono dan Ramlan, pembagian kelas kaa itu terdiri dari Nominal Verbal, dan Partikel. Sama saja bukan? Begitu pun dengan bahasa Arab. \n" +
+                        "\n" + "Pembagian kelas kata dalam tradisi bahasa Arab sebenarnya sama dengan pembagian kelas kata secara umum, loh! Ada nomina (kata benda), verba (kata kerja), dan partikel. Istilah-istilah tersebut dikemukakan oleh aliran bahasa strukturalisme. Kalau dalam bahasa Indonesia, dikemukakan oleh Moeliono dan Ramlan, pembagian kelas kaa itu terdiri dari Nominal Verbal, dan Partikel. Sama saja bukan? Begitu pun dengan bahasa Arab. \n",
+                textAlign = TextAlign.Justify,
+                style = MaterialTheme.typography.bodyMedium
+            )
 
-            "\na. Isim/Kata benda \n" +
+            Spacer(modifier = Modifier.height(15.dp))
+
+            // Menambahkan gambar di antara teks
+            Image(
+                painter = painterResource(id = R.drawable.bagankata1), // Sesuaikan ID gambar
+                contentDescription = "bagankata",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(130.dp),
+                contentScale = ContentScale.Crop
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            // Lanjutkan dengan penjelasan teks
+            Text(
+                text = "\na. Isim/Kata benda \n" +
             "Isim adalah kata yang menunjukan makna tertentu yang tidak terikat oleh waktu. Berikut ini yang termasuk ke dalam isim dalam kaidah bahasa Arab: \n" +
-            "Manusia, Tumbuhan, dan Hewan. \n" +
+            "\n • Manusia, Tumbuhan, dan Hewan. \n" +
             "Contoh : Zaid, Kurma, Unta, dll. \n" +
-            "Benda Mati. \n" +
+            "• Benda Mati. \n" +
             "Contoh: bangku, meja, lemari dll. \n" +
-            "Nama Suatu Tempat, Daerah atau Wilayah \n" +
+            "• Nama Suatu Tempat, Daerah atau Wilayah \n" +
             "Contoh: Bandung, Jakarta, Gunung, Pantai dll. \n" +
-            "Nama Waktu / Masa \n" +
+            "• Nama Waktu / Masa \n" +
             "Contoh: Pagi, Siang, Sore, dll. \n" +
-            "Kata Sifat \n" +
+            "• Kata Sifat \n" +
             "Contoh: Cantik, Tampan, Kecil, Besar, Panjang, Pendek, dll. \n" +
-            "Bagaimana cara menentukan apakah suatu kata isim atau bukan? Selain melihat maknanya, secara umum, isim bisa dilihat dari ciri-cirinya: \n" +
-            "اِلخَفْضِ = kasrah \n" +
-            "Jadi, kalau kita menjumpai lafadz dalam bahasa arab yang huruf akhirnya dikasrah, itu sudah pasti isim. Kenapa? Karena tidak akan ada fi’il yang mendapatkan harakat kasrah. Sedangkan harf, harakat akhirnya tidak akan berubah. \n" +
-            "Contohnya: \n" +
-            " بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ –\n" +
-            "بَيْتُ المُدِيرِ \n" +
-            "  – المُدِيرِ \n" +
-            "Tanwin itu adalah ً (fathatain), ٍ (kasrahtain), dan ٌ (dhomatain) Jadi kalau kita menjumpai sebuah lafadz yang huruf akhirnya bertanwin, maka itu kata benda. Bukan fi’il, juga bukan huruf. Contoh: \n" +
-            "– زَيْدٌ atau زَيْدً atau زَيْدٍ. \n" +
-            "Kenapa isim? Karena lafadz ini diakhiri dengan tanwin. \n" +
-            "\n" +
-            "دُخُولِ الألف واللام = Dimasuki huruf alif dan lam \n" +
-            "Jadi kalau kita menjumpai lafadz yang awalnya alif lam, maka itu isim. \n" +
-            "Contoh: \n" +
-            "– كِتَابٌ diberikan ال menjadi الكِتَابُ Catatan: tidak akan bertemu antara alif lam dengan tanwin dalam satu lafadz. Kalau misalnya kita berbicara الكِتَابٌ, maka ini salah. \n" +
-            "\n" +
-            "الخَفْضِ = huruf jar \n" +
-            "Huruf jar adalah partikel-partikel yang menyebabkan kata selanjutnya harus ber’irab jar, atau secar umum, harakatnya harus menjadi kasrah. Tapi, sebenarnya, selain kasrah masih ada ciri-ciri lain dari i’rab jar yang harus dipelajari lebih lanjut dalam pembahasan tentang i’rab jar.من ، إلى ، عَنَ ، عَلَى ، في ، رُبّ ، الباء ، الكاف ، اللام \n" +
-            "Contoh: جَاءَ زَيْدٌ مِنَ المسجدِ\u2028Kalimat المسجدِ adalah isim. Cirinya: \n" +
-            "– ada ال, \n" +
-            "– kasrah, \n" +
-            "– kemasukan huruf jar (من). \n" +
-            "Penjelasan: زَيدٌ فِي البيةِ. Kalimat البيةِ adalah isim. Cirinya ada ال, kemasukan huruf kasrah dan kemasukan jar. Kalau ال dibuang, maka kalimatnya menjadi زَيدٌ فِي بيةٍ. Kalau tidak ada ال, pasti akhirannya adalah ٍ (tanwin). Kalau ada ال, pasti ِ (i). \n" +
-            "\n" +
-            "قَسَم = qasam \n" +
-            "Huruf قَسَم ada tiga. Yaitu وَ ,بِ ,تَ.Ini disebut huruf qasam karena huruf tersebut adalah alat untuk bersumpah. \n" +
-            "Contoh: وَالْعَصْرِ. Kenapa الْعَصْرُ berubah menjadi kasrah? Karena وَ disini adalah وَ qasam. Sering kita mendengar وَاللهِ, karena وَ di sini adalah وَ qasam. Jadi kalau kita bersumpah, kata diakhiri dengan kasrah. Di al-Qur’an banyak dengan وَ. \n" +
-            "b. Fi’il/ Kata kerja \n" +
-            "Fi’il secara bahasa, فِعْلٌ artinya pekerjaan. Fi’il ialah kata yang menunjukan makna mengandung kala (zaman). Kala dibagi menjadi 3, yaitu madhi (lampau/telah berlalu), hal (sedang terjadi), dan mustaqbal (akan terjadi). Pembagian fi’il juga terbagi menjadi tiga, sebagai berikut: \n" +
-            "i. Fi’il madhi \n" +
-            "Fi’il madhi adalah fi’il yang menunjukkan pada kejadian yang terjadinya sebelum waktu pembicaraan. \n" +
-            "Contoh fi’il madhi sebagai berikut: \n" +
-            "\n" +
-            "حَضَرَ artinya telah hadir.\n" +
-            "نَامَ artinya telah tidur.\n" +
-            "قَامَ artinya telah berdiri.\n" +
-            "جَلَسَ artinya telah duduk.\n" +
-            "قَرَأَ artinya telah membaca.\n" +
-            "اَكْرَمَ artiya telah memuliakan. \n" +
-            "ii. Fi’il mudhari \n" +
-            "Fi’il mudhari’ adalah fi’il yang menunjukkan peristiwa yang sedang terjadi atau akan terjadi setelah percakapan. Fi’il mudhari pasti diawali dengan salah satu dari 4 huruf mudhara’ah yang terkumpul dalam lafadz anaitu (اَنَيْتُ). \n" +
-            "Contohnya: \n" +
-            "\n" +
-            "يَحْضُرُ artinya dia sedang atau akan hadir. \n" +
-            "\n" +
-            "يَنَامُ artinya dia sedang atau akan tidur. \n" +
-            "\n" +
-            "أَقُوْمُ artinya aku sedang atau akan berdiri. \n" +
-            "\n" +
-            "نَجْلِسُ artinya kami sedang atau akan duduk. \n" +
-            "\n" +
-            "تَقْرَأُ artinya kamu sedang atau akan membaca. \n" +
-            "\n" +
-            "يُكْرِمُ artinya dia sedang atau akan memuliakan. \n" +
-            "iii. Fi’il Amar \n" +
-            "Fi’il amar/kata kerja imperatif (perintah) adalah fi’il yang menunjukkan peristiwa yang mana hasilnya dituntut setelah waktu berbicara. \n" +
-            "Contohnya: \n" +
-            "\n" +
-            "قُمْ artinya berdirilah. \n" +
-            "\n" +
-            "اجْلِسْ artinya duduklah. \n" +
-            "\n" +
-            "ادْخُلْ artinya masuklah. \n" +
-            "c. Harf/ Partikel \n" +
-            "Partikel adalah kata yang tidak akan bisa berubah. Dia hanya memiliki makna gramatikal. Artinya ketika dia berdiri sendiri, maknanya tidak bisa dipahami. Contoh partikel diantaranya, kata depan (partikel preposisi), konjungsi (penghubung), dll. Teman-teman akan lebih memahami tentang partikel ketika dia bergabung dengan kata lain dan membentuk frasa. Salah satu contoh partikel dalam bahasa Arab adalah harf jar yang sudah dibahas dalam ciri-ciri isim. Harf jar ini adalah apa yang kita sebut sebagai partikel preposisi.\n"
+            "\nBagaimana cara menentukan apakah suatu kata isim atau bukan? Selain melihat maknanya, secara umum, isim bisa dilihat dari ciri-cirinya: \n",
+                textAlign = TextAlign.Justify,
+                style = MaterialTheme.typography.bodyMedium
+            )
 
+            Text(
+                text = """
+- باِلخَفْضِ = kasrah
+Jadi, kalau kita menjumpai lafadz dalam bahasa arab yang huruf akhirnya dikasrah, itu sudah pasti isim. Kenapa? Karena tidak akan ada fi’il yang mendapatkan harakat kasrah. Sedangkan harf, harakat akhirnya tidak akan berubah.
+Contohnya:
+– بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ
+– بَيْتُ المُدِيرِ
+(kalimat المُدِيرِ adalah isim karena dikasrah)
+
+- التَّنْوِينِ= tanwin
+Tanwin itu adalah ً (fathatain), ٍ (kasrahtain), dan ٌ (dhomatain)
+Jadi kalau kita menjumpai sebuah lafadz yang huruf akhirnya bertanwin, maka itu kata benda. Bukan fi’il, juga bukan huruf.
+Contoh:
+– زَيْدٌ atau زَيْدً atau زَيْدٍ.
+Kenapa isim? Karena lafadz ini diakhiri dengan tanwin.
+
+- دُخُولِ الألف واللام = Dimasuki huruf alif dan lam
+Jadi kalau kita menjumpai lafadz yang awalnya alif lam, maka itu isim.
+Contoh:
+– كِتَابٌ diberikan ال menjadi الكِتَابُ
+Catatan: tidak akan bertemu antara alif lam dengan tanwin dalam satu lafadz. Kalau misalnya kita berbicara الكِتَابٌ, maka ini salah.
+
+- الخَفْضِ = huruf jar
+Huruf jar adalah partikel-partikel yang menyebabkan kata selanjutnya harus ber’irab jar, atau secar umum, harakatnya harus menjadi kasrah. Tapi, sebenarnya, selain kasrah masih ada ciri-ciri lain dari i’rab jar yang harus dipelajari lebih lanjut dalam pembahasan tentang i’rab jar.
+من ، إلى ، عَنَ ، عَلَى ، في ، رُبّ ، الباء ، الكاف ، اللام
+
+- Contoh: جَاءَ زَيْدٌ مِنَ المسجدِ 
+Kalimat المسجدِ adalah isim. Cirinya:
+– ada ال,
+– kasrah,
+– kemasukan huruf jar (من).
+Penjelasan: زَيدٌ فِي البيةِ
+Kalimat البيةِ adalah isim. Cirinya ada ال, kemasukan huruf kasrah dan kemasukan jar. Kalau ال dibuang, maka kalimatnya menjadi زَيدٌ فِي بيةٍ.
+Kalau tidak ada ال, pasti akhirannya adalah ٍ  (tanwin). Kalau ada ال, pasti ِ (i).
+
+- قَسَم = qasam
+Huruf قَسَم ada tiga. Yaitu وَ ,بِ ,تَ.Ini disebut huruf qasam karena huruf tersebut adalah alat untuk bersumpah.
+Contoh: وَالْعَصْرِ.
+Kenapa الْعَصْرُ berubah menjadi kasrah? Karena وَ disini adalah وَ  qasam. Sering kita mendengar وَاللهِ, karena وَ  di sini adalah وَ qasam. Jadi kalau kita bersumpah, kata diakhiri dengan kasrah. Di al-Qur’an banyak dengan وَ.
+
+b. Fi’il/ Kata kerja
+	Fi’il secara bahasa, فِعْلٌ artinya pekerjaan. Fi’il ialah kata yang menunjukan makna mengandung kala (zaman). Kala dibagi menjadi 3, yaitu madhi (lampau/telah berlalu), hal (sedang terjadi), dan mustaqbal (akan terjadi). Pembagian fi’il juga terbagi menjadi tiga, sebagai berikut:
+    """.trimIndent(),
+                textAlign = TextAlign.Justify,
+                style = MaterialTheme.typography.bodyMedium
+            )
+
+            Spacer(modifier = Modifier.height(15.dp))
+
+            // Menambahkan gambar di antara teks
+            Image(
+                painter = painterResource(id = R.drawable.bagankata), // Sesuaikan ID gambar
+                contentDescription = "bagankata",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(160.dp),
+                contentScale = ContentScale.Crop
+            )
+
+            Spacer(modifier = Modifier.height(15.dp))
+
+            Text(
+                text = """
+1. Fi’il madhi
+Fi’il madhi adalah fi’il yang menunjukkan pada kejadian yang terjadinya sebelum waktu pembicaraan.
+Contoh fi’il madhi sebagai berikut:
+حَضَرَ artinya telah hadir.
+نَامَ artinya telah tidur.
+قَامَ artinya telah berdiri.
+جَلَسَ artinya telah duduk.
+قَرَأَ artinya telah membaca.
+اَكْرَمَ artiya telah memuliakan.
+
+2. Fi’il mudhari
+Fi’il mudhari’ adalah fi’il yang menunjukkan peristiwa yang sedang terjadi atau akan terjadi setelah percakapan. Fi’il mudhari pasti diawali dengan salah satu dari 4 huruf mudhara’ah yang terkumpul dalam lafadz anaitu (اَنَيْتُ).
+Contohnya:
+يَحْضُرُ artinya dia sedang atau akan hadir.
+يَنَامُ artinya dia sedang atau akan tidur.
+أَقُوْمُ artinya aku sedang atau akan berdiri.
+نَجْلِسُ artinya kami sedang atau akan duduk.
+تَقْرَأُ artinya kamu sedang atau akan membaca.
+يُكْرِمُ artinya dia sedang atau akan memuliakan.
+
+3. Fi’il Amar
+Fi’il amar/kata kerja imperatif (perintah) adalah fi’il yang menunjukkan peristiwa yang mana hasilnya dituntut setelah waktu berbicara.
+Contohnya:
+قُمْ artinya berdirilah.
+اجْلِسْ artinya duduklah.
+ادْخُلْ artinya masuklah.
+
+c. Harf/ Partikel
+Partikel adalah kata yang tidak akan bisa berubah. Dia hanya memiliki makna gramatikal. Artinya ketika dia berdiri sendiri, maknanya tidak bisa dipahami. Contoh partikel diantaranya, kata depan (partikel preposisi), konjungsi (penghubung), dll. Teman-teman akan lebih memahami tentang partikel ketika dia bergabung dengan kata lain dan membentuk frasa. Salah satu contoh partikel dalam bahasa Arab adalah harf jar yang sudah dibahas dalam ciri-ciri isim. Harf jar ini adalah apa yang kita sebut sebagai partikel preposisi.
+    """.trimIndent(),
+                textAlign = TextAlign.Justify,
+                style = MaterialTheme.typography.bodyMedium
+            )
+
+        }
+    }
 
 
     val modul1 = HalamanMateri("Kata", "dalam Bahasa Arab", resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)

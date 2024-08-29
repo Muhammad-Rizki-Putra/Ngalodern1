@@ -4,6 +4,16 @@ import Object.Quadruple
 import Object.HalamanMateri
 import Object.Modul
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.style.TextAlign
+import com.example.ngalodern.R
 
 @Composable
 fun Data2_M(){
@@ -12,7 +22,7 @@ fun Data2_M(){
     var Array_indo = arrayOf<String>()
     var Array_logat = arrayOf<Quadruple<Int, Int, Int, String>>()
     var ArtiFull: String = ""
-    var Penjelasan: String = ""
+//    var Penjelasan: String = ""
     var Array_logat_B = arrayOf<Pair<Int, String>>()
     var Array_Duplicate = arrayOf<Pair<Int, Int>>()
     var iterasi: Int = 0
@@ -227,42 +237,193 @@ fun Data2_M(){
     Array_logat_B += Pair(48,"Pp")
 
     ArtiFull = ""
-    Penjelasan = "\n" + "Kalimat dalam bahasa Arab disebut jumlah mufidah, atau kalam. Artinya, kalimat adalah rangkaian kata yang sudah memiliki makna yang utuh. Kalimat dalam bahasa Arab terbagi menjadi dua, yaitu jumlah ismiyah dan jumlah fi’liyah. \n" +
-            "\n1. Jumlah ismiyah\n" +
-            "Jumlah ismiyah adalah kalimat yang diawali dengan اسم/isim (nomina). Fungsi yang bekerja dalam kalimat ini adalah mubtada sebagai subjeknya, dan khabar sebagai predikatnya. Jadi, dalam ngalogat modern, struktur jumlah ismiyah diisi oleh fungsi S1 (subjek mubtada) dan P1 (predikat khabar) \n" +
-            "Contoh: \n" +
-            "القلمُ جديدٌ \n" +
-            "(Pulpen itu baru) \n" +
-            "Subjek mubtada dalam kalimat di atas adalah القلمُ. Syarat dari mubtada yaitu: \n" +
-            "\n" +
-            "Harus ma’rifat (bermakna khusus) biasanya ditandai alif lam dan tidak ada tanwin\n" +
-            "I’rab nya harus rofa, ditandai dengan harakat akhirnya dhammah. \n" +
-            "Predikat khabar dalam kalimat di atas adalah جديدٌ. Syarat dari khabar adalah: \n" +
-            "Wajib nakirah (bermakna umum) ditandai dengan munculnya tanwin \n" +
-            "Hati-hati, ya. Jangan terbalik dengan frasa na’ty! Kalau frasa na’ty baik kata pertama maupun kedua, jika ada alif lam maka keduanya harus alif lam, jika tidak maka keduanya tidak ada alif lam. Yuk, bedakan frasa na’ty dan kalimat dengan struktur jumlah ismiyah! \n" +
-            "Frasa na’ty: \n" +
-            "المكتبةُ الكبيرةُ \n" +
-            "(Perpustakaan yang besar) \n" +
-            "Frasa di atas tidak menjelaskan apa-apa karena tidak mengandung predikat. \n" +
-            "Jumlah ismiyah: \n" +
-            "المكتبةُ كبيرةٌ \n" +
-            "(Perpustakaan itu besar) \n" +
-            "Jika kita gunakan metode ngalogat modern, maka analisis struktur kalimat di atas adalah sebagai berikut: \n" +
-            " N1المكتبةُN1 S1كبيرةٌP1  \n" +
-            "Warna merah menandakan bahwa dia adalah subjek dalam kalimat tersebut. Artinya kata tersebut menjadi inti yang dibahas dalam kalimat. N1 artinya kata tersebut merupakan nomina (kata benda) tunggal (menunjukan bahwa jumlahnya hanya satu), dan S1 artinya subjek mubtada. Mubtada dan khabar hanya muncul dalam jumlah ismiyyah. Maka jika ada S1 pasti jumlah ismiyyah, artinya predikatnya pasti berupa khabar (P1).  \n" +
-            "Kalimat di atas merupakan kalimat dan bukan frasa karena dalam kalimat tersebut sudah mengandung predikat, yaitu yang ditandai dengan warna biru. Kata كبيرةٌ dalam kalimat di atas bukan menjadi sifat dari المكتب, melainkan dia menjelaskan keadaan dari المكتب, artinya fungsinya adalah sebagai predikat. \n" +
-            "\n2. Jumlah Fi’liyah\n" +
-            "Jumlah Fi’liyah adalah kalimat yang diawali dengan فعل fi’il (kata kerja), kalimat ini terdiri dari fi’il sebagai predikat dan فاعل fa’il sebagai subyek serta مفعل به maf’ul bih (objek penderita) dan fi’il ini bisa menggunakan Fi’il Madhi فعل ماضي (kata kerja lampau) atau bisa juga dengan fi’il mudhori فعل مضرع (kata kerja non-lampau). \n" +
-            "Subyek (fa’il) dalam jumlah fi’liyah ini bisa terlihat biasanya ditandai dengan nama orang atau suatu benda, bisa juga tak terlihat biasanya jumlah fi’liyah seperti ini terletak pada tengah paragraf karena dhomirnya sudah dijelaskan di awal paragraf. Jumlah fi’liyah adalah struktur kalimat yang predikatnya terletak di awal.  \n" +
-            "Contoh: \n" +
-            " جَلَسَ اَحْمَدُ \n" +
-            "(Ahmad telah duduk) \n" +
-            "Dari contoh di atas جلس menurut keterangan waktu ini menunjukkan masa lampau atau فعل ماضي (telah dilakukan) yang artinya telah duduk, dan jenisnya adalah fi’il lazim/verba intransitif (yang tidak memerlukan objek) tapi perlu adanya subjek dan kata Ahmad adalah subjek/yang mengerjakan perbuatan. Kedua kata ini sudah termasuk kalimat yang terdiri atas fi’il dan fa’il sehingga sudah jelas meskipun hanya dua kata. \n" +
-            "Jika kita menerapkan metode ngalogat modern, maka analisisnya adalah sebagai berikut: \n" +
-            "\n" +
-            " VlجَلَسَN1   P2اَحْمَدُS2 \n" +
-            "Vl artinya verba lampau, P2 artinya predikat fi’il. N1 menunjukkan bahwa kata tersebut adalah nomina tunggal, dan S2 adalah subjek fa’il.\n"
+//    Penjelasan = "\n1. Pengertian\n" +
+//            "\n" + "Kata dalam bahasa Arab disebut sebagai الكلمة ‘al-kalimah’, yaitu suatu lafadz yang mempunyai makna tertentu. Secara istilah, al-kalimatu adakah kata yang mufrod (berdiri sendiri), artinya dia berdiri sendiri dan memiliki makna sendiri. \n" +
+//            "Kata merupakan satuan bahasa yang paling kecil, karena gabungan dari kata dapat membentuk satuan yang lebih besar, yaitu frasa, klausa, dan kalimat. Apa itu frasa, klausa, dan kalimat? Akan dibahas di modul lain, ya! \n" +
+//
+//            "\n2. Pembagian Kata dalam Bahasa Arab \n" +
+//            "Pembagian kelas kata dalam tradisi bahasa Arab sebenarnya sama dengan pembagian kelas kata secara umum, loh! Ada nomina (kata benda), verba (kata kerja), dan partikel. Istilah-istilah tersebut dikemukakan oleh aliran bahasa strukturalisme. Kalau dalam bahasa Indonesia, dikemukakan oleh Moeliono dan Ramlan, pembagian kelas kaa itu terdiri dari Nominal Verbal, dan Partikel. Sama saja bukan? Begitu pun dengan bahasa Arab. \n" +
+//
+//            "\na. Isim/Kata benda \n" +
+//            "Isim adalah kata yang menunjukan makna tertentu yang tidak terikat oleh waktu. Berikut ini yang termasuk ke dalam isim dalam kaidah bahasa Arab: \n" +
+//            "Manusia, Tumbuhan, dan Hewan. \n" +
+//            "Contoh : Zaid, Kurma, Unta, dll. \n" +
+//            "Benda Mati. \n" +
+//            "Contoh: bangku, meja, lemari dll. \n" +
+//            "Nama Suatu Tempat, Daerah atau Wilayah \n" +
+//            "Contoh: Bandung, Jakarta, Gunung, Pantai dll. \n" +
+//            "Nama Waktu / Masa \n" +
+//            "Contoh: Pagi, Siang, Sore, dll. \n" +
+//            "Kata Sifat \n" +
+//            "Contoh: Cantik, Tampan, Kecil, Besar, Panjang, Pendek, dll. \n" +
+//            "Bagaimana cara menentukan apakah suatu kata isim atau bukan? Selain melihat maknanya, secara umum, isim bisa dilihat dari ciri-cirinya: \n" +
+//            "\n" +
+//            "\n" +
+//            "باِلخَفْضِ = kasrah\u2028\n" +
+//            "Jadi, kalau kita menjumpai lafadz dalam bahasa arab yang huruf akhirnya dikasrah, itu sudah pasti isim. Kenapa? Karena tidak akan ada fi’il yang mendapatkan harakat kasrah. Sedangkan harf, harakat akhirnya tidak akan berubah.\n" +
+//            "Contohnya:\n" +
+//            "– بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ\u2028بَيْتُ المُدِيرِ\n" +
+//            "– المُدِيرِ (kalimat المُدِيرِ adalah isim karena dikasrah)\n" +
+//            "التَّنْوِينِ= tanwin\n" +
+//            "Tanwin itu adalah ً (fathatain), ٍ (kasrahtain), dan ٌ (dhomatain)\n" +
+//            "Jadi kalau kita menjumpai sebuah lafadz yang huruf akhirnya bertanwin, maka itu kata benda. Bukan fi’il, juga bukan huruf.\n" +
+//            "Contoh:\n" +
+//            "– زَيْدٌ atau زَيْدً atau زَيْدٍ.\n" +
+//            "Kenapa isim? Karena lafadz ini diakhiri dengan tanwin.\n" +
+//            "دُخُولِ الألف واللام = Dimasuki huruf alif dan lam\n" +
+//            "Jadi kalau kita menjumpai lafadz yang awalnya alif lam, maka itu isim.\n" +
+//            "Contoh:\n" +
+//            "– كِتَابٌ diberikan ال menjadi الكِتَابُ\n" +
+//            "Catatan: tidak akan bertemu antara alif lam dengan tanwin dalam satu lafadz. Kalau misalnya kita berbicara الكِتَابٌ, maka ini salah.\n" +
+//            "الخَفْضِ = huruf jar\n" +
+//            "Huruf jar adalah partikel-partikel yang menyebabkan kata selanjutnya harus ber’irab jar, atau secar umum, harakatnya harus menjadi kasrah. Tapi, sebenarnya, selain kasrah masih ada ciri-ciri lain dari i’rab jar yang harus dipelajari lebih lanjut dalam pembahasan tentang i’rab jar.\n" +
+//            "من ، إلى ، عَنَ ، عَلَى ، في ، رُبّ ، الباء ، الكاف ، اللام\n" +
+//            "Contoh: جَاءَ زَيْدٌ مِنَ المسجدِ\n" +
+//            "Kalimat المسجدِ adalah isim. Cirinya:\n" +
+//            "– ada ال,\n" +
+//            "– kasrah,\n" +
+//            "– kemasukan huruf jar (من).\n" +
+//            "Penjelasan: زَيدٌ فِي البيةِ\n" +
+//            "Kalimat البيةِ adalah isim. Cirinya ada ال, kemasukan huruf kasrah dan kemasukan jar. Kalau ال dibuang, maka kalimatnya menjadi زَيدٌ فِي بيةٍ.\n" +
+//            "Kalau tidak ada ال, pasti akhirannya adalah ٍ  (tanwin). Kalau ada ال, pasti ِ (i).\n" +
+//            "قَسَم = qasam\n" +
+//            "Huruf قَسَم ada tiga. Yaitu وَ ,بِ ,تَ.Ini disebut huruf qasam karena huruf tersebut adalah alat untuk bersumpah.\n" +
+//            "Contoh: وَالْعَصْرِ.\n" +
+//            "Kenapa الْعَصْرُ berubah menjadi kasrah? Karena وَ disini adalah وَ  qasam. Sering kita mendengar وَاللهِ, karena وَ  di sini adalah وَ qasam. Jadi kalau kita bersumpah, kata diakhiri dengan kasrah. Di al-Qur’an banyak dengan وَ.\n" +
+//            "b. Fi’il/ Kata kerja\n" +
+//            "\tFi’il secara bahasa, فِعْلٌ artinya pekerjaan. Fi’il ialah kata yang menunjukan makna mengandung kala (zaman). Kala dibagi menjadi 3, yaitu madhi (lampau/telah berlalu), hal (sedang terjadi), dan mustaqbal (akan terjadi). Pembagian fi’il juga terbagi menjadi tiga, sebagai berikut:\n \n" +
+//            "i. Fi’il madhi \n" +
+//            "Fi’il madhi adalah fi’il yang menunjukkan pada kejadian yang terjadinya sebelum waktu pembicaraan. \n" +
+//            "Contoh fi’il madhi sebagai berikut: \n" +
+//            "\n" +
+//            "حَضَرَ artinya telah hadir.\n" +
+//            "نَامَ artinya telah tidur.\n" +
+//            "قَامَ artinya telah berdiri.\n" +
+//            "جَلَسَ artinya telah duduk.\n" +
+//            "قَرَأَ artinya telah membaca.\n" +
+//            "اَكْرَمَ artiya telah memuliakan. \n" +
+//            "ii. Fi’il mudhari \n" +
+//            "Fi’il mudhari’ adalah fi’il yang menunjukkan peristiwa yang sedang terjadi atau akan terjadi setelah percakapan. Fi’il mudhari pasti diawali dengan salah satu dari 4 huruf mudhara’ah yang terkumpul dalam lafadz anaitu (اَنَيْتُ). \n" +
+//            "Contohnya: \n" +
+//            "\n" +
+//            "يَحْضُرُ artinya dia sedang atau akan hadir. \n" +
+//            "\n" +
+//            "يَنَامُ artinya dia sedang atau akan tidur. \n" +
+//            "\n" +
+//            "أَقُوْمُ artinya aku sedang atau akan berdiri. \n" +
+//            "\n" +
+//            "نَجْلِسُ artinya kami sedang atau akan duduk. \n" +
+//            "\n" +
+//            "تَقْرَأُ artinya kamu sedang atau akan membaca. \n" +
+//            "\n" +
+//            "يُكْرِمُ artinya dia sedang atau akan memuliakan. \n" +
+//            "iii. Fi’il Amar \n" +
+//            "Fi’il amar/kata kerja imperatif (perintah) adalah fi’il yang menunjukkan peristiwa yang mana hasilnya dituntut setelah waktu berbicara. \n" +
+//            "Contohnya: \n" +
+//            "\n" +
+//            "قُمْ artinya berdirilah. \n" +
+//            "\n" +
+//            "اجْلِسْ artinya duduklah. \n" +
+//            "\n" +
+//            "ادْخُلْ artinya masuklah. \n" +
+//            "c. Harf/ Partikel \n" +
+//            "Partikel adalah kata yang tidak akan bisa berubah. Dia hanya memiliki makna gramatikal. Artinya ketika dia berdiri sendiri, maknanya tidak bisa dipahami. Contoh partikel diantaranya, kata depan (partikel preposisi), konjungsi (penghubung), dll. Teman-teman akan lebih memahami tentang partikel ketika dia bergabung dengan kata lain dan membentuk frasa. Salah satu contoh partikel dalam bahasa Arab adalah harf jar yang sudah dibahas dalam ciri-ciri isim. Harf jar ini adalah apa yang kita sebut sebagai partikel preposisi.\n"
 
+    var Penjelasan: @Composable () -> Unit = {
+        Column(
+            modifier = Modifier.padding(16.dp)
+        ) {
+            // Teks penjelasan
+            Text(
+                text = """
+Kalimat dalam bahasa Arab disebut jumlah mufidah, atau kalam. Artinya, kalimat adalah rangkaian kata yang sudah memiliki makna yang utuh. Kalimat dalam bahasa Arab terbagi menjadi dua, yaitu jumlah ismiyah dan jumlah fi’liyah.
+
+1.Jumlah ismiyah
+Jumlah ismiyah adalah kalimat yang diawali dengan اسم/isim (nomina). Fungsi yang bekerja dalam kalimat ini adalah mubtada sebagai subjeknya, dan khabar sebagai predikatnya. Jadi, dalam ngalogat modern, struktur jumlah ismiyah diisi oleh fungsi S1 (subjek mubtada) dan P1 (predikat khabar)
+Contoh:
+ (Pulpen itu baru) القلمُ جديدٌ
+
+Subjek mubtada dalam kalimat di atas adalah القلمُ. Syarat dari mubtada yaitu:
+- Harus ma’rifat (bermakna khusus) biasanya ditandai alif lam dan tidak ada tanwin
+- I’rab nya harus rofa, ditandai dengan harakat akhirnya dhammah.
+	Predikat khabar dalam kalimat di atas adalah جديدٌ. Syarat dari khabar adalah:
+- Wajib nakirah (bermakna umum) ditandai dengan munculnya tanwin
+
+	Hati-hati, ya. Jangan terbalik dengan frasa na’ty! Kalau frasa na’ty baik kata pertama maupun kedua, jika ada alif lam maka keduanya harus alif lam, jika tidak maka keduanya tidak ada alif lam. Yuk, bedakan frasa na’ty dan kalimat dengan struktur jumlah ismiyah!
+
+Frasa na’ty:
+ المكتبةُ الكبيرةُ (Perpustakaan yang besar)
+Frasa di atas tidak menjelaskan apa-apa karena tidak mengandung predikat.
+
+Jumlah ismiyah:
+ المكتبةُ كبيرةٌ (Perpustakaan itu besar)
+ 
+Jika kita gunakan metode ngalogat modern, maka analisis struktur kalimat di atas adalah sebagai berikut:
+    """.trimIndent(),
+                textAlign = TextAlign.Justify,
+                style = MaterialTheme.typography.bodyMedium
+            )
+
+            Spacer(modifier = Modifier.height(15.dp))
+
+            // Menambahkan gambar di antara teks
+            Image(
+                painter = painterResource(id = R.drawable.kalimat1), // Sesuaikan ID gambar
+                contentDescription = "bagankata",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp),
+                contentScale = ContentScale.Crop
+            )
+
+            Spacer(modifier = Modifier.height(15.dp))
+
+            Text(
+                text = """
+Warna merah menandakan bahwa dia adalah subjek dalam kalimat tersebut. Artinya kata tersebut menjadi inti yang dibahas dalam kalimat. N1 artinya kata tersebut merupakan nomina (kata benda) tunggal (menunjukan bahwa jumlahnya hanya satu), dan S1 artinya subjek mubtada. Mubtada dan khabar hanya muncul dalam jumlah ismiyyah. Maka jika ada S1 pasti jumlah ismiyyah, artinya predikatnya pasti berupa khabar (P1). 
+	Kalimat di atas merupakan kalimat dan bukan frasa karena dalam kalimat tersebut sudah mengandung predikat, yaitu yang ditandai dengan warna biru. Kata كبيرةٌ dalam kalimat di atas bukan menjadi sifat dari المكتب, melainkan dia menjelaskan keadaan dari المكتب, artinya fungsinya adalah sebagai predikat.
+
+2. Jumlah Fi’liyah
+Jumlah Fi’liyah adalah kalimat yang diawali dengan فعل fi’il (kata kerja), kalimat ini terdiri dari fi’il sebagai predikat dan فاعل fa’il sebagai subyek serta مفعل به maf’ul bih (objek penderita) dan fi’il ini bisa menggunakan Fi’il Madhi فعل ماضي (kata kerja lampau) atau bisa juga dengan fi’il mudhoriفعل مضرع (kata kerja non-lampau).
+Subyek (fa’il) dalam jumlah fi’liyah ini bisa terlihat biasanya ditandai dengan nama orang atau suatu benda, bisa juga tak terlihat biasanya jumlah fi’liyah seperti ini terletak pada tengah paragraf karena dhomirnya sudah dijelaskan di awal paragraf. Jumlah fi’liyah adalah struktur kalimat yang predikatnya terletak di awal. 
+
+Contoh:
+ جَلَسَ اَحْمَدُ (Ahmad telah duduk)
+ 
+Dari contoh di atas جلس menurut keterangan waktu ini menunjukkan masa lampau atau فعل ماضي (telah dilakukan) yang artinya telah duduk, dan jenisnya adalah fi’il lazim/verba intransitif (yang tidak memerlukan objek) tapi perlu adanya subjek dan kata Ahmad adalah subjek/yang mengerjakan perbuatan. Kedua kata ini sudah termasuk kalimat yang terdiri atas fi’il dan fa’il sehingga sudah jelas meskipun hanya dua kata.
+
+Jika kita menerapkan metode ngalogat modern, maka analisisnya adalah sebagai berikut:
+
+    """.trimIndent(),
+                textAlign = TextAlign.Justify,
+                style = MaterialTheme.typography.bodyMedium
+            )
+
+            Spacer(modifier = Modifier.height(15.dp))
+
+            // Menambahkan gambar di antara teks
+            Image(
+                painter = painterResource(id = R.drawable.kalimat22), // Sesuaikan ID gambar
+                contentDescription = "bagankata",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp),
+                contentScale = ContentScale.Crop
+            )
+
+            Spacer(modifier = Modifier.height(15.dp))
+
+            Text(
+                text = """
+Vl artinya verba lampau, P2 artinya predikat fi’il. N1 menunjukkan bahwa kata tersebut adalah nomina tunggal, dan S2 adalah subjek fa’il.
+    """.trimIndent(),
+                textAlign = TextAlign.Justify,
+                style = MaterialTheme.typography.bodyMedium
+            )
+
+
+        }
+    }
 
 
     val modul2 = HalamanMateri("Kalimat", "dalam Bahasa Arab", resultArray ,Array_indo.reversedArray(), Array_arab.reversedArray(), Array_logat,  ArtiFull , Array_logat_B, Array_Duplicate ,Penjelasan)

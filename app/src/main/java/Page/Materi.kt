@@ -229,20 +229,19 @@ fun box_video(waktu: String = "00.00",durasi: String = "00.00", judul: String = 
                         painter = painterResource(id = R.drawable.tombolplayer2),
                         contentDescription = "Logo play"
                     )
-                    Column {
-                        Text(
+                    Text(
                             text = judul,
                             fontWeight = FontWeight.Bold,
                             fontSize = 16.sp,
                             color = Color.White
-                        )
+                    )
+//
+//                        Text(
+//                            text = waktu + " / " + durasi,
+//                            fontSize = 12.sp,
+//                            color = Color.White
+//                        )
 
-                        Text(
-                            text = waktu + " / " + durasi,
-                            fontSize = 12.sp,
-                            color = Color.White
-                        )
-                    }
                 }
             }
         }

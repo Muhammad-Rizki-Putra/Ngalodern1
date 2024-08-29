@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 fun Data1_V(){
 
     var videoUrl : String = ""
-    videoUrl = "https://drive.google.com/file/d/1I1l3FpJZ8pgExW0TPbQTiUCL2hruvYG5/view?usp=drive_link"
+    videoUrl = "uL-2-ykMMfE"
 
 
 
