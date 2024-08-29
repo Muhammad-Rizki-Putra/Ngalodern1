@@ -5,7 +5,7 @@ import Object.Soal_13
 import androidx.compose.runtime.Composable
 
 @Composable
-fun Soal_1301() {
+fun Soal_1302() {
 
     var arr_soal = arrayOf<String>()
     var arr_lokasi = arrayOf<Triple<Int, Int, Int>>()
@@ -19,7 +19,7 @@ fun Soal_1301() {
     var soal_ke : String = ""
     var iterasi: Int = 0
 
-    // Tingkat 1 Level 3 Soal 1
+    // Tingkat 1 Level 3 Soal 2
 
     arr_soal += "رَدُّ"
     arr_soal += "فَهُوَ"
@@ -28,8 +28,8 @@ fun Soal_1301() {
     arr_soal += "مَا"
     arr_soal += "هذا"
     arr_soal += "أَمْرِنَا"
-    arr_soal += "فِي"
-    arr_soal += "أَحْدَثَ" // Yang ini (18)
+    arr_soal += "فِي" // Yang ini (19 - 21)
+    arr_soal += "أَحْدَثَ"
     arr_soal += "مَنْ"
     arr_soal += "و سلم :"
     arr_soal += "عليه"
@@ -49,23 +49,33 @@ fun Soal_1301() {
     arr_soal += "المُؤْمِنِيْنَ"
     arr_soal += "عَنْ أُمِّ"
 
-    for (i in 0 .. 8) {
-        arr_lokasi += Triple(18, i, 1)
+    for (i in 0 .. 3) {
+        arr_lokasi += Triple(19, i, 1)
         iterasi++
     }
 
-    pertanyaan = "Kata yang diberikan tanda di atas merupakan kategori ..."
+    for (i in 0 .. 9) {
+        arr_lokasi += Triple(20, i, 1)
+        iterasi++
+    }
 
-    opsi_1 = "N1"
-    opsi_2 = "N+"
-    opsi_3 = "Vl"
-    opsi_4 = "Vnl"
+    for (i in 0 .. 3) {
+        arr_lokasi += Triple(21, i, 1)
+        iterasi++
+    }
 
-    opsi_benar = "Vl"
+    pertanyaan = "Kata yang diberikan tanda di atas merupakan fungsi ..."
 
-    rute_berikutnya = "Soal1_3_1"
-    soal_ke = "1/5"
+    opsi_1 = "S2"
+    opsi_2 = "P2"
+    opsi_3 = "O"
+    opsi_4 = "K"
 
-    val soal_1301 : HalamanSoal = HalamanSoal("Soal 3 - 1", 2, arr_soal.reversedArray(), arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
-    Soal_13.add(soal_1301)
+    opsi_benar = "K"
+
+    rute_berikutnya = "Soal1_3_2"
+    soal_ke = "2/5"
+
+    val soal_1302 : HalamanSoal = HalamanSoal("Soal 3 - 2", 2, arr_soal.reversedArray(), arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
+    Soal_13.add(soal_1302)
 }

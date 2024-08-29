@@ -6,7 +6,7 @@ import Object.Soal_21
 import androidx.compose.runtime.Composable
 
 @Composable
-fun Soal_2102() {
+fun Soal_2103() {
 
     var arr_soal = arrayOf<String>()
     var arr_lokasi = arrayOf<Triple<Int, Int, Int>>()
@@ -20,15 +20,12 @@ fun Soal_2102() {
     var soal_ke : String = ""
     var iterasi: Int = 0
 
-    // Tingkat 2 Level 1 Soal 2
+    // Tingkat 2 Level 1 Soal 3
 
-    arr_soal += "A.     أحمد, قام,غضبوا, حتى"
-
-    arr_soal += "B.     فاطمة, سوداء, على, صلح"
-
-    arr_soal += "C.     عن, تحت,صار,مرّ"
-
-    arr_soal += "D.     علي, الكرسي, المسجد,عائشة"
+    arr_soal += "A.     فوق, علم, حدث, استغفر            "
+    arr_soal += "B.     قام, قال, جلس, سمع               "
+    arr_soal += "C.     و, ل, الكتاب, خاف                "
+    arr_soal += "D.     قرأ, جلس, في,من                  "
 
     for (i in 0 .. 2) {
         arr_lokasi += Triple(0, i, 1)
@@ -47,18 +44,18 @@ fun Soal_2102() {
         iterasi++
     }
 
-    pertanyaan = "Manakah di antara pilihan di atas yang termasuk isim ..."
+    pertanyaan = "Manakah di antara pilihan di atas yang termasuk fiil ..."
 
     opsi_1 = "A"
     opsi_2 = "B"
     opsi_3 = "C"
     opsi_4 = "D"
 
-    opsi_benar = "D"
+    opsi_benar = "B"
 
-    rute_berikutnya = "Soal2_1_2"
-    soal_ke = "2/10"
+    rute_berikutnya = "Soal2_1_3"
+    soal_ke = "3/10"
 
-    val soal_2102 : HalamanSoal = HalamanSoal("Soal 1 - 2", 3, arr_soal, arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
-    Soal_21.add(soal_2102)
+    val soal_2103 : HalamanSoal = HalamanSoal("Soal 1 - 3", 3, arr_soal, arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
+    Soal_21.add(soal_2103)
 }

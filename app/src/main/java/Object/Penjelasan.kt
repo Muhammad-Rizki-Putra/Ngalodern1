@@ -113,6 +113,63 @@ fun Penjelasan(
     }
 }
 
+@Composable
+fun BenarSalah(
+    ucapan: String,
+    onDismiss: () -> Unit
+) {
+    AlertDialog(
+        onDismissRequest = onDismiss
+    ) {
+        Box(
+            modifier = Modifier
+                .clip(
+                    RoundedCornerShape(
+                        topStart = 10.dp,
+                        bottomStart = 10.dp,
+                        topEnd = 10.dp,
+                        bottomEnd = 10.dp,
+                    )
+                )
+                .width(120.dp)
+                .heightIn(min = 100.dp, max = 500.dp)
+                .background(color = Color.White),
+        ){
+            Column (
+                modifier = Modifier
+                    .wrapContentHeight()
+                    .padding(15.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.SpaceBetween
+            ){
 
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 30.dp, bottom = 30.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ){ // Ucapan jawaban benar atau salah
+                    Text(
+                        text = ucapan,
+                        fontFamily = dmsansFontFamily,
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center
+                    )
+                }
+
+                Box (){// Tombol untuk melanjutkan
+                    Button(
+                        colors = ButtonDefaults.buttonColors(
+                            Color(android.graphics.Color.parseColor("#457b9d"))
+                        ),
+                        onClick = onDismiss) {
+                        Text(text = "Lanjutkan")
+                    }
+                }
+            }
+        }
+    }
+}
 
 

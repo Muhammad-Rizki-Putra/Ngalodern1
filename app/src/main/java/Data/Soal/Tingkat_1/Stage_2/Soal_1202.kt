@@ -1,11 +1,11 @@
 package Data.Soal.Tingkat_1.Stage_2
 
 import Object.HalamanSoal
-import Object.Soal
+import Object.Soal_12
 import androidx.compose.runtime.Composable
 
 @Composable
-fun Soal_1201() {
+fun Soal_1202() {
 
     var judul : String = ""
     var jenis_soal : Int = 0
@@ -27,7 +27,7 @@ fun Soal_1201() {
         }
     }
 
-    // Tingkat 1 Level 2 Soal 1
+    // Tingkat 1 Level 2 Soal 2
 
     arr_soal += "رَوَاهُ البُخَارِيُّ وَمُسْلِمٌ"
     arr_soal += "رَمَضَانَ ”"
@@ -48,7 +48,7 @@ fun Soal_1201() {
     arr_soal += "أَنْ"
     arr_soal += "شَهَادَةِ"
     arr_soal += "خَمْسٍ :"
-    arr_soal += "عَلَى"
+    arr_soal += "عَلَى" // Yang ini (24)
     arr_soal += "اْلإِسْلاَمُ"
     arr_soal += "بُنِيَ"
     arr_soal += "يَقُوْلُ :"
@@ -74,8 +74,8 @@ fun Soal_1201() {
     arr_soal += "أَبِي"
     arr_soal += "عَنْ"
 
-    for (i in 0 .. 8) {
-        arr_lokasi += Triple(21, i, 1)
+    for (i in 0 .. 5) {
+        arr_lokasi += Triple(24, i, 1)
         iterasi++
     }
 
@@ -85,18 +85,18 @@ fun Soal_1201() {
         Pair(uniqueElement, index)
     }.toTypedArray()
 
-    pertanyaan = "Kata yang diberikan tanda di atas merupakan fungsi ..."
+    pertanyaan = "Kata yang diberikan tanda di atas merupakan kategori ..."
 
-    opsi_1 = "S1"
-    opsi_2 = "S2"
-    opsi_3 = "P1"
-    opsi_4 = "P2"
+    opsi_1 = "Ko"
+    opsi_2 = "Pp"
+    opsi_3 = "N1"
+    opsi_4 = "N2"
 
-    opsi_benar = "P2"
+    opsi_benar = "Pp"
 
-    rute_berikutnya = "Soal1_2_1"
-    soal_ke = "1/5"
+    rute_berikutnya = "Soal1_2_2"
+    soal_ke = "2/5"
 
-    val soal_1201 : HalamanSoal = HalamanSoal("Soal 2 - 1", 1, arr_soal.reversedArray(), arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
-    Soal.add(soal_1201)
+    val soal_1202 : HalamanSoal = HalamanSoal("Soal 2 - 2", 2, arr_soal.reversedArray(), arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
+    Soal_12.add(soal_1202)
 }

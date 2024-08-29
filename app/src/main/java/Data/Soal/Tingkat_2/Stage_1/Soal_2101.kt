@@ -1,11 +1,12 @@
-package Data.Soal.Tingkat_1.Stage_3
+package Data.Soal.Tingkat_2.Stage_1
 
 import Object.HalamanSoal
 import Object.Soal_13
+import Object.Soal_21
 import androidx.compose.runtime.Composable
 
 @Composable
-fun Soal_1301() {
+fun Soal_2101() {
 
     var arr_soal = arrayOf<String>()
     var arr_lokasi = arrayOf<Triple<Int, Int, Int>>()
@@ -19,53 +20,42 @@ fun Soal_1301() {
     var soal_ke : String = ""
     var iterasi: Int = 0
 
-    // Tingkat 1 Level 3 Soal 1
+    // Tingkat 2 Level 1 Soal 1
 
-    arr_soal += "رَدُّ"
-    arr_soal += "فَهُوَ"
-    arr_soal += "مِنْهُ"
-    arr_soal += "لَيْسَ"
-    arr_soal += "مَا"
-    arr_soal += "هذا"
-    arr_soal += "أَمْرِنَا"
-    arr_soal += "فِي"
-    arr_soal += "أَحْدَثَ" // Yang ini (18)
-    arr_soal += "مَنْ"
-    arr_soal += "و سلم :"
-    arr_soal += "عليه"
-    arr_soal += "الله"
-    arr_soal += "صلى"
-    arr_soal += "اللهِ"
-    arr_soal += "رَسُولُ"
-    arr_soal += "قَالَ"
-    arr_soal += "قَالَتْ :"
-    arr_soal += "عنها"
-    arr_soal += "الله"
-    arr_soal += "رضي"
-    arr_soal += "عَائِشَةَ"
-    arr_soal += "اللهِ"
-    arr_soal += "عَبْدِ"
-    arr_soal += "أُمِّ"
-    arr_soal += "المُؤْمِنِيْنَ"
-    arr_soal += "عَنْ أُمِّ"
+    arr_soal += "A.     Isim (Nomina), Fi’il (Verba), Dhamir (Pronomina)"
+    arr_soal += "B.     Isim (Nomina), Fi’il(Verba), Harf (Partikel)"
+    arr_soal += "C.     Isim (Nomina), Fi’il(Verba), Isyarah (Partikel)"
+    arr_soal += "D.     Isim (Nomina), Fa’il(Verba), Harf (Partikel)"
 
-    for (i in 0 .. 8) {
-        arr_lokasi += Triple(18, i, 1)
+    for (i in 0 .. 2) {
+        arr_lokasi += Triple(0, i, 1)
+        iterasi++
+    }
+    for (i in 0 .. 2) {
+        arr_lokasi += Triple(1, i, 1)
+        iterasi++
+    }
+    for (i in 0 .. 2) {
+        arr_lokasi += Triple(2, i, 1)
+        iterasi++
+    }
+    for (i in 0 .. 2) {
+        arr_lokasi += Triple(3, i, 1)
         iterasi++
     }
 
-    pertanyaan = "Kata yang diberikan tanda di atas merupakan kategori ..."
+    pertanyaan = "Kalimat dalam bahasa Arab terbagi menjadi tiga ..."
 
-    opsi_1 = "N1"
-    opsi_2 = "N+"
-    opsi_3 = "Vl"
-    opsi_4 = "Vnl"
+    opsi_1 = "A"
+    opsi_2 = "B"
+    opsi_3 = "C"
+    opsi_4 = "D"
 
-    opsi_benar = "Vl"
+    opsi_benar = "B"
 
-    rute_berikutnya = "Soal1_3_1"
-    soal_ke = "1/5"
+    rute_berikutnya = "Soal2_1_1"
+    soal_ke = "1/10"
 
-    val soal_1301 : HalamanSoal = HalamanSoal("Soal 3 - 1", 2, arr_soal.reversedArray(), arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
-    Soal_13.add(soal_1301)
+    val soal_2101 : HalamanSoal = HalamanSoal("Soal 1 - 1", 3, arr_soal, arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
+    Soal_21.add(soal_2101)
 }

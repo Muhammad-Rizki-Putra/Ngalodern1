@@ -275,6 +275,7 @@ fun box_materi(judul: String = "None", route: String, navController: NavControll
 @Preview
 @Composable
 fun Belajar(scrollState: ScrollState, navController: NavController){
+
     Scaffold(
         topBar = {
             topbar(navController)
@@ -291,9 +292,7 @@ fun Belajar(scrollState: ScrollState, navController: NavController){
                 .padding(innerPadding)
                 ,
             horizontalAlignment = Alignment.CenterHorizontally
-
-        )
-        {
+        ) {
             var indikator by remember { mutableStateOf(false) }
             Row(
 
@@ -396,6 +395,5 @@ fun Belajar(scrollState: ScrollState, navController: NavController){
             }
         }
     }
-
 
 }

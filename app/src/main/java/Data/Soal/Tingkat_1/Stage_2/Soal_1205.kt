@@ -1,11 +1,11 @@
 package Data.Soal.Tingkat_1.Stage_2
 
 import Object.HalamanSoal
-import Object.Soal
+import Object.Soal_12
 import androidx.compose.runtime.Composable
 
 @Composable
-fun Soal_1204() {
+fun Soal_1205() {
 
     var judul : String = ""
     var jenis_soal : Int = 0
@@ -27,7 +27,7 @@ fun Soal_1204() {
         }
     }
 
-    // Tingkat 1 Level 2 Soal 4
+    // Tingkat 1 Level 2 Soal 5
 
     arr_soal += "رَوَاهُ البُخَارِيُّ وَمُسْلِمٌ"
     arr_soal += "رَمَضَانَ ”"
@@ -50,15 +50,15 @@ fun Soal_1204() {
     arr_soal += "خَمْسٍ :"
     arr_soal += "عَلَى"
     arr_soal += "اْلإِسْلاَمُ"
-    arr_soal += "بُنِيَ" // Yang ini (22)
+    arr_soal += "بُنِيَ"
     arr_soal += "يَقُوْلُ :"
     arr_soal += "وَسَلَّمَ"
     arr_soal += "عَلَيْهِ"
     arr_soal += "اللهُ"
     arr_soal += "صَلَّى"
     arr_soal += "اللهِ"
-    arr_soal += "رَسُوْلَ"
-    arr_soal += "سَمِعْتُ" // Yang ini (14)
+    arr_soal += "رَسُوْلَ" // Yang ini (15 - 20)
+    arr_soal += "سَمِعْتُ"
     arr_soal += "قَالَ :"
     arr_soal += "عَنْهُمَا"
     arr_soal += "اللهُ"
@@ -75,7 +75,32 @@ fun Soal_1204() {
     arr_soal += "عَنْ"
 
     for (i in 0 .. 8) {
-        arr_lokasi += Triple(14, i, 1)
+        arr_lokasi += Triple(15, i, 1)
+        iterasi++
+    }
+
+    for (i in 0 .. 5) {
+        arr_lokasi += Triple(16, i, 1)
+        iterasi++
+    }
+
+    for (i in 0 .. 6) {
+        arr_lokasi += Triple(17, i, 1)
+        iterasi++
+    }
+
+    for (i in 0 .. 5) {
+        arr_lokasi += Triple(18, i, 1)
+        iterasi++
+    }
+
+    for (i in 0 .. 8) {
+        arr_lokasi += Triple(19, i, 1)
+        iterasi++
+    }
+
+    for (i in 0 .. 9) {
+        arr_lokasi += Triple(20, i, 1)
         iterasi++
     }
 
@@ -85,18 +110,18 @@ fun Soal_1204() {
         Pair(uniqueElement, index)
     }.toTypedArray()
 
-    pertanyaan = "Kata yang diberikan tanda di atas merupakan kategori ..."
+    pertanyaan = "Kata yang diberikan tanda di atas merupakan fungsi ..."
 
-    opsi_1 = "Vl"
-    opsi_2 = "Vnl"
-    opsi_3 = "N1"
-    opsi_4 = "N+"
+    opsi_1 = "S2"
+    opsi_2 = "P2"
+    opsi_3 = "O"
+    opsi_4 = "K"
 
-    opsi_benar = "Vl"
+    opsi_benar = "O"
 
-    rute_berikutnya = "Soal1_2_4"
-    soal_ke = "4/5"
+    rute_berikutnya = "FinalSkor"
+    soal_ke = "5/5"
 
-    val soal_1204 : HalamanSoal = HalamanSoal("Soal 2 - 4", 2, arr_soal.reversedArray(), arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
-    Soal.add(soal_1204)
+    val soal_1205 : HalamanSoal = HalamanSoal("Soal 2 - 4", 2, arr_soal.reversedArray(), arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
+    Soal_12.add(soal_1205)
 }

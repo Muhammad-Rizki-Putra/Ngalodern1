@@ -204,7 +204,7 @@ fun box_materi(waktu: String = "00.00",durasi: String = "00.00", judul: String =
 
                     },
                 painter = painterResource(id = R.drawable.tombol_play_1),
-                contentDescription = "Logo buku",
+                contentDescription = "Logo play",
             )
         }
     }

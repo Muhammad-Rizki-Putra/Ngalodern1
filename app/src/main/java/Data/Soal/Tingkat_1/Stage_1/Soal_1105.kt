@@ -1,11 +1,11 @@
-package Data.SoalLatihan
+package Data.Soal.Tingkat_1.Stage_1
 
 import Object.HalamanSoal
-import Object.Soal
+import Object.Soal_11
 import androidx.compose.runtime.Composable
 
 @Composable
-fun Data1_1_5S() {
+fun Soal_1105() {
 
     var judul : String = ""
     var jenis_soal : Int = 0
@@ -59,7 +59,7 @@ fun Data1_1_5S() {
     arr_soal += "أَنْ"
     arr_soal += "يَشْهَدُوا"
     arr_soal += "حَتَّى"
-    arr_soal += "النَّاسَ" // Yang ini
+    arr_soal += "النَّاسَ" // Yang ini (17)
     arr_soal += "أُقَاتِلَ"
     arr_soal += "أَنْ"
     arr_soal += "أُمِرْتُ"
@@ -101,6 +101,6 @@ fun Data1_1_5S() {
     rute_berikutnya = "Soal1_1_5"
     soal_ke = "5/10"
 
-    val soal1_1_5 : HalamanSoal = HalamanSoal("Soal 1 - 5", 1, arr_soal.reversedArray(), arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
-    Soal.add(soal1_1_5)
+    val soal_1105 : HalamanSoal = HalamanSoal("Soal 1 - 5", 1, arr_soal.reversedArray(), arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
+    Soal_11.add(soal_1105)
 }

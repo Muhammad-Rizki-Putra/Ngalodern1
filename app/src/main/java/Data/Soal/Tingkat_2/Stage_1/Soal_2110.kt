@@ -6,7 +6,7 @@ import Object.Soal_21
 import androidx.compose.runtime.Composable
 
 @Composable
-fun Soal_2109() {
+fun Soal_2110() {
 
     var arr_soal = arrayOf<String>()
     var arr_lokasi = arrayOf<Triple<Int, Int, Int>>()
@@ -20,13 +20,13 @@ fun Soal_2109() {
     var soal_ke : String = ""
     var iterasi: Int = 0
 
-    // Tingkat 2 Level 1 Soal 9
+    // Tingkat 2 Level 1 Soal 10
 
-    arr_soal += "A.     الِعلُمُ نَافعٌ                     "
+    arr_soal += "A.     كَانَ لِلملكِ ابنانِ. الإبنُ الأكبرِ اسمَهُ رادن بانجلوراه"
 
-    arr_soal += "B.     نَافعٌ                           "
+    arr_soal += "B.     كَانَ لِلْملكِ ابنانِ. الإِبْنُ الأكبَرُ اسْمُهُ رادن بانجلوراه"
 
-    arr_soal += "C.     الِعلْمُ                          "
+    arr_soal += "C.     كَانَ لِلملكِ ابنانٌ. الإِبْنُ الأَكْبَرُ اسمُهُ رادن بانجلوراه"
 
     for (i in 0 .. 2) {
         arr_lokasi += Triple(0, i, 1)
@@ -41,17 +41,17 @@ fun Soal_2109() {
         iterasi++
     }
 
-    pertanyaan = " الِعلُمُ نَافعٌ. المبتدأ هو ..."
+    pertanyaan = " كان للملك ابنان. الإبن الأكبر اسمه رادن بانجلوراه ..."
 
     opsi_1 = "A"
     opsi_2 = "B"
     opsi_3 = "C"
 
-    opsi_benar = "C"
+    opsi_benar = "B"
 
-    rute_berikutnya = "Soal2_1_9"
-    soal_ke = "9/10"
+    rute_berikutnya = "FinalSkor"
+    soal_ke = "10/10"
 
-    val soal_2109 : HalamanSoal = HalamanSoal("Soal 1 - 9", 3, arr_soal, arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
-    Soal_21.add(soal_2109)
+    val soal_2110 : HalamanSoal = HalamanSoal("Soal 1 - 10", 3, arr_soal, arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
+    Soal_21.add(soal_2110)
 }

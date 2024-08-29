@@ -1,7 +1,6 @@
 package Object
 
 import Page.navbar
-import android.media.Image
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
@@ -43,7 +42,7 @@ import com.example.ngalodern.R
 import com.example.ngalodern.ui.theme.ui.theme.dmsansFontFamily
 
 @Composable
-fun topbarTingkat_1 (navController: NavController) {
+fun topbarTingkat (judul: String, navController: NavController) {
     Surface(
         modifier = Modifier
             .fillMaxWidth()
@@ -76,7 +75,7 @@ fun topbarTingkat_1 (navController: NavController) {
             ) {
                 Text(
                     modifier = Modifier,
-                    text = "Tingkat 1",
+                    text = judul,
                     fontSize = 28.sp,
                     color = Color.White,
                     fontFamily = dmsansFontFamily,
@@ -150,7 +149,7 @@ fun Tingkat_1(scrollState: ScrollState, navController: NavController) {
             navbar(navController = navController)
         },
         topBar = {
-            topbarTingkat_1(navController)
+            topbarTingkat("Tingkat 1", navController)
         }
     ) { innerPadding ->
         Column(
@@ -165,8 +164,7 @@ fun Tingkat_1(scrollState: ScrollState, navController: NavController) {
         ) {
             CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
                 FlowRow(
-                    modifier = Modifier
-                        .wrapContentWidth(),
+                    modifier = Modifier.wrapContentWidth(),
                     horizontalArrangement = Arrangement.spacedBy(20.dp),
                     verticalArrangement = Arrangement.spacedBy(20.dp)
                 ) {
@@ -224,6 +222,107 @@ fun Tingkat_1(scrollState: ScrollState, navController: NavController) {
                     ) }
                     Box( modifier = Modifier
                         .width(133.dp).height(163.dp)
+                    ) { Image(
+                        painter = painterResource(id = R.drawable.stage_8_locked_button),
+                        contentDescription = "Soal 8",
+                        modifier = Modifier.fillMaxSize()
+                    ) }
+                }
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalLayoutApi::class)
+@Preview
+@Composable
+fun Tingkat_2(scrollState: ScrollState, navController: NavController) {
+    Scaffold(
+        bottomBar = {
+            navbar(navController = navController)
+        },
+        topBar = {
+            topbarTingkat("Tingkat 2", navController = navController)
+        }
+    ) { innerPadding ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .verticalScroll(scrollState)
+                .background(color = Color(android.graphics.Color.parseColor("#E8E5DE")))
+                .padding(top = 20.dp, start = 20.dp, end = 20.dp, bottom = 20.dp)
+                .padding(innerPadding),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(20.dp)
+        ) {
+            CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
+                FlowRow(
+                    modifier = Modifier
+                        .wrapContentWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(20.dp),
+                    verticalArrangement = Arrangement.spacedBy(20.dp)
+                ) {
+                    Box( modifier = Modifier
+                        .clickable { navController.navigate("Soal2_1_0") }
+                        .width(133.dp)
+                        .height(163.dp)
+                    ) { Image(
+                        painter = painterResource(id = R.drawable.stage_1_unlocked_button),
+                        contentDescription = "Soal 1",
+                        modifier = Modifier.fillMaxSize()
+                    ) }
+                    Box( modifier = Modifier
+                        .clickable { navController.navigate("Soal2_2_0") }
+                        .width(133.dp)
+                        .height(163.dp)
+                    ) { Image(
+                        painter = painterResource(id = R.drawable.stage_2_unlocked_button),
+                        contentDescription = "Soal 2",
+                        modifier = Modifier.fillMaxSize()
+                    ) }
+                    Box( modifier = Modifier
+                        .width(133.dp)
+                        .height(163.dp)
+                    ) { Image(
+                        painter = painterResource(id = R.drawable.stage_3_locked_button),
+                        contentDescription = "Soal 3",
+                        modifier = Modifier.fillMaxSize()
+                    ) }
+                    Box( modifier = Modifier
+                        .width(133.dp)
+                        .height(163.dp)
+                    ) { Image(
+                        painter = painterResource(id = R.drawable.stage_4_locked_button),
+                        contentDescription = "Soal 4",
+                        modifier = Modifier.fillMaxSize()
+                    ) }
+                    Box( modifier = Modifier
+                        .width(133.dp)
+                        .height(163.dp)
+                    ) { Image(
+                        painter = painterResource(id = R.drawable.stage_5_locked_button),
+                        contentDescription = "Soal 5",
+                        modifier = Modifier.fillMaxSize()
+                    ) }
+                    Box( modifier = Modifier
+                        .width(133.dp)
+                        .height(163.dp)
+                    ) { Image(
+                        painter = painterResource(id = R.drawable.stage_6_locked_button),
+                        contentDescription = "Soal 6",
+                        modifier = Modifier.fillMaxSize()
+                    ) }
+                    Box( modifier = Modifier
+                        .width(133.dp)
+                        .height(163.dp)
+                    ) { Image(
+                        painter = painterResource(id = R.drawable.stage_7_locked_button),
+                        contentDescription = "Soal 7",
+                        modifier = Modifier.fillMaxSize()
+                    ) }
+                    Box( modifier = Modifier
+                        .width(133.dp)
+                        .height(163.dp)
                     ) { Image(
                         painter = painterResource(id = R.drawable.stage_8_locked_button),
                         contentDescription = "Soal 8",

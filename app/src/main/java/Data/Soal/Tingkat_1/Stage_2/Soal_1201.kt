@@ -1,11 +1,11 @@
-package Data.Soal.Tingkat_1.Stage_1
+package Data.Soal.Tingkat_1.Stage_2
 
 import Object.HalamanSoal
-import Object.Soal
+import Object.Soal_12
 import androidx.compose.runtime.Composable
 
 @Composable
-fun Soal_1101() {
+fun Soal_1201() {
 
     var judul : String = ""
     var jenis_soal : Int = 0
@@ -27,59 +27,55 @@ fun Soal_1101() {
         }
     }
 
-    // Tingkat 1 Level 1 Soal 1
+    // Tingkat 1 Level 2 Soal 1
 
-    arr_soal += "رَوَاهُ البُخَارِيُّ وَمُسْلِمٌ."
-    arr_soal += "تَعَالىَ"
+    arr_soal += "رَوَاهُ البُخَارِيُّ وَمُسْلِمٌ"
+    arr_soal += "رَمَضَانَ ”"
+    arr_soal += "وَصَوْمِ"
+    arr_soal += "الْبَيْتِ"
+    arr_soal += "وَحَجِّ"
+    arr_soal += "الزَّكَاةِ"
+    arr_soal += "وَإِيْتَاءِ"
+    arr_soal += "الصَّلاَةِ"
+    arr_soal += "وَإِقَامِ"
     arr_soal += "اللهِ"
-    arr_soal += "عَلَى"
-    arr_soal += "وَحِسَابُهُمْ"
-    arr_soal += "الإِسْلاَمِ"
-    arr_soal += "بِحَقِّ"
-    arr_soal += "إِلاَّ"
-    arr_soal += "وَأَمْوَالَـهُمْ"
-    arr_soal += "دِمَاءَهُمْ"
-    arr_soal += "مِنِّي"
-    arr_soal += "عَصَمُوا"
-    arr_soal += "ذَلِكَ"
-    arr_soal += "فَعَلُوا"
-    arr_soal += "فَإِذَا"
-    arr_soal += "الزَّكاَةَ،"
-    arr_soal += "وَيُؤْتُوا"
-    arr_soal += "الصَّلاَةَ"
-    arr_soal += "وَيُقِيْمُوا"
-    arr_soal += "اللهِ،"
     arr_soal += "رَسُوْلُ"
-    arr_soal += "مُحَمَّداً"
-    arr_soal += "وَأَنَّ"
+    arr_soal += "مُحَمَّداً"
+    arr_soal += "وَأَنَّ"
     arr_soal += "اللهُ"
-    arr_soal += "إِلاَّ"
-    arr_soal += "إِلَهَ"
-    arr_soal += "لاَ"
+    arr_soal += "إِلاَّ"
+    arr_soal += "لاَ إِلَهَ"
     arr_soal += "أَنْ"
-    arr_soal += "يَشْهَدُوا"
-    arr_soal += "حَتَّى"
-    arr_soal += "النَّاسَ"
-    arr_soal += "أُقَاتِلَ"
-    arr_soal += "أَنْ"
-    arr_soal += "أُمِرْتُ"
-    arr_soal += "قَالَ :"
-    arr_soal += "وَسَلَّمَ"
+    arr_soal += "شَهَادَةِ"
+    arr_soal += "خَمْسٍ :"
+    arr_soal += "عَلَى"
+    arr_soal += "اْلإِسْلاَمُ"
+    arr_soal += "بُنِيَ"
+    arr_soal += "يَقُوْلُ :" // Yang ini (21)
+    arr_soal += "وَسَلَّمَ"
     arr_soal += "عَلَيْهِ"
     arr_soal += "اللهُ"
-    arr_soal += "صَلَّى"
+    arr_soal += "صَلَّى"
     arr_soal += "اللهِ"
     arr_soal += "رَسُوْلَ"
-    arr_soal += "أَنَّ"
+    arr_soal += "سَمِعْتُ"
+    arr_soal += "قَالَ :"
     arr_soal += "عَنْهُمَا"
     arr_soal += "اللهُ"
-    arr_soal += "رَضِيَ" // Yang ini
+    arr_soal += "رَضِيَ"
+    arr_soal += "الْخَطَّابِ"
+    arr_soal += "بْنِ"
     arr_soal += "عُمَرَ"
-    arr_soal += "ابْنِ"
+    arr_soal += "بْنِ"
+    arr_soal += "اللهِ"
+    arr_soal += "عَبْدِ"
+    arr_soal += "الرَّحْمَنِ"
+    arr_soal += "عَبْدِ"
+    arr_soal += "أَبِي"
     arr_soal += "عَنْ"
 
-    for (i in 0 .. 6) {
-        arr_lokasi += Triple(3, i, 1)
+    for (i in 0 .. 8) {
+        arr_lokasi += Triple(21, i, 1)
         iterasi++
     }
 
@@ -98,9 +94,9 @@ fun Soal_1101() {
 
     opsi_benar = "P2"
 
-    rute_berikutnya = "Soal1_1_1"
-    soal_ke = "1/10"
+    rute_berikutnya = "Soal1_2_1"
+    soal_ke = "1/5"
 
-    val soal_1101 : HalamanSoal = HalamanSoal("Soal 1 - 1", 1, arr_soal.reversedArray(), arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
-    Soal.add(soal_1101)
+    val soal_1201 : HalamanSoal = HalamanSoal("Soal 2 - 1", 2, arr_soal.reversedArray(), arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
+    Soal_12.add(soal_1201)
 }

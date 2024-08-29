@@ -5,7 +5,7 @@ import Object.Soal_13
 import androidx.compose.runtime.Composable
 
 @Composable
-fun Soal_1304() {
+fun Soal_1305() {
 
     var arr_soal = arrayOf<String>()
     var arr_lokasi = arrayOf<Triple<Int, Int, Int>>()
@@ -19,13 +19,13 @@ fun Soal_1304() {
     var soal_ke : String = ""
     var iterasi: Int = 0
 
-    // Tingkat 1 Level 3 Soal 4
+    // Tingkat 1 Level 3 Soal 5
 
     arr_soal += "رَدُّ"
     arr_soal += "فَهُوَ"
     arr_soal += "مِنْهُ"
-    arr_soal += "لَيْسَ"
-    arr_soal += "مَا" // Yang ini (22 - 24)
+    arr_soal += "لَيْسَ" // Yang ini (23)
+    arr_soal += "مَا"
     arr_soal += "هذا"
     arr_soal += "أَمْرِنَا"
     arr_soal += "فِي"
@@ -49,16 +49,8 @@ fun Soal_1304() {
     arr_soal += "المُؤْمِنِيْنَ"
     arr_soal += "عَنْ أُمِّ"
 
-    for (i in 0 .. 3) {
-        arr_lokasi += Triple(22, i, 1)
-        iterasi++
-    }
     for (i in 0 .. 6) {
         arr_lokasi += Triple(23, i, 1)
-        iterasi++
-    }
-    for (i in 0 .. 6) {
-        arr_lokasi += Triple(24, i, 1)
         iterasi++
     }
 
@@ -71,9 +63,9 @@ fun Soal_1304() {
 
     opsi_benar = "Vl"
 
-    rute_berikutnya = "Soal1_3_4"
+    rute_berikutnya = "FinalSkor"
     soal_ke = "4/5"
 
-    val soal_1304 : HalamanSoal = HalamanSoal("Soal 3 - 4", 2, arr_soal.reversedArray(), arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
-    Soal_13.add(soal_1304)
+    val soal_1305 : HalamanSoal = HalamanSoal("Soal 3 - 5", 2, arr_soal.reversedArray(), arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
+    Soal_13.add(soal_1305)
 }

@@ -5,7 +5,7 @@ import Object.Soal_22
 import androidx.compose.runtime.Composable
 
 @Composable
-fun Soal_2203() {
+fun Soal_2204() {
 
     var arr_soal = arrayOf<String>()
     var arr_lokasi = arrayOf<Triple<Int, Int, Int>>()
@@ -19,18 +19,18 @@ fun Soal_2203() {
     var soal_ke : String = ""
     var iterasi: Int = 0
 
-    // Tingkat 2 Level 2 Soal 3
+    // Tingkat 2 Level 2 Soal 4
 
-    arr_soal += "Nomina (isim) yang menunjukkan jumlah satu disebut isim mufrad."
+    arr_soal += "Nomina (isim) yang menunjukkan jumlah dua disebut isim jamak"
 
     opsi_1 = "Benar"
     opsi_2 = "Salah"
 
-    opsi_benar = "Benar"
+    opsi_benar = "Salah"
 
-    rute_berikutnya = "Soal2_2_3"
-    soal_ke = "3/10"
+    rute_berikutnya = "Soal2_2_4"
+    soal_ke = "4/10"
 
-    val soal_2203 : HalamanSoal = HalamanSoal("Soal 1 - 3", 4, arr_soal, arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
-    Soal_22.add(soal_2203)
+    val soal_2204 : HalamanSoal = HalamanSoal("Soal 2 - 4", 4, arr_soal, arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
+    Soal_22.add(soal_2204)
 }

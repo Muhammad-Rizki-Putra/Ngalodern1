@@ -6,7 +6,7 @@ import Object.Soal_21
 import androidx.compose.runtime.Composable
 
 @Composable
-fun Soal_2106() {
+fun Soal_2107() {
 
     var arr_soal = arrayOf<String>()
     var arr_lokasi = arrayOf<Triple<Int, Int, Int>>()
@@ -20,7 +20,7 @@ fun Soal_2106() {
     var soal_ke : String = ""
     var iterasi: Int = 0
 
-    // Tingkat 2 Level 1 Soal 6
+    // Tingkat 2 Level 1 Soal 7
 
     arr_soal += "A.     فأتوا منه ما اسْتَطَعْتُمْ            "
 
@@ -53,9 +53,9 @@ fun Soal_2106() {
 
     opsi_benar = "A"
 
-    rute_berikutnya = "Soal2_1_6"
-    soal_ke = "6/10"
+    rute_berikutnya = "Soal2_1_7"
+    soal_ke = "7/10"
 
-    val soal_2106 : HalamanSoal = HalamanSoal("Soal 1 - 6", 3, arr_soal, arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
-    Soal_21.add(soal_2106)
+    val soal_2107 : HalamanSoal = HalamanSoal("Soal 1 - 7", 3, arr_soal, arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
+    Soal_21.add(soal_2107)
 }

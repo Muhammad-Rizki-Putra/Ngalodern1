@@ -1,5 +1,6 @@
 package Page
 
+import Object.Skor
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -77,6 +78,7 @@ fun navbar(navController: NavController){
                         .width(75.dp)
                         .clickable {
                             navController.navigate("Dashboard")
+                            Skor.skor.value = 0
                         },
                     painter = painterResource(id = berandaResourceId),
                     contentDescription = "Logo Beranda"
@@ -88,6 +90,7 @@ fun navbar(navController: NavController){
                         .width(75.dp)
                         .clickable {
                             navController.navigate("Belajar")
+                            Skor.skor.value = 0
                         },
                     painter = painterResource(id = belajarResourceId),
                     contentDescription = "Logo Belajar"
@@ -99,21 +102,23 @@ fun navbar(navController: NavController){
                         .width(75.dp)
                         .clickable {
                             navController.navigate("Latihan")
+                            Skor.skor.value = 0
                         },
                     painter = painterResource(id = latihanResourceId),
                     contentDescription = "Logo Latihan"
                 )
-                Image(
-                    modifier = Modifier
-                        .clip(RoundedCornerShape(100.dp))
-                        .height(75.dp)
-                        .width(75.dp)
-                        .clickable {
-                            navController.navigate("Profile")
-                        },
-                    painter = painterResource(id = profilResourceId),
-                    contentDescription = "Logo Profil"
-                )
+//                Image(
+//                    modifier = Modifier
+//                        .clip(RoundedCornerShape(100.dp))
+//                        .height(75.dp)
+//                        .width(75.dp)
+//                        .clickable {
+//                            navController.navigate("Profile")
+//                            Skor.skor.value = 0
+//                        },
+//                    painter = painterResource(id = profilResourceId),
+//                    contentDescription = "Logo Profil"
+//                )
             }
         }
     }

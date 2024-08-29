@@ -5,7 +5,7 @@ import Object.Soal_22
 import androidx.compose.runtime.Composable
 
 @Composable
-fun Soal_2209() {
+fun Soal_2210() {
 
     var arr_soal = arrayOf<String>()
     var arr_lokasi = arrayOf<Triple<Int, Int, Int>>()
@@ -19,7 +19,7 @@ fun Soal_2209() {
     var soal_ke : String = ""
     var iterasi: Int = 0
 
-    // Tingkat 2 Level 2 Soal 9
+    // Tingkat 2 Level 2 Soal 10
 
     arr_soal += "السَّاقِطِ\"."
     arr_soal += "اللَّيْمُونِ"
@@ -39,12 +39,12 @@ fun Soal_2209() {
     arr_soal += "كَابَايَانِ"
     arr_soal += "فَقَالَ"
     arr_soal += "قَبْرِهِ."
-    arr_soal += "فَوْقَ" // Yang ini (12 - 13)
+    arr_soal += "فَوْقَ"
     arr_soal += "اللَّيْمُونِ"
     arr_soal += "ثِمَارُ"
     arr_soal += "سَقَطَتْ"
     arr_soal += "الدَّفْنِ"
-    arr_soal += "وَبَعْدَ"
+    arr_soal += "وَبَعْدَ" // Yang ini (7 - 8)
     arr_soal += "فِيهَا."
     arr_soal += "نَفْسِهِ"
     arr_soal += "وَدَفْن"
@@ -53,12 +53,12 @@ fun Soal_2209() {
     arr_soal += "كَابَايَانْ"
     arr_soal += "فَقَامَ سِي"
 
-    for (i in 0 .. 5) {
-        arr_lokasi += Triple(12, i, 1)
+    for (i in 0 .. 7) {
+        arr_lokasi += Triple(7, i, 1)
         iterasi++
     }
-    for (i in 0 .. 7) {
-        arr_lokasi += Triple(13, i, 1)
+    for (i in 0 .. 8) {
+        arr_lokasi += Triple(8, i, 1)
         iterasi++
     }
 
@@ -71,9 +71,9 @@ fun Soal_2209() {
 
     opsi_benar = "K"
 
-    rute_berikutnya = "Soal2_2_9"
-    soal_ke = "9/10"
+    rute_berikutnya = "FinalSkor"
+    soal_ke = "10/10"
 
-    val soal_2209 : HalamanSoal = HalamanSoal("Soal 2 - 9", 1, arr_soal.reversedArray(), arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
-    Soal_22.add(soal_2209)
+    val soal_2210 : HalamanSoal = HalamanSoal("Soal 2 - 10", 1, arr_soal.reversedArray(), arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
+    Soal_22.add(soal_2210)
 }

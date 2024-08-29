@@ -5,7 +5,7 @@ import Object.Soal_22
 import androidx.compose.runtime.Composable
 
 @Composable
-fun Soal_2201() {
+fun Soal_2202() {
 
     var arr_soal = arrayOf<String>()
     var arr_lokasi = arrayOf<Triple<Int, Int, Int>>()
@@ -19,18 +19,18 @@ fun Soal_2201() {
     var soal_ke : String = ""
     var iterasi: Int = 0
 
-    // Tingkat 2 Level 2 Soal 1
+    // Tingkat 2 Level 2 Soal 2
 
-    arr_soal += "Kata yang menunjukkan arti pada dirinya sendiri dan tidak berhubungan dengan waktu disebut dengan nomina (isim)."
+    arr_soal += "Kata yang menunjukkan arti pada dirinya sendiri dan tidak berhubungan dengan waktu disebut dengan verba (fi'il)"
 
     opsi_1 = "Benar"
     opsi_2 = "Salah"
 
-    opsi_benar = "Benar"
+    opsi_benar = "Salah"
 
-    rute_berikutnya = "Soal2_2_1"
-    soal_ke = "1/10"
+    rute_berikutnya = "Soal2_2_2"
+    soal_ke = "2/10"
 
-    val soal_2201 : HalamanSoal = HalamanSoal("Soal 1 - 1", 4, arr_soal, arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
-    Soal_22.add(soal_2201)
+    val soal_2202 : HalamanSoal = HalamanSoal("Soal 2 - 2", 4, arr_soal, arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
+    Soal_22.add(soal_2202)
 }

@@ -5,7 +5,7 @@ import Object.Soal_13
 import androidx.compose.runtime.Composable
 
 @Composable
-fun Soal_1303() {
+fun Soal_1304() {
 
     var arr_soal = arrayOf<String>()
     var arr_lokasi = arrayOf<Triple<Int, Int, Int>>()
@@ -19,13 +19,13 @@ fun Soal_1303() {
     var soal_ke : String = ""
     var iterasi: Int = 0
 
-    // Tingkat 1 Level 3 Soal 3
+    // Tingkat 1 Level 3 Soal 4
 
     arr_soal += "رَدُّ"
-    arr_soal += "فَهُوَ" // Yang ini (25)
+    arr_soal += "فَهُوَ"
     arr_soal += "مِنْهُ"
     arr_soal += "لَيْسَ"
-    arr_soal += "مَا"
+    arr_soal += "مَا" // Yang ini (22 - 24)
     arr_soal += "هذا"
     arr_soal += "أَمْرِنَا"
     arr_soal += "فِي"
@@ -49,23 +49,31 @@ fun Soal_1303() {
     arr_soal += "المُؤْمِنِيْنَ"
     arr_soal += "عَنْ أُمِّ"
 
-    for (i in 0 .. 2) {
-        arr_lokasi += Triple(25, i, 1)
+    for (i in 0 .. 3) {
+        arr_lokasi += Triple(22, i, 1)
+        iterasi++
+    }
+    for (i in 0 .. 6) {
+        arr_lokasi += Triple(23, i, 1)
+        iterasi++
+    }
+    for (i in 0 .. 6) {
+        arr_lokasi += Triple(24, i, 1)
         iterasi++
     }
 
-    pertanyaan = "Kata yang diberikan tanda di atas merupakan kategori ..."
+    pertanyaan = "Kata yang diberikan tanda di atas merupakan fungsi ..."
 
-    opsi_1 = "Pp"
-    opsi_2 = "Ko"
-    opsi_3 = "N1"
-    opsi_4 = "N+"
+    opsi_1 = "S1"
+    opsi_2 = "P1"
+    opsi_3 = "O"
+    opsi_4 = "K"
 
-    opsi_benar = "Ko"
+    opsi_benar = "O"
 
-    rute_berikutnya = "Soal1_3_3"
-    soal_ke = "3/5"
+    rute_berikutnya = "Soal1_3_4"
+    soal_ke = "4/5"
 
-    val soal_1303 : HalamanSoal = HalamanSoal("Soal 3 - 3", 2, arr_soal.reversedArray(), arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
-    Soal_13.add(soal_1303)
+    val soal_1304 : HalamanSoal = HalamanSoal("Soal 3 - 4", 2, arr_soal.reversedArray(), arr_lokasi, pertanyaan, opsi_1, opsi_2, opsi_3, opsi_4, opsi_benar, rute_berikutnya, soal_ke)
+    Soal_13.add(soal_1304)
 }

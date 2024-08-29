@@ -71,7 +71,6 @@ data class Quadruple<A, B, C, D>(
     val fourth: D
 )
 
-
 @OptIn(ExperimentalMaterial3Api::class)
 class HalamanBelajar {
     var judul: String = ""
@@ -198,7 +197,7 @@ class HalamanBelajar {
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
-                    Text(
+                    Text( // Judul
                         modifier = Modifier,
                         text = judul,
                         fontSize = 28.sp,
@@ -207,7 +206,7 @@ class HalamanBelajar {
                         fontWeight = FontWeight.Bold
                     )
 
-                    Text(
+                    Text( // Subjudul
                         modifier = Modifier,
                         text = subjudul,
                         fontSize = 12.sp,
@@ -359,7 +358,7 @@ class HalamanBelajar {
                                         iterasi++
                                         buffer_logat = 0
                                     }
-                                    else  {
+                                    else {
                                         if (iterasi_D < arr_duplicate.size && arr_duplicate[iterasi_D].first == index){
                                             logat.tombol(Simbol = arr_lokasi[arr_duplicate[iterasi_D].second].fourth)
                                             iterasi_D++
@@ -405,13 +404,13 @@ class HalamanBelajar {
                 )
             }
 
+            // Tampilin arti full dari bawah
             BottomSheetScaffold(
                 scaffoldState = scaffoldState,
                 sheetContent = {
                     Box(
                         modifier = Modifier
                             .heightIn(max = 500.dp)
-
                     ) {
                         Column(
                             modifier = Modifier
