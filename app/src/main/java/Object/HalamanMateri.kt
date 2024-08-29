@@ -5,6 +5,7 @@ package Object
 
 import Page.VideoPlayer
 import Page.box_video
+import Page.navbar
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
@@ -154,28 +155,6 @@ class HalamanMateri {
         return this.arab
     }
 
-    fun Coloredchar(str: String, indexesToColor: List<Int>, colorIds: List<Int>): AnnotatedString {
-        return buildAnnotatedString {
-            str.forEachIndexed { index, char ->
-                val color = if (index in indexesToColor) {
-                    val colorId = colorIds[indexesToColor.indexOf(index)]
-                    when (colorId) {
-                        1 -> Color(android.graphics.Color.parseColor("#FF0000"))
-                        2 -> Color(android.graphics.Color.parseColor("#479DDC"))
-                        3 -> Color(android.graphics.Color.parseColor("#964B00"))
-                        4 -> Color(android.graphics.Color.parseColor("#800080"))
-                        else -> Color.Black
-                    }
-                } else {
-                    Color.Black
-                }
-                withStyle(style = SpanStyle(color = color)) {
-                    append(char)
-                }
-            }
-        }
-    }
-
     @Composable
     fun topbar(navController: NavController) {
         Surface(
@@ -217,14 +196,16 @@ class HalamanMateri {
                         fontWeight = FontWeight.Bold
                     )
 
-                    Text(
-                        modifier = Modifier,
-                        text = subjudul,
-                        fontSize = 12.sp,
-                        color = Color.White,
-                        fontFamily = dmsansFontFamily,
-                        fontWeight = FontWeight.Bold
-                    )
+                    if (subjudul.isNotEmpty()) {
+                        Text(
+                            modifier = Modifier,
+                            text = subjudul,
+                            fontSize = 12.sp,
+                            color = Color.White,
+                            fontFamily = dmsansFontFamily,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
                 }
 
                 Image(
@@ -254,6 +235,9 @@ class HalamanMateri {
         Scaffold(
             topBar = {
                 topbar(navController = navController)
+            },
+            bottomBar = {
+                navbar(navController = navController)
             }
         ) { innerPadding ->
             val scaffoldState = rememberBottomSheetScaffoldState()
@@ -323,6 +307,9 @@ class HalamanMateri {
         Scaffold(
             topBar = {
                 topbar(navController = navController)
+            },
+            bottomBar ={
+                navbar(navController = navController)
             }
         ) { innerPadding ->
             val scaffoldState = rememberBottomSheetScaffoldState()
@@ -333,7 +320,7 @@ class HalamanMateri {
                     .fillMaxSize()
                     .background(color = Color(android.graphics.Color.parseColor("#E8E5DE")))
                     .padding(innerPadding)
-                    .padding(top = 10.dp, start = 30.dp, end = 30.dp, bottom = 60.dp)
+                    .padding(top = 10.dp, start = 30.dp, end = 30.dp, bottom = 10.dp)
                     .verticalScroll(rememberScrollState()),
                 horizontalAlignment = Alignment.End
             ) {
