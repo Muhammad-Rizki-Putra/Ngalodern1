@@ -46,6 +46,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.draw.shadow
 import androidx.navigation.NavController
 import com.example.ngalodern.ui.theme.ui.theme.dmsansFontFamily
@@ -134,84 +135,6 @@ fun box_belajar(judul: String = "None"){
 
 @Preview
 @Composable
-fun box_materi(waktu: String = "00.00",durasi: String = "00.00", judul: String = "Ragam Subjek"){
-    Box(
-        modifier = Modifier
-            .shadow(
-                elevation = 5.dp,
-                shape = RoundedCornerShape(
-                    topStart = 10.dp,
-                    bottomStart = 10.dp,
-                    topEnd = 10.dp,
-                    bottomEnd = 10.dp,
-                ),
-                clip = false
-            )
-            .clip(
-                RoundedCornerShape(
-                    topStart = 10.dp,
-                    bottomStart = 10.dp,
-                    topEnd = 10.dp,
-                    bottomEnd = 10.dp,
-                )
-            )
-            .fillMaxWidth()
-            .background(color = Color(android.graphics.Color.parseColor("#A9C0CF")))
-            .height(68.dp)
-        ,
-
-    ){
-        Row (
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(10.dp)
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-
-        ){
-           Box(){
-               Row{
-                   Image(
-                       modifier = Modifier
-                           .height(60.dp)
-                           .width(60.dp),
-                       painter = painterResource(id = R.drawable.buku_1),
-                       contentDescription = "Logo buku"
-                   )
-                   Column {
-                       Text(
-                           text = judul,
-                           fontWeight = FontWeight.Bold,
-                           fontSize = 16.sp,
-                           color = Color.White
-                       )
-
-                       Text(
-                           text = waktu + " / " + durasi,
-                           fontSize = 12.sp,
-                           color = Color.White
-                       )
-                   }
-               }
-
-           }
-
-            Image(
-                modifier = Modifier
-                    .height(60.dp)
-                    .width(60.dp)
-                    .clickable {
-
-                    },
-                painter = painterResource(id = R.drawable.tombol_play_1),
-                contentDescription = "Logo play",
-            )
-        }
-    }
-}
-
-@Preview
-@Composable
 fun box_belajar_2(judul: String = "None", route: String, navController: NavController){
     Box(
         modifier = Modifier
@@ -294,7 +217,6 @@ fun box_belajar_2(judul: String = "None", route: String, navController: NavContr
     }
 }
 
-
 @Preview
 @Composable
 fun togglebelajar(indikator: Boolean = true, navController: NavController){
@@ -344,6 +266,7 @@ fun togglebelajar(indikator: Boolean = true, navController: NavController){
     }
 }
 
+
 @Preview
 @Composable
 fun topbar(){
@@ -355,7 +278,7 @@ fun topbar(){
             .padding(start = 30.dp, end = 30.dp, top = 30.dp, bottom = 10.dp)
             ,
         horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = CenterVertically
     ) {
         Text(
             text = "Ngalodern",
@@ -422,7 +345,7 @@ fun Dashboard(scrollState: ScrollState, navController: NavController) {
                         fontSize = 14.sp
                     )
 
-                    box_materi("00.00", "04.34")
+                    box_materi("00.00", "04.34", "Ragam Subjek", "Video_0", navController)
                 }
             }
 
@@ -457,11 +380,10 @@ fun Dashboard(scrollState: ScrollState, navController: NavController) {
                     }
 
                     Box(modifier = Modifier.padding(bottom = 13.dp).padding(top = 10.dp)) {
-                        box_materi("00.00", "04.34")
-                    }
+                        box_materi("00.00", "04.34", "Ragam Subjek", "Video_0", navController)                    }
 
                     Box(modifier = Modifier.padding(bottom = 13.dp)) {
-                        box_materi("00.00", "07.21", "Kata Arab-Sunda")
+                        box_materi("00.00", "07.21", "Kata Arab-Sunda", "Video_1", navController)
                     }
                 }
             }
@@ -580,6 +502,88 @@ fun Dashboard(scrollState: ScrollState, navController: NavController) {
                     togglebelajar(indikator,navController)
                 }
             }
+        }
+    }
+}
+
+@Preview
+@Composable
+fun box_materi(waktu: String = "00.00",durasi: String = "00.00", judul: String, rute:String, navController: NavController){
+    Box(
+        modifier = Modifier
+            .shadow(
+                elevation = 5.dp,
+                shape = RoundedCornerShape(
+                    topStart = 10.dp,
+                    bottomStart = 10.dp,
+                    topEnd = 10.dp,
+                    bottomEnd = 10.dp,
+                ),
+                clip = false
+            )
+            .clip(
+                RoundedCornerShape(
+                    topStart = 10.dp,
+                    bottomStart = 10.dp,
+                    topEnd = 10.dp,
+                    bottomEnd = 10.dp,
+                )
+            )
+            .fillMaxWidth()
+            .background(color = Color(android.graphics.Color.parseColor("#A9C0CF")))
+            .height(68.dp)
+            .clickable {
+                navController.navigate(rute)
+            }
+        ,
+        contentAlignment = Alignment.Center
+    ) {
+        Row (
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp)
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = CenterVertically
+        ){
+            Box {
+                Row {
+                    Image(
+                        modifier = Modifier
+                            .height(60.dp)
+                            .width(60.dp),
+                        painter = painterResource(id = R.drawable.buku_1),
+                        contentDescription = "Logo buku"
+                    )
+                    Column {
+                        Text(
+                            text = judul,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 16.sp,
+                            color = Color.White
+                        )
+
+                        Text(
+                            text = waktu + " / " + durasi,
+                            fontSize = 12.sp,
+                            color = Color.White
+                        )
+                    }
+                }
+
+            }
+
+            Image(
+                modifier = Modifier
+                    .height(60.dp)
+                    .width(60.dp)
+                    .clickable {
+                        navController.navigate(rute)
+                    },
+                painter = painterResource(id = R.drawable.tombol_play_1),
+                contentDescription = "Logo play",
+
+            )
         }
     }
 }

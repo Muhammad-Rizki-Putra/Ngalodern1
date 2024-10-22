@@ -229,7 +229,7 @@ fun box_video(waktu: String = "00.00",durasi: String = "00.00", judul: String = 
         modifier = Modifier
             .clickable {
             navController.navigate(route)
-        }
+            }
             .shadow(
                 elevation = 5.dp,
                 shape = RoundedCornerShape(
@@ -251,19 +251,17 @@ fun box_video(waktu: String = "00.00",durasi: String = "00.00", judul: String = 
             .fillMaxWidth()
             .background(color = Color(android.graphics.Color.parseColor("#A9C0CF")))
             .height(68.dp)
-        ,
-
         ){
         Row (
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(10.dp)
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-
-            ){
+                .fillMaxWidth()
+        ){
             Box(){
-                Row{
+                Row (
+                    horizontalArrangement = Arrangement.spacedBy(10.dp)
+                ){
                     Image(
                         modifier = Modifier
                             .height(60.dp)
@@ -274,8 +272,10 @@ fun box_video(waktu: String = "00.00",durasi: String = "00.00", judul: String = 
                     Text(
                             text = judul,
                             fontWeight = FontWeight.Bold,
-                            fontSize = 16.sp,
-                            color = Color.White
+                            fontSize = 18.sp,
+                            color = Color.White,
+                            modifier = Modifier.align(Alignment.CenterVertically)
+
                     )
 //
 //                        Text(
@@ -315,7 +315,7 @@ fun box_modul(judul: String = "None", route: String, navController: NavControlle
         Row (
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 10.dp, end = 10.dp)
+                .padding(start = 20.dp, end = 20.dp)
                 .fillMaxHeight(),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
@@ -326,7 +326,8 @@ fun box_modul(judul: String = "None", route: String, navController: NavControlle
                 fontFamily = leaguespartanFontFamily,
                 fontWeight = FontWeight.Bold,
                 fontSize = 20.sp,
-                color = Color.White
+                color = Color.White,
+                modifier = Modifier.align(Alignment.CenterVertically)
             )
 
             Image(
