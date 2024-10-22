@@ -234,6 +234,8 @@ fun Data6(){
         Array_logat += Quadruple(7,i,1,"S2")
         iterasi++
     }
+    Array_Duplicate += Pair(7,iterasi - 1)
+
     for (i in 0..8){
         Array_logat += Quadruple(8,i,3,"O")
         iterasi++
@@ -402,10 +404,14 @@ fun Data6(){
         Array_logat += Quadruple(69,i,1,"S2")
         iterasi++
     }
+    Array_Duplicate += Pair(69,iterasi - 1)
+
     for (i in 0..6){
         Array_logat += Quadruple(70,i,2,"P2")
         iterasi++
     }
+    Array_Duplicate += Pair(70,iterasi - 1)
+
     for (i in 0..8){
         Array_logat += Quadruple(71,i,1,"S2")
         iterasi++
@@ -422,10 +428,14 @@ fun Data6(){
         Array_logat += Quadruple(75,i,1,"S2")
         iterasi++
     }
+    Array_Duplicate += Pair(75,iterasi - 1)
+
     for (i in 0..6){
         Array_logat += Quadruple(76,i,2,"P2")
         iterasi++
     }
+    Array_Duplicate += Pair(76,iterasi - 1)
+
     for (i in 0..8){
         Array_logat += Quadruple(77,i,1,"S2")
         iterasi++

@@ -76,7 +76,7 @@ class Logat {
             }
         this.warna =
             when (this.simbol){
-                "S1" , "S2" , "S3" -> 1
+                "S1" , "S2" , "S3", "S4" -> 1
                 "P1" , "P2" , "P3"-> 2
                 "O" -> 3
                 else -> 10
@@ -89,7 +89,7 @@ class Logat {
         this.simbol = Simbol
         this.warna =
             when (this.simbol){
-                "S1" , "S2" , "S3" -> 1
+                "S1" , "S2" , "S3", "S4" -> 1
                 "P1" , "P2" , "P3"-> 2
                 "O" -> 3
                 "K" -> 4
@@ -118,7 +118,7 @@ class Logat {
                     this.simbol = Simbol
                     this.warna =
                         when (this.simbol){
-                            "S1" , "S2" , "S3" -> 1
+                            "S1" , "S2" , "S3", "S4" -> 1
                             "P1" , "P2" , "P3"-> 2
                             "O" -> 3
                             "K" -> 4
@@ -161,7 +161,7 @@ class Logat {
         this.simbol = Simbol
         this.warna =
             when (this.simbol){
-                "S1" , "S2" , "S3" -> 1
+                "S1" , "S2" , "S3", "S4" -> 1
                 "P1" , "P2" , "P3"-> 2
                 "O" -> 3
                 "K" -> 4
@@ -190,7 +190,7 @@ class Logat {
                     this.simbol = Simbol
                     this.warna =
                         when (this.simbol){
-                            "S1" , "S2" , "S3" -> 1
+                            "S1" , "S2" , "S3", "S4" -> 1
                             "P1" , "P2" , "P3"-> 2
                             "O" -> 3
                             "K" -> 4
